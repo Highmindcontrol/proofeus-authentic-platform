@@ -18,7 +18,7 @@ export default function LaGaleriePage() {
         {
           titre: "Aucune valeur ne naît d'une œuvre douteuse",
           corps:
-            "Le marché de l'art repose sur une convention silencieuse : ce qui est authentifié peut être valorisé. Une œuvre dont l'auteur ne peut être confirmé perd son socle — quelle que soit sa beauté. Proofeus Authentic reconnaît ce fait ancien et lui donne, à l'ère post-IA, un outil à la hauteur du problème.",
+            "Le marché de l'art repose sur une convention silencieuse : ce qui est authentifié peut être valorisé. Une œuvre dont l'auteur ne peut être confirmé perd son socle — quelle que soit sa beauté. Proofeus Authentic® reconnaît ce fait ancien et lui donne, à l'ère post-IA, un outil à la hauteur du problème.",
         },
         {
           titre: "Ce que change le Sceau pour un collectionneur",

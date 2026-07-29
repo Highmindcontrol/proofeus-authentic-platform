@@ -3,13 +3,13 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Proofeus Genesis — Le Sceau des Origines",
+  title: "Proofeus Genesis® — Le Sceau des Origines",
   description:
-    "1 000 000 de fragments Soul-Bound d'une œuvre unique, offerts aux premiers humains vérifiés par Proofeus. Trace historique, pas actif spéculatif.",
+    "1 000 000 de fragments Soul-Bound d'une œuvre unique, offerts aux premiers humains vérifiés par Proofeus®. Trace historique, pas actif spéculatif.",
 };
 
 /**
- * Page dédiée au Sceau des Origines (Proofeus Genesis).
+ * Page dédiée au Sceau des Origines (Proofeus Genesis®).
  * V1 placeholder — en Phase 3 (T1 2027) : compteur temps réel, galerie
  * dynamique des Sceaux mint, formulaire réclamation.
  */
@@ -41,7 +41,7 @@ export default function GenesisPage() {
             />
             <Image
               src="/sceau-canonique.png"
-              alt="Le Sceau Cristal — objet iconique de Proofeus Authentic"
+              alt="Le Sceau Cristal — objet iconique de Proofeus Authentic®"
               width={320}
               height={320}
               className="relative"
@@ -54,7 +54,7 @@ export default function GenesisPage() {
           Une plaque compagnon numérotée personnalise chaque fragment.
         </p>
         <p className="mt-8 text-xl leading-relaxed text-gris-clair">
-          La première œuvre auto-certifiée de l&apos;histoire de Proofeus.
+          La première œuvre auto-certifiée de l&apos;histoire de Proofeus®.
           Une œuvre numérique unique dont un million de fragments sont
           distribués sous forme de Soul-Bound Tokens (SBT) aux premiers
           humains vérifiés par la plateforme.

@@ -18,12 +18,12 @@ export default function LeCoffrePage() {
         {
           titre: "La mémoire ne pardonne pas l'à-peu-près",
           corps:
-            "Une œuvre traverse les siècles. Les documents qui l'accompagnent, non. Les certificats papier jaunissent, se perdent, se falsifient. Les archives brûlent. Les héritiers meurent. Proofeus Authentic a été conçu pour survivre à tous ces oublis — parce que sa mémoire n'appartient à personne en particulier, et donc à chacun.",
+            "Une œuvre traverse les siècles. Les documents qui l'accompagnent, non. Les certificats papier jaunissent, se perdent, se falsifient. Les archives brûlent. Les héritiers meurent. Proofeus Authentic® a été conçu pour survivre à tous ces oublis — parce que sa mémoire n'appartient à personne en particulier, et donc à chacun.",
         },
         {
           titre: "Un registre ouvert, inaltérable, souverain",
           corps:
-            "Chaque Sceau émis par la plateforme est inscrit dans un registre public. Toute personne au monde peut consulter l'existence d'une œuvre certifiée, son auteur, sa date d'inscription. Nul ne peut effacer une entrée du registre. Nul ne peut la falsifier. Proofeus Authentic elle-même n'en a pas le pouvoir.",
+            "Chaque Sceau émis par la plateforme est inscrit dans un registre public. Toute personne au monde peut consulter l'existence d'une œuvre certifiée, son auteur, sa date d'inscription. Nul ne peut effacer une entrée du registre. Nul ne peut la falsifier. Proofeus Authentic® elle-même n'en a pas le pouvoir.",
         },
         {
           titre: "Ce qui traverse le temps",

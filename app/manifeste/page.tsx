@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <PagePlaceholder
       eyebrow="Le Manifeste"
-      titre="Pourquoi Proofeus Authentic existe."
+      titre="Pourquoi Proofeus Authentic® existe."
       chapo="L'IA générative rend indistinguables l'humain et la machine dans la création. Nous refusons ce brouillage. Notre texte fondateur — en cours de rédaction."
     />
   );

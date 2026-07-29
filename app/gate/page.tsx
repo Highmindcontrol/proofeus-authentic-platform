@@ -66,7 +66,7 @@ export default function GatePage() {
             lineHeight: 1.2,
           }}
         >
-          Proofeus Authentic — chantier en cours
+          Proofeus Authentic® — chantier en cours
         </h1>
         <p className="mt-6 text-base leading-relaxed text-gris-clair">
           La plateforme est en préparation. L&apos;accès est réservé jusqu&apos;à

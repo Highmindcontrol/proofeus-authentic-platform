@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 /**
- * Landing Proofeus Authentic.
+ * Landing Proofeus Authentic®.
  *
  * Structure clarifiée (arbitrage 29 juillet 2026 soir — François a
  * rejeté la doctrine « musée mystique » : le visiteur ne comprend pas
- * ce que Proofeus fait) :
+ * ce que Proofeus® fait) :
  *
- * 1. Hero — image + baseline en haut + nom Proofeus Authentic en dessous
+ * 1. Hero — image + baseline en haut + nom Proofeus Authentic® en dessous
  * 2. Ce que nous faisons — bloc de positionnement clair (le « quoi »)
  * 3. Les 4 salles — grille horizontale (le « pour qui »)
  * 4. Le Sceau, en détail — section technique explicite (le « comment »)
@@ -71,7 +71,7 @@ export default function AuthenticLanding() {
               lineHeight: 1.05,
             }}
           >
-            Proofeus{" "}
+            Proofeus®{" "}
             <span style={{ color: "var(--color-cyan-proofeus)" }}>
               Authentic
             </span>
@@ -127,11 +127,11 @@ export default function AuthenticLanding() {
           </h3>
 
           <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
-            Vous créez votre compte Proofeus Authentic, puis vous
+            Vous créez votre compte Proofeus Authentic®, puis vous
             téléchargez l&apos;application{" "}
-            <strong className="font-medium text-blanc-casse">Proofeus</strong>{" "}
+            <strong className="font-medium text-blanc-casse">Proofeus®</strong>{" "}
             — développée pour l&apos;ensemble de nos activités et
-            nativement intégrée à Proofeus Authentic. En quelques minutes,
+            nativement intégrée à Proofeus Authentic®. En quelques minutes,
             l&apos;application capture vos empreintes biométriques
             multimodales :
           </p>
@@ -146,13 +146,13 @@ export default function AuthenticLanding() {
           <p className="mx-auto mt-14 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
             Ces cinq captures sont fusionnées cryptographiquement pour
             créer votre{" "}
-            <strong className="font-medium text-blanc-casse">Sceau Proofeus</strong>{" "}
+            <strong className="font-medium text-blanc-casse">Sceau Proofeus®</strong>{" "}
             — unique, inaltérable, à vous seul. C&apos;est cet emblème qui
             servira à enregistrer et à signer l&apos;ensemble de vos
             œuvres et de vos propriétés. C&apos;est également ce même
             Sceau qui vous permettra d&apos;utiliser l&apos;ensemble des
             services des écosystèmes{" "}
-            <strong className="font-medium text-blanc-casse">Proofeus</strong>{" "}
+            <strong className="font-medium text-blanc-casse">Proofeus®</strong>{" "}
             et{" "}
             <strong className="font-medium text-blanc-casse">Verbalock</strong>.
           </p>
@@ -181,7 +181,7 @@ export default function AuthenticLanding() {
             Un registre inaltérable. Une garantie à vie.
           </h2>
           <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
-            Le Sceau Proofeus est notre certificat. Une fois apposé sur une
+            Le Sceau Proofeus® est notre certificat. Une fois apposé sur une
             œuvre, il ne peut ni être copié, ni détaché, ni contesté. Voici
             ce qu&apos;il contient, ce qu&apos;il vous apporte et ce contre
             quoi il vous protège.
@@ -236,7 +236,7 @@ export default function AuthenticLanding() {
                 }}
               >
                 Une seule identité, tous les services des écosystèmes
-                Proofeus &amp; Verbalock.
+                Proofeus® &amp; Verbalock.
               </h3>
               <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
                 Votre Sceau est votre clé unique dans l&apos;ensemble des
@@ -282,10 +282,10 @@ export default function AuthenticLanding() {
               </div>
             </div>
 
-            {/* Groupe B — Dans les écosystèmes Proofeus + Verbalock */}
+            {/* Groupe B — Dans les écosystèmes Proofeus® + Verbalock */}
             <div className="mt-16">
               <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
-                Dans les écosystèmes Proofeus &amp; Verbalock
+                Dans les écosystèmes Proofeus® &amp; Verbalock
               </p>
               <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {PROTECTIONS_ECOSYSTEMES.map((item) => (
@@ -334,7 +334,7 @@ function Pastille({ titre, corps }: { titre: string; corps: string }) {
 }
 
 /**
- * Picto rond d'une capture multimodale — vraie image de l'app Proofeus
+ * Picto rond d'une capture multimodale — vraie image de l'app Proofeus®
  * en rond (mask circulaire), halo cyan diffus + label sous l'image.
  * Images 1254x1254 partagées depuis le repo proofeus-platform.
  */
@@ -386,7 +386,7 @@ const TECHNIQUE = [
   {
     titre: "Registre public inaltérable",
     chapo:
-      "Chaque Sceau est inscrit à vie dans un registre public consultable par quiconque. Aucune œuvre certifiée ne peut être effacée ou modifiée — Proofeus Authentic elle-même n'en a pas le pouvoir.",
+      "Chaque Sceau est inscrit à vie dans un registre public consultable par quiconque. Aucune œuvre certifiée ne peut être effacée ou modifiée — Proofeus Authentic® elle-même n'en a pas le pouvoir.",
   },
   {
     titre: "Plaque compagnon",
@@ -406,12 +406,12 @@ const TECHNIQUE = [
 ];
 
 /* Ce qu'il vous apporte — services débloqués par le Sceau dans les
-   écosystèmes Proofeus + Verbalock */
+   écosystèmes Proofeus® + Verbalock */
 const APPORTS: { titre: string; corps: string }[] = [
   {
     titre: "Certification d'œuvres",
     corps:
-      "Toiles, sculptures, photographies, NFT — chaque œuvre reçoit son Sceau et rejoint le registre public inaltérable de Proofeus Authentic.",
+      "Toiles, sculptures, photographies, NFT — chaque œuvre reçoit son Sceau et rejoint le registre public inaltérable de Proofeus Authentic®.",
   },
   {
     titre: "Messagerie chiffrée E2E",
@@ -460,7 +460,7 @@ const PROTECTIONS_ART: { titre: string; corps: string }[] = [
   {
     titre: "Faux certificats papier",
     corps:
-      "Fini les certificats jaunis, perdus ou falsifiés. Le registre public de Proofeus Authentic est consultable en trois secondes, à vie.",
+      "Fini les certificats jaunis, perdus ou falsifiés. Le registre public de Proofeus Authentic® est consultable en trois secondes, à vie.",
   },
   {
     titre: "Provenance opaque",
@@ -488,7 +488,7 @@ const PROTECTIONS_ECOSYSTEMES: { titre: string; corps: string }[] = [
   {
     titre: "Prise de contrôle de compte",
     corps:
-      "Aucun accès à vos comptes Proofeus, Verbalock ou services partenaires sans validation biométrique multimodale en direct.",
+      "Aucun accès à vos comptes Proofeus®, Verbalock ou services partenaires sans validation biométrique multimodale en direct.",
   },
   {
     titre: "Ingénierie sociale",

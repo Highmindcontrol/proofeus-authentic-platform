@@ -15,16 +15,16 @@ export const metadata: Metadata = {
     title:
       "Proofeus Authentic® — Certification des œuvres d'art physiques et numériques",
     description:
-      "Proofeus Authentic relie chaque œuvre à l'humain qui l'a créée par une empreinte biométrique unique et un registre public inaltérable. Copies générées par IA, contrefaçons, usurpations d'auteur : le problème est résolu.",
+      "Proofeus Authentic® relie chaque œuvre à l'humain qui l'a créée par une empreinte biométrique unique et un registre public inaltérable. Copies générées par IA, contrefaçons, usurpations d'auteur : le problème est résolu.",
     type: "website",
-    siteName: "Proofeus Authentic",
+    siteName: "Proofeus Authentic®",
     locale: "fr_FR",
     images: [
       {
         url: "/sceau-canonique.png",
         width: 1200,
         height: 1200,
-        alt: "Le Sceau Proofeus — Proofeus Authentic",
+        alt: "Le Sceau Proofeus® — Proofeus Authentic®",
       },
     ],
   },

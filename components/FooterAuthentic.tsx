@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * Footer Proofeus Authentic — sobre, informatif, cohérent groupe.
+ * Footer Proofeus Authentic® — sobre, informatif, cohérent groupe.
  *
  * 4 colonnes : Maison / Artistes & Galeries / Web3 / Éditeur.
  * Ligne finale : copyright + liens légaux + cross-links écosystème.
@@ -69,7 +69,7 @@ export function FooterAuthentic() {
                   rel="noopener"
                   className="hover:text-cyan-proofeus"
                 >
-                  Proofeus ↗
+                  Proofeus® ↗
                 </a>
               </li>
               <li>

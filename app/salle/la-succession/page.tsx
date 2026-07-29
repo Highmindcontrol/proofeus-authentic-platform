@@ -28,7 +28,7 @@ export default function LaSuccessionPage() {
         {
           titre: "Transmettre, hériter, léguer",
           corps:
-            "Une œuvre scellée par Proofeus Authentic peut être offerte, vendue, ou léguée par testament. Le Sceau reste attaché à l'œuvre ; la plaque compagnon suit son propriétaire. Ce que l'héritier reçoit n'est plus une pièce dont il devra prouver l'authenticité — c'est une pièce dont l'authenticité est déjà prouvée. La confiance a été transmise en même temps que l'œuvre.",
+            "Une œuvre scellée par Proofeus Authentic® peut être offerte, vendue, ou léguée par testament. Le Sceau reste attaché à l'œuvre ; la plaque compagnon suit son propriétaire. Ce que l'héritier reçoit n'est plus une pièce dont il devra prouver l'authenticité — c'est une pièce dont l'authenticité est déjà prouvée. La confiance a été transmise en même temps que l'œuvre.",
         },
       ]}
       cta={[

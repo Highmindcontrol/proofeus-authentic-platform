@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 /**
- * Header Proofeus Authentic — épuré, classe, technique.
+ * Header Proofeus Authentic® — épuré, classe, technique.
  *
- * Codes hérités de Verbalock/Proofeus : header fixed, ligne fine
+ * Codes hérités de Verbalock/Proofeus® : header fixed, ligne fine
  * en séparateur, sceau à gauche + wordmark, 7 items de navigation
  * centrés, sélecteur langue + connexion + CTA cyan à droite.
  *
@@ -23,7 +23,7 @@ export function HeaderAuthentic() {
         <Link
           href="/"
           className="flex items-center gap-3 shrink-0"
-          aria-label="Proofeus Authentic — accueil"
+          aria-label="Proofeus Authentic® — accueil"
         >
           <Image
             src="/favicon.png"
@@ -34,7 +34,7 @@ export function HeaderAuthentic() {
             priority
           />
           <span className="hidden text-lg font-semibold tracking-[-0.005em] text-blanc-casse md:inline">
-            Proofeus <span style={{ color: "var(--color-cyan-proofeus)" }}>Authentic</span>
+            Proofeus® <span style={{ color: "var(--color-cyan-proofeus)" }}>Authentic</span>
           </span>
         </Link>
 

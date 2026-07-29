@@ -18,12 +18,12 @@ export default function LaToilePage() {
         {
           titre: "Une œuvre existe deux fois",
           corps:
-            "Une œuvre existe d'abord par la matière — la toile tendue, la couche de pigment, la trace de la main. Puis elle existe une seconde fois par le regard — celui de l'auteur qui la signe, celui du collectionneur qui la reconnaît, celui de l'histoire qui la retient. Proofeus Authentic n'invente pas cette seconde existence. Elle lui donne un corps.",
+            "Une œuvre existe d'abord par la matière — la toile tendue, la couche de pigment, la trace de la main. Puis elle existe une seconde fois par le regard — celui de l'auteur qui la signe, celui du collectionneur qui la reconnaît, celui de l'histoire qui la retient. Proofeus Authentic® n'invente pas cette seconde existence. Elle lui donne un corps.",
         },
         {
           titre: "Ce que le Sceau vient sceller",
           corps:
-            "Le Sceau ne modifie pas l'œuvre. Il l'accompagne. Il porte l'iris de l'auteur — sa signature biométrique, aussi singulière que le grain de la toile. Il porte la date exacte de la mise en dépôt. Il porte l'empreinte immuable de sa dimension, de sa technique, de son sujet. Une œuvre scellée par Proofeus Authentic ne peut plus être confondue, imitée, contestée. Elle a trouvé son identité.",
+            "Le Sceau ne modifie pas l'œuvre. Il l'accompagne. Il porte l'iris de l'auteur — sa signature biométrique, aussi singulière que le grain de la toile. Il porte la date exacte de la mise en dépôt. Il porte l'empreinte immuable de sa dimension, de sa technique, de son sujet. Une œuvre scellée par Proofeus Authentic® ne peut plus être confondue, imitée, contestée. Elle a trouvé son identité.",
         },
         {
           titre: "Pour qui le Sceau est-il utile",

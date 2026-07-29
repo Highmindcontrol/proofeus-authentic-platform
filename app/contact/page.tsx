@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Nous écrire",
   description:
-    "Chaque message reçu par Proofeus Authentic reçoit une réponse humaine sous 24 h. Trois adresses, une équipe, aucune machine intermédiaire.",
+    "Chaque message reçu par Proofeus Authentic® reçoit une réponse humaine sous 24 h. Trois adresses, une équipe, aucune machine intermédiaire.",
 };
 
 /**

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Certifier une œuvre",
   description:
-    "Toute œuvre présentée à Proofeus Authentic reçoit son Sceau. Physique ou numérique, ancien ou contemporain — Le Sceau Proofeus s'appose comme une signature vivante, opposable et inaltérable.",
+    "Toute œuvre présentée à Proofeus Authentic® reçoit son Sceau. Physique ou numérique, ancien ou contemporain — Le Sceau Proofeus® s'appose comme une signature vivante, opposable et inaltérable.",
 };
 
 /**
@@ -53,7 +53,7 @@ export default function CertifierPage() {
               lineHeight: 1.15,
             }}
           >
-            Toute œuvre certifiée par Proofeus
+            Toute œuvre certifiée par Proofeus®
             <br />
             reçoit son Sceau.
           </h1>
@@ -97,7 +97,7 @@ export default function CertifierPage() {
 
           <div className="mt-24 flex flex-col items-center gap-6 text-center">
             <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
-              « L&apos;acte de sceller est un rite. Proofeus Authentic en
+              « L&apos;acte de sceller est un rite. Proofeus Authentic® en
               garantit la solennité, la précision et la mémoire. »
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
