@@ -44,7 +44,7 @@ export default function AuthenticLanding() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.6rem, 3.2vw, 2.6rem)",
+              fontSize: "clamp(1.85rem, 3.5vw, 2.9rem)",
               lineHeight: 1.25,
               letterSpacing: "0.005em",
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
