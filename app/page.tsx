@@ -78,8 +78,9 @@ export default function AuthenticLanding() {
         numero="I"
         salle="La Toile"
         phrase="Toute œuvre mérite une identité."
-        imageAlt="Une toile ancienne, gros plan sur la texture, Le Sceau apparaît discrètement en cyan"
+        imageAlt="Deux mains gantées de blanc tiennent une toile romantique dans son cadre doré ; Le Sceau apparaît en projection cyan au coin supérieur droit"
         imagePlaceholder="chapitre-1-toile"
+        imageSrc="/chapitre-1-toile.png"
       />
 
       {/* CHAPITRE 2 — La Galerie */}
@@ -222,6 +223,7 @@ function ChapitreSection({
   phrase,
   imageAlt,
   imagePlaceholder,
+  imageSrc,
   inverse = false,
 }: {
   numero: string;
@@ -229,6 +231,7 @@ function ChapitreSection({
   phrase: string;
   imageAlt: string;
   imagePlaceholder: string;
+  imageSrc?: string;
   inverse?: boolean;
 }) {
   return (
@@ -238,30 +241,55 @@ function ChapitreSection({
       >
         {/* Image ou placeholder */}
         <div
-          className={`relative min-h-[400px] md:min-h-[600px] ${inverse ? "md:col-start-2" : ""}`}
+          className={`relative min-h-[400px] overflow-hidden md:min-h-[600px] ${inverse ? "md:col-start-2" : ""}`}
           aria-label={imageAlt}
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(10,15,28,0.9) 0%, rgba(20,30,50,0.7) 50%, rgba(5,8,16,0.95) 100%)",
-            }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center opacity-30">
+          {imageSrc ? (
+            <>
               <div
-                className="mx-auto h-32 w-32 rounded-full blur-3xl"
-                style={{ background: "var(--color-cyan-proofeus)" }}
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url('${imageSrc}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               />
-              <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/60">
-                {imagePlaceholder}
-              </p>
-              <p className="mt-2 max-w-xs px-6 text-xs text-gris-clair/70">
-                {imageAlt}
-              </p>
-            </div>
-          </div>
+              {/* Voile latéral discret pour lier au texte sans écraser l'image */}
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  background: inverse
+                    ? "linear-gradient(to left, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.15) 30%, transparent 60%)"
+                    : "linear-gradient(to right, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.15) 30%, transparent 60%)",
+                }}
+              />
+            </>
+          ) : (
+            <>
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(10,15,28,0.9) 0%, rgba(20,30,50,0.7) 50%, rgba(5,8,16,0.95) 100%)",
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center opacity-30">
+                  <div
+                    className="mx-auto h-32 w-32 rounded-full blur-3xl"
+                    style={{ background: "var(--color-cyan-proofeus)" }}
+                  />
+                  <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/60">
+                    {imagePlaceholder}
+                  </p>
+                  <p className="mt-2 max-w-xs px-6 text-xs text-gris-clair/70">
+                    {imageAlt}
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Phrase-déclaration */}
