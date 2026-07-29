@@ -343,35 +343,6 @@ export default function AuthenticLanding() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gris-sombre px-6 py-12 md:px-12">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 text-xs text-gris-clair md:flex-row md:items-center">
-          <p>
-            © Proofeus Authentic® — édité par Ataraxis IA. La Maison de
-            l&apos;Art Authentique.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="https://proofeus.com"
-              className="hover:text-cyan-proofeus"
-            >
-              proofeus.com ↗
-            </a>
-            <a
-              href="https://verbalock.com"
-              className="hover:text-cyan-proofeus"
-            >
-              verbalock.com ↗
-            </a>
-            <a
-              href="https://ataraxis.group"
-              className="hover:text-cyan-proofeus"
-            >
-              ataraxis.group ↗
-            </a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

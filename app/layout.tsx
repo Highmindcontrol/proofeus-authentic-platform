@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { HeaderAuthentic } from "@/components/HeaderAuthentic";
+import { FooterAuthentic } from "@/components/FooterAuthentic";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://proofeus.art"),
@@ -39,7 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <HeaderAuthentic />
+        {children}
+        <FooterAuthentic />
+      </body>
     </html>
   );
 }
