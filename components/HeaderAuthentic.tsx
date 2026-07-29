@@ -33,7 +33,7 @@ export function HeaderAuthentic() {
             className="h-9 w-9"
             priority
           />
-          <span className="hidden text-sm font-semibold uppercase tracking-[0.24em] text-blanc-casse md:inline">
+          <span className="hidden text-base font-semibold tracking-[-0.005em] text-blanc-casse md:inline">
             Proofeus <span style={{ color: "var(--color-cyan-proofeus)" }}>Authentic</span>
           </span>
         </Link>

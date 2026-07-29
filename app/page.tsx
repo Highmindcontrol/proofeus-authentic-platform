@@ -61,15 +61,14 @@ export default function AuthenticLanding() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl">
-          {/* Nom marque en gros — test en majuscules */}
+          {/* Nom marque en gros — casse normale */}
           <h2
-            className="text-center font-light uppercase text-blanc-casse"
+            className="text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2rem, 5vw, 4.5rem)",
-              letterSpacing: "0.04em",
-              lineHeight: 1.1,
+              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+              lineHeight: 1.05,
             }}
           >
             Proofeus{" "}
