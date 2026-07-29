@@ -88,8 +88,9 @@ export default function AuthenticLanding() {
         numero="II"
         salle="La Galerie"
         phrase="L'authenticité précède la valeur."
-        imageAlt="Silhouettes de collectionneurs dans une galerie luxueuse, Le Sceau flotte au centre"
+        imageAlt="Un collectionneur en contemplation silencieuse devant Le Sceau flottant au-dessus d'un socle en marbre noir, entre une toile romantique et une œuvre contemporaine"
         imagePlaceholder="chapitre-2-galerie"
+        imageSrc="/chapitre-2-galerie.png"
         inverse
       />
 
