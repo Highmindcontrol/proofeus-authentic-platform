@@ -98,8 +98,9 @@ export default function AuthenticLanding() {
         numero="III"
         salle="Le Coffre"
         phrase="Certaines choses traversent le temps."
-        imageAlt="Un coffre-fort blindé s'ouvre lentement, Le Sceau flotte à l'intérieur"
+        imageAlt="Un coffre-fort blindé d'institution ancienne, porte massive ouverte, Le Sceau flotte au centre du sanctuaire cuivré"
         imagePlaceholder="chapitre-3-coffre"
+        imageSrc="/chapitre-3-coffre.png"
       />
 
       {/* CHAPITRE 4 — La Succession */}
