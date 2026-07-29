@@ -94,21 +94,63 @@ export default function AuthenticLanding() {
           <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
             Nous relions chaque œuvre — toile, sculpture, photographie ou
             NFT — à l&apos;humain qui l&apos;a créée, par une empreinte
-            biométrique unique et un registre public inaltérable. Copies
-            générées par IA, contrefaçons, usurpations d&apos;auteur et
-            provenances douteuses ne peuvent plus se confondre avec
-            l&apos;original.
+            biométrique multimodale unique et un registre public
+            inaltérable. Copies générées par IA, contrefaçons, usurpations
+            d&apos;auteur et provenances douteuses ne peuvent plus se
+            confondre avec l&apos;original.
           </p>
 
+          {/* Comment ça fonctionne — App Proofeus + captures multimodales */}
+          <div className="mt-20 border-t border-gris-sombre pt-16 md:mt-24 md:pt-20">
+            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Comment ça fonctionne
+            </p>
+            <h3
+              className="mx-auto mt-6 max-w-3xl text-center font-light tracking-[-0.01em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                lineHeight: 1.25,
+              }}
+            >
+              Un compte, une application, un Sceau à vie.
+            </h3>
+
+            <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+              Vous créez votre compte Proofeus Authentic, puis vous
+              téléchargez l&apos;application <strong className="font-medium text-blanc-casse">Proofeus</strong> —
+              développée pour l&apos;ensemble de nos activités et nativement
+              intégrée à Proofeus Authentic. En quelques minutes,
+              l&apos;application capture vos empreintes biométriques
+              multimodales :
+            </p>
+
+            {/* Les 5 captures multimodales — pictos ronds */}
+            <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5">
+              {CAPTURES.map((c) => (
+                <Capture key={c.label} label={c.label} icon={c.icon} />
+              ))}
+            </div>
+
+            <p className="mx-auto mt-14 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+              Ces cinq captures sont fusionnées cryptographiquement pour
+              créer votre <strong className="font-medium text-blanc-casse">Sceau Proofeus</strong> — unique,
+              inaltérable, à vous seul. C&apos;est cet emblème qui servira à
+              enregistrer et à signer l&apos;ensemble de vos œuvres et de
+              vos propriétés.
+            </p>
+          </div>
+
           {/* 3 pastilles : les 3 problèmes résolus */}
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-20 grid gap-6 md:mt-24 md:grid-cols-3">
             <ProblemeResolu
               titre="Copies générées par IA"
               corps="Une image produite par une IA ne peut plus se faire passer pour l'œuvre d'un humain. Seul un auteur vérifié biométriquement peut sceller."
             />
             <ProblemeResolu
               titre="Usurpation d'auteur"
-              corps="L'iris de l'auteur, gravé au cœur du Sceau, est aussi unique qu'une empreinte digitale. Aucun tiers ne peut se déclarer créateur à sa place."
+              corps="L'ensemble de vos empreintes biométriques — iris, visage, voix, paume, morphologie — est fusionné dans votre Sceau Proofeus. Aucun tiers ne peut se déclarer créateur à votre place."
             />
             <ProblemeResolu
               titre="Provenance opaque"
@@ -234,6 +276,86 @@ function ProblemeResolu({ titre, corps }: { titre: string; corps: string }) {
     </div>
   );
 }
+
+/**
+ * Picto rond d'une capture multimodale — cercle avec halo cyan +
+ * SVG icône monochrome cyan + label sous le cercle.
+ */
+function Capture({ label, icon }: { label: string; icon: React.ReactNode }) {
+  return (
+    <div className="flex flex-col items-center text-center">
+      <div className="relative">
+        <div
+          aria-hidden
+          className="absolute inset-0 rounded-full opacity-30 blur-2xl"
+          style={{ background: "var(--color-cyan-proofeus)" }}
+        />
+        <div
+          className="relative flex h-20 w-20 items-center justify-center rounded-full border border-cyan-proofeus/40 bg-noir-profond md:h-24 md:w-24"
+          style={{ color: "var(--color-cyan-proofeus)" }}
+        >
+          {icon}
+        </div>
+      </div>
+      <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-blanc-casse">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+/* --- Icônes SVG des 5 captures multimodales --- */
+
+const IconIris = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 18s5.5-9 16-9 16 9 16 9-5.5 9-16 9S2 18 2 18z" />
+    <circle cx="18" cy="18" r="5" />
+    <circle cx="18" cy="18" r="1.8" fill="currentColor" />
+  </svg>
+);
+
+const IconVisage = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <ellipse cx="18" cy="18" rx="10" ry="12" />
+    <circle cx="14" cy="16" r="1" fill="currentColor" />
+    <circle cx="22" cy="16" r="1" fill="currentColor" />
+    <path d="M14 22c1 1.2 2.4 2 4 2s3-.8 4-2" />
+  </svg>
+);
+
+const IconVoix = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="14" y="8" width="8" height="16" rx="4" />
+    <path d="M10 20a8 8 0 0 0 16 0" />
+    <line x1="18" y1="28" x2="18" y2="32" />
+    <line x1="14" y1="32" x2="22" y2="32" />
+  </svg>
+);
+
+const IconPaume = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20V10a2 2 0 0 1 4 0v8" />
+    <path d="M16 18V8a2 2 0 0 1 4 0v10" />
+    <path d="M20 18V10a2 2 0 0 1 4 0v10" />
+    <path d="M24 14a2 2 0 0 1 4 0v10c0 4-3 8-8 8s-8-4-8-8v-4" />
+  </svg>
+);
+
+const IconMorphologie = (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="18" cy="9" r="4" />
+    <path d="M10 32v-6a8 8 0 0 1 16 0v6" />
+    <line x1="18" y1="13" x2="18" y2="24" />
+  </svg>
+);
+
+const CAPTURES: { label: string; icon: React.ReactNode }[] = [
+  { label: "Iris", icon: IconIris },
+  { label: "Visage", icon: IconVisage },
+  { label: "Voix", icon: IconVoix },
+  { label: "Paume", icon: IconPaume },
+  { label: "Morphologie", icon: IconMorphologie },
+];
 
 /**
  * Carte d'une salle — image en background, overlay sombre pour
