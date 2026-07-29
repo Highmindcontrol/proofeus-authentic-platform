@@ -1,31 +1,23 @@
 import Link from "next/link";
 
 /**
- * Landing Proofeus Authentic — Le Musée de la Confiance.
+ * Landing Proofeus Authentic — La Maison.
  *
- * Doctrine cinématographique 29 juillet 2026 soir : ce n'est plus
- * un site, c'est une institution. Chaque scroll = une salle du siège.
- * Silence, respiration, majesté. Références Christie's / Hermès /
- * Leica / Rolls-Royce.
+ * Structure minimaliste (2-3 écrans max) :
+ * 1. Hero — image musée + phrase-déclaration
+ * 2. Les 4 Salles — grille horizontale de 4 cartes cliquables
+ *    qui mènent chacune vers une page dédiée (/salle/la-toile,
+ *    /salle/la-galerie, /salle/le-coffre, /salle/la-succession)
+ * 3. Le Sceau révélé — section technique (dévoilée en dernier)
  *
- * Structure :
- * 1. Hero — image musée + Le Sceau qui flotte + « L'authenticité a
- *    trouvé son emblème. »
- * 2. Chapitre 1 — La Toile
- * 3. Chapitre 2 — La Galerie
- * 4. Chapitre 3 — Le Coffre
- * 5. Chapitre 4 — La Succession
- * 6. Le Sceau révélé (technologie, seulement à la fin)
- *
- * Zéro mention NFT/blockchain/IA/QR avant la section technique
- * finale. Le client achète une émotion, pas une technologie.
+ * Doctrine : peu de scroll, pages dédiées derrière chaque salle,
+ * vocabulaire technique uniquement dans la dernière section.
  */
 export default function AuthenticLanding() {
   return (
     <main>
-      {/* HERO — image musée pleine largeur + phrase-déclaration */}
+      {/* HERO — image musée pleine hauteur + phrase-déclaration */}
       <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
-        {/* Image musée en fond, pleine largeur */}
         <div
           aria-hidden
           className="absolute inset-0"
@@ -35,8 +27,6 @@ export default function AuthenticLanding() {
             backgroundPosition: "center",
           }}
         />
-
-        {/* Voile sombre bas pour lisibilité de la phrase */}
         <div
           aria-hidden
           className="absolute inset-0"
@@ -46,87 +36,73 @@ export default function AuthenticLanding() {
           }}
         />
 
-        {/* Phrase-déclaration en bas */}
         <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
           <h1
-            className="font-serif font-light tracking-[-0.02em] text-blanc-casse"
+            className="font-light tracking-[-0.02em] text-blanc-casse"
             style={{
+              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(2rem, 4.5vw, 4rem)",
               lineHeight: 1.15,
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
             }}
           >
             L&apos;authenticité a trouvé son emblème.
           </h1>
 
-          {/* Indicateur scroll très discret */}
           <div className="mt-16 flex flex-col items-center gap-3">
             <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gris-clair/70">
-              Entrer dans le siège
+              Entrer dans les salles
             </span>
             <span
               aria-hidden
-              className="h-8 w-px animate-pulse bg-gradient-to-b from-cyan-proofeus/60 to-transparent"
-              style={{ background: "linear-gradient(to bottom, var(--color-cyan-proofeus), transparent)" }}
+              className="h-8 w-px animate-pulse"
+              style={{
+                background:
+                  "linear-gradient(to bottom, var(--color-cyan-proofeus), transparent)",
+              }}
             />
           </div>
         </div>
       </section>
 
-      {/* CHAPITRE 1 — La Toile */}
-      <ChapitreSection
-        numero="I"
-        salle="La Toile"
-        phrase="Toute œuvre mérite une identité."
-        imageAlt="Deux mains gantées de blanc tiennent une toile romantique dans son cadre doré ; Le Sceau apparaît en projection cyan au coin supérieur droit"
-        imagePlaceholder="chapitre-1-toile"
-        imageSrc="/chapitre-1-toile.png"
-      />
+      {/* LES 4 SALLES — grille horizontale de cartes cliquables */}
+      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center md:mb-16">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
+              La visite
+            </p>
+            <h2
+              className="mt-4 font-light tracking-[-0.02em] text-blanc-casse"
+              style={{
+                fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                lineHeight: 1.2,
+              }}
+            >
+              Quatre salles. Un même Sceau.
+            </h2>
+          </div>
 
-      {/* CHAPITRE 2 — La Galerie */}
-      <ChapitreSection
-        numero="II"
-        salle="La Galerie"
-        phrase="L'authenticité précède la valeur."
-        imageAlt="Un collectionneur en contemplation silencieuse devant Le Sceau flottant au-dessus d'un socle en marbre noir, entre une toile romantique et une œuvre contemporaine"
-        imagePlaceholder="chapitre-2-galerie"
-        imageSrc="/chapitre-2-galerie.png"
-        inverse
-      />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SALLES.map((salle) => (
+              <SalleCard key={salle.href} {...salle} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CHAPITRE 3 — Le Coffre */}
-      <ChapitreSection
-        numero="III"
-        salle="Le Coffre"
-        phrase="Certaines choses traversent le temps."
-        imageAlt="Un coffre-fort blindé d'institution ancienne, porte massive ouverte, Le Sceau flotte au centre du sanctuaire cuivré"
-        imagePlaceholder="chapitre-3-coffre"
-        imageSrc="/chapitre-3-coffre.png"
-      />
-
-      {/* CHAPITRE 4 — La Succession */}
-      <ChapitreSection
-        numero="IV"
-        salle="La Succession"
-        phrase="La confiance se transmet."
-        imageAlt="Deux mains — une âgée en costume, une plus jeune — se rencontrent pour transmettre Le Sceau, cadres dorés flous en arrière-plan"
-        imagePlaceholder="chapitre-4-succession"
-        imageSrc="/chapitre-4-succession.png"
-        inverse
-      />
-
-      {/* LE SCEAU RÉVÉLÉ — la technologie apparaît enfin, tout en bas */}
-      <section className="relative overflow-hidden border-t border-gris-sombre px-6 py-32 md:px-12 md:py-40">
+      {/* LE SCEAU RÉVÉLÉ — section technique en dernier */}
+      <section className="relative overflow-hidden border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
             Le Sceau — dévoilé
           </p>
           <h2
-            className="mt-6 text-center font-serif font-light tracking-[-0.02em] text-blanc-casse"
+            className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
-              fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
-              lineHeight: 1.2,
               fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.6rem, 3vw, 2.5rem)",
+              lineHeight: 1.2,
             }}
           >
             Ce que vous voyez flotter dans chaque salle
@@ -134,64 +110,27 @@ export default function AuthenticLanding() {
             n&apos;est pas un logo. C&apos;est un objet.
           </h2>
 
-          <div className="mt-20 grid gap-x-16 gap-y-12 md:grid-cols-2">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Cristal</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                Verre optique haut de gamme légèrement teinté cyan. Sept couches
-                superposées visibles à l&apos;œil nu, chacune portant une couche
-                d&apos;information cryptographique.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Iris</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                L&apos;iris humain gravé au centre est la signature de
-                l&apos;auteur — une empreinte biométrique inaltérable, aussi
-                unique qu&apos;une œuvre.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Gravures</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                Sur l&apos;anneau intérieur, des micro-inscriptions inspirées des
-                billets de banque et des passeports. Sur l&apos;anneau extérieur,
-                les marques de sécurité d&apos;une monnaie officielle.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Registre</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                Chaque Sceau est inscrit à vie dans un registre public consultable.
-                Aucune œuvre certifiée ne peut être effacée de la mémoire.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Plaque compagnon</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                Une plaque métallique gravée accompagne toujours Le Sceau. Elle
-                porte le numéro d&apos;ordre, la date et la clé de vérification —
-                jamais sur le Sceau, toujours à côté de lui.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Souveraineté</p>
-              <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                Ancré sur une infrastructure européenne, sous droit européen.
-                Vos données ne quittent jamais notre juridiction. Aucune tierce
-                partie non-européenne n&apos;y a accès.
-              </p>
-            </div>
+          <div className="mt-16 grid gap-x-16 gap-y-10 md:grid-cols-2 md:mt-20">
+            {TECHNIQUE.map((item) => (
+              <div key={item.titre}>
+                <p className="text-xs uppercase tracking-widest text-cyan-300/70">
+                  {item.titre}
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                  {item.chapo}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-24 flex flex-col items-center gap-4 text-center">
+          <div className="mt-20 flex flex-col items-center gap-6 text-center">
             <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
               « Le Sceau Proofeus n&apos;est pas une image de marque. C&apos;est
               l&apos;objet même que nous produisons. »
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
-                href="/artistes"
+                href="/certifier"
                 className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
               >
                 Sceller une œuvre
@@ -212,110 +151,142 @@ export default function AuthenticLanding() {
 }
 
 /**
- * Composant de section "chapitre" — image cinématographique pleine
- * hauteur d'un côté, phrase-déclaration de l'autre. Peut être
- * inversé (inverse=true) pour alterner la composition.
- *
- * Les vraies images (4 chapitres) sont à générer via ChatGPT/DALL-E.
- * En attendant, le composant affiche un placeholder cyan avec une
- * indication de contenu.
+ * Carte d'une salle — image en background, overlay sombre pour
+ * lisibilité, numéro romain + nom + phrase-déclaration en overlay.
+ * Effet hover : léger scale + overlay plus léger.
  */
-function ChapitreSection({
+function SalleCard({
   numero,
-  salle,
+  nom,
   phrase,
-  imageAlt,
-  imagePlaceholder,
-  imageSrc,
-  inverse = false,
+  href,
+  image,
 }: {
   numero: string;
-  salle: string;
+  nom: string;
   phrase: string;
-  imageAlt: string;
-  imagePlaceholder: string;
-  imageSrc?: string;
-  inverse?: boolean;
+  href: string;
+  image: string;
 }) {
   return (
-    <section className="relative border-t border-gris-sombre">
+    <Link
+      href={href}
+      className="group relative flex aspect-[4/5] overflow-hidden rounded-sm border border-gris-sombre bg-noir transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40 hover:shadow-[0_18px_40px_-12px_rgba(63,212,217,0.25)]"
+    >
+      {/* Image de fond */}
       <div
-        className={`mx-auto grid min-h-[70vh] max-w-7xl grid-cols-1 items-center md:grid-cols-2 ${inverse ? "md:grid-flow-dense" : ""}`}
-      >
-        {/* Image ou placeholder */}
-        <div
-          className={`relative min-h-[400px] overflow-hidden md:min-h-[600px] ${inverse ? "md:col-start-2" : ""}`}
-          aria-label={imageAlt}
-        >
-          {imageSrc ? (
-            <>
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url('${imageSrc}')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              {/* Voile latéral discret pour lier au texte sans écraser l'image */}
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  background: inverse
-                    ? "linear-gradient(to left, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.15) 30%, transparent 60%)"
-                    : "linear-gradient(to right, rgba(10,15,28,0.55) 0%, rgba(10,15,28,0.15) 30%, transparent 60%)",
-                }}
-              />
-            </>
-          ) : (
-            <>
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(10,15,28,0.9) 0%, rgba(20,30,50,0.7) 50%, rgba(5,8,16,0.95) 100%)",
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center opacity-30">
-                  <div
-                    className="mx-auto h-32 w-32 rounded-full blur-3xl"
-                    style={{ background: "var(--color-cyan-proofeus)" }}
-                  />
-                  <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/60">
-                    {imagePlaceholder}
-                  </p>
-                  <p className="mt-2 max-w-xs px-6 text-xs text-gris-clair/70">
-                    {imageAlt}
-                  </p>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
+        aria-hidden
+        className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
+        style={{
+          backgroundImage: `url('${image}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
 
-        {/* Phrase-déclaration */}
-        <div
-          className={`px-6 py-20 md:px-16 md:py-32 ${inverse ? "md:col-start-1 md:row-start-1" : ""}`}
+      {/* Voile sombre pour lisibilité */}
+      <div
+        aria-hidden
+        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-70"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(5,8,16,0.95) 10%, rgba(5,8,16,0.55) 55%, rgba(5,8,16,0.15) 100%)",
+        }}
+      />
+
+      {/* Contenu */}
+      <div className="relative z-10 flex w-full flex-col justify-end p-6 md:p-7">
+        <p
+          className="font-light text-cyan-proofeus/70"
+          style={{
+            fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+            lineHeight: 1,
+          }}
         >
-          <p
-            className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70"
-          >
-            Chapitre {numero} · {salle}
-          </p>
-          <p
-            className="mt-10 font-serif font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              lineHeight: 1.2,
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            }}
-          >
-            {phrase}
-          </p>
-        </div>
+          {numero}
+        </p>
+        <h3
+          className="mt-3 font-light text-blanc-casse"
+          style={{
+            fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+            lineHeight: 1.15,
+          }}
+        >
+          {nom}
+        </h3>
+        <p className="mt-4 text-sm italic leading-relaxed text-gris-clair">
+          {phrase}
+        </p>
+        <span className="mt-6 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-cyan-proofeus transition-transform group-hover:translate-x-1">
+          Entrer <span aria-hidden>→</span>
+        </span>
       </div>
-    </section>
+    </Link>
   );
 }
+
+const SALLES = [
+  {
+    numero: "I",
+    nom: "La Toile",
+    phrase: "Toute œuvre mérite une identité.",
+    href: "/salle/la-toile",
+    image: "/chapitre-1-toile.png",
+  },
+  {
+    numero: "II",
+    nom: "La Galerie",
+    phrase: "L'authenticité précède la valeur.",
+    href: "/salle/la-galerie",
+    image: "/chapitre-2-galerie.png",
+  },
+  {
+    numero: "III",
+    nom: "Le Coffre",
+    phrase: "Certaines choses traversent le temps.",
+    href: "/salle/le-coffre",
+    image: "/chapitre-3-coffre.png",
+  },
+  {
+    numero: "IV",
+    nom: "La Succession",
+    phrase: "La confiance se transmet.",
+    href: "/salle/la-succession",
+    image: "/chapitre-4-succession.png",
+  },
+];
+
+const TECHNIQUE = [
+  {
+    titre: "Cristal",
+    chapo:
+      "Verre optique haut de gamme légèrement teinté cyan. Sept couches superposées visibles à l'œil nu, chacune portant une couche d'information cryptographique.",
+  },
+  {
+    titre: "Iris",
+    chapo:
+      "L'iris humain gravé au centre est la signature de l'auteur — une empreinte biométrique inaltérable, aussi unique qu'une œuvre.",
+  },
+  {
+    titre: "Gravures",
+    chapo:
+      "Sur l'anneau intérieur, des micro-inscriptions inspirées des billets de banque. Sur l'anneau extérieur, les marques de sécurité d'une monnaie officielle.",
+  },
+  {
+    titre: "Registre",
+    chapo:
+      "Chaque Sceau est inscrit à vie dans un registre public consultable. Aucune œuvre certifiée ne peut être effacée de la mémoire.",
+  },
+  {
+    titre: "Plaque compagnon",
+    chapo:
+      "Une plaque métallique gravée accompagne toujours Le Sceau. Elle porte le numéro d'ordre, la date et la clé de vérification — jamais sur le Sceau, toujours à côté de lui.",
+  },
+  {
+    titre: "Souveraineté",
+    chapo:
+      "Ancré sur une infrastructure européenne, sous droit européen. Vos données ne quittent jamais notre juridiction.",
+  },
+];
