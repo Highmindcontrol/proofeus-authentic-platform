@@ -18,23 +18,7 @@ export function HeaderAuthentic() {
       className="sticky top-0 z-50 border-b border-gris-sombre backdrop-blur-xl"
       style={{ background: "rgba(0,0,0,0.92)" }}
     >
-      {/* Baseline institutionnelle — au-dessus du wordmark, comme une devise gravée */}
-      <div className="mx-auto max-w-7xl px-6 pt-5 md:px-10 md:pt-6">
-        <p
-          className="text-center italic text-blanc-casse/85"
-          style={{
-            fontFamily:
-              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            fontSize: "clamp(1rem, 1.7vw, 1.4rem)",
-            lineHeight: 1.2,
-            letterSpacing: "0.005em",
-          }}
-        >
-          L&apos;authenticité a trouvé son emblème.
-        </p>
-      </div>
-
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 md:px-10 md:py-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-7 md:px-10 md:py-8">
         {/* Logo + wordmark */}
         <Link
           href="/"

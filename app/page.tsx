@@ -16,9 +16,9 @@ export default function AuthenticLanding() {
   return (
     <main>
       {/* ═══════════════════════════════════════════════════════════
-          1. HERO — image musée + baseline (au-dessus) + Proofeus Authentic
+          1. HERO — image musée + baseline dans le tiers supérieur
           ═══════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
+      <section className="relative flex min-h-screen items-start justify-center overflow-hidden pt-24 md:pt-32">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -33,11 +33,26 @@ export default function AuthenticLanding() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 45%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
+              "linear-gradient(to bottom, rgba(13,13,16,0.55) 0%, rgba(13,13,16,0.15) 25%, transparent 55%, rgba(13,13,16,0.85) 100%)",
           }}
         />
 
-        {/* Hero : image seule — la baseline vit désormais dans le header */}
+        {/* Baseline dans le tiers supérieur, au-dessus du Sceau qui flotte */}
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <p
+            className="italic text-blanc-casse md:whitespace-nowrap"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.6rem, 3.2vw, 2.6rem)",
+              lineHeight: 1.25,
+              letterSpacing: "0.005em",
+              textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+            }}
+          >
+            L&apos;authenticité a trouvé son emblème.
+          </p>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
