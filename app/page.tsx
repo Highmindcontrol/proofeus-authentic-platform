@@ -18,7 +18,7 @@ export default function AuthenticLanding() {
       {/* ═══════════════════════════════════════════════════════════
           1. HERO — image musée + baseline dans le tiers supérieur
           ═══════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-screen items-start justify-center overflow-hidden pt-24 md:pt-32">
+      <section className="relative flex min-h-screen items-start justify-center overflow-hidden pt-[30vh] md:pt-[34vh]">
         <div
           aria-hidden
           className="absolute inset-0"
