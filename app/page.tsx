@@ -57,11 +57,11 @@ export default function AuthenticLanding() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          2. PROOFEUS AUTHENTIC — nom marque + positionnement clair
+          2A. PROOFEUS AUTHENTIC — nom marque + positionnement clair
           ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl">
-          {/* Nom marque en gros, à la place du eyebrow */}
+          {/* Nom marque en gros */}
           <h2
             className="text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
@@ -100,58 +100,73 @@ export default function AuthenticLanding() {
             d&apos;auteur et provenances douteuses ne peuvent plus se
             confondre avec l&apos;original.
           </p>
+        </div>
+      </section>
 
-          {/* Comment ça fonctionne — App Proofeus + captures multimodales */}
-          <div className="mt-20 border-t border-gris-sombre pt-16 md:mt-24 md:pt-20">
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Comment ça fonctionne
-            </p>
-            <h3
-              className="mx-auto mt-6 max-w-3xl text-center font-light tracking-[-0.01em] text-blanc-casse"
-              style={{
-                fontFamily:
-                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
-                lineHeight: 1.25,
-              }}
-            >
-              Un compte, une application, un Sceau à vie.
-            </h3>
+      {/* ═══════════════════════════════════════════════════════════
+          2B. BANDEAU NOIR pleine largeur — Comment ça fonctionne
+          ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="px-6 py-24 md:px-12 md:py-32"
+        style={{ background: "#000" }}
+      >
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+            Comment ça fonctionne
+          </p>
+          <h3
+            className="mx-auto mt-6 max-w-3xl text-center font-light tracking-[-0.01em] text-blanc-casse"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+              lineHeight: 1.25,
+            }}
+          >
+            Un compte, une application, un Sceau à vie.
+          </h3>
 
-            <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
-              Vous créez votre compte Proofeus Authentic, puis vous
-              téléchargez l&apos;application <strong className="font-medium text-blanc-casse">Proofeus</strong> —
-              développée pour l&apos;ensemble de nos activités et nativement
-              intégrée à Proofeus Authentic. En quelques minutes,
-              l&apos;application capture vos empreintes biométriques
-              multimodales :
-            </p>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+            Vous créez votre compte Proofeus Authentic, puis vous
+            téléchargez l&apos;application{" "}
+            <strong className="font-medium text-blanc-casse">Proofeus</strong>{" "}
+            — développée pour l&apos;ensemble de nos activités et
+            nativement intégrée à Proofeus Authentic. En quelques minutes,
+            l&apos;application capture vos empreintes biométriques
+            multimodales :
+          </p>
 
-            {/* Les 5 captures multimodales — pictos ronds */}
-            <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5">
-              {CAPTURES.map((c) => (
-                <Capture key={c.label} label={c.label} image={c.image} />
-              ))}
-            </div>
-
-            <p className="mx-auto mt-14 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
-              Ces cinq captures sont fusionnées cryptographiquement pour
-              créer votre <strong className="font-medium text-blanc-casse">Sceau Proofeus</strong> — unique,
-              inaltérable, à vous seul. C&apos;est cet emblème qui servira à
-              enregistrer et à signer l&apos;ensemble de vos œuvres et de
-              vos propriétés.
-            </p>
+          {/* Les 5 captures multimodales — pictos ronds avec vraies images */}
+          <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5">
+            {CAPTURES.map((c) => (
+              <Capture key={c.label} label={c.label} image={c.image} />
+            ))}
           </div>
 
-          {/* 3 pastilles : les 3 problèmes résolus */}
-          <div className="mt-20 grid gap-6 md:mt-24 md:grid-cols-3">
+          <p className="mx-auto mt-14 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+            Ces cinq captures sont fusionnées cryptographiquement pour
+            créer votre{" "}
+            <strong className="font-medium text-blanc-casse">Sceau Proofeus</strong>{" "}
+            — unique, inaltérable, à vous seul. C&apos;est cet emblème qui
+            servira à enregistrer et à signer l&apos;ensemble de vos
+            œuvres et de vos propriétés.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          2C. 3 PASTILLES + phrase italique — retour fond anthracite
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid gap-6 md:grid-cols-3">
             <ProblemeResolu
               titre="Copies générées par IA"
               corps="Une image produite par une IA ne peut plus se faire passer pour l'œuvre d'un humain. Seul un auteur vérifié biométriquement peut sceller."
             />
             <ProblemeResolu
               titre="Usurpation d'auteur"
-              corps="L'ensemble de vos empreintes biométriques — iris, visage, voix, paume, morphologie — est fusionné dans votre Sceau Proofeus. Aucun tiers ne peut se déclarer créateur à votre place."
+              corps="L'ensemble de vos empreintes biométriques — iris, morphologie, voix, paume, pouls — est fusionné dans votre Sceau Proofeus. Aucun tiers ne peut se déclarer créateur à votre place."
             />
             <ProblemeResolu
               titre="Provenance opaque"
