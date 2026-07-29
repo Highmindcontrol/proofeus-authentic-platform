@@ -37,21 +37,7 @@ export default function AuthenticLanding() {
           }}
         />
 
-        <div className="relative z-10 mx-auto mb-24 max-w-5xl px-6 text-center md:mb-32">
-          {/* Baseline — seul élément du hero */}
-          <p
-            className="italic text-blanc-casse/90 md:whitespace-nowrap"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)",
-              lineHeight: 1.25,
-              letterSpacing: "0.005em",
-            }}
-          >
-            « L&apos;authenticité a trouvé son emblème. »
-          </p>
-        </div>
+        {/* Hero : image seule — la baseline vit désormais dans le header */}
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
