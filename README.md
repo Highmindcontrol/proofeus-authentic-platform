@@ -2,7 +2,10 @@
 
 > *NFT : problème résolu.*
 
-Espace dédié à la certification humaine dans le Web3 — entité éditoriale semi-autonome à l'intérieur de Proofeus (modèle Watch).
+**Domaine canonique** : [proofeus.art](https://proofeus.art)
+**Alias** : authentic.proofeus.com
+
+Espace dédié à la certification humaine dans le Web3 — entité éditoriale autonome sous marque Proofeus (arbitrage 29 juillet 2026 : domaine dédié pour neutralité renforcée vs sous-domaine).
 
 Édité par **Ataraxis IA** — verticale d'intelligence artificielle souveraine du groupe Ataraxis.
 

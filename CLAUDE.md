@@ -19,8 +19,8 @@
 **Filiale** : Ataraxis IA — marques sœurs Coryphea®, Proofeus®, Verbalock®, VocalGPS®.
 
 **URL cible** :
-- V1 (opérationnel à l'arrivée Chypre) : `proofeus.com/authentic` OU ce repo déployé sur son propre domaine
-- V2/V3 (T1 2027 au drop) : `authentic.proofeus.com` (sous-domaine dédié)
+- **`proofeus.art`** — **domaine canonique arbitré 29 juillet 2026** (TLD .art choisi pour signal cible artistes/galeries/marketplaces Web3, neutralité renforcée vs sous-domaine, garde la marque Proofeus visible)
+- `authentic.proofeus.com` — alias qui redirige vers `proofeus.art` (capte trafic cross-Proofeus + cohérence interne écosystème)
 
 **Statut marque** : INPI à déposer (marque Authentic + Genesis).
 
@@ -152,6 +152,7 @@
 - Tests Foundry V1 posés (déploiement, mint, transfer bloqué, burn, metadata, admin, cap)
 - CLAUDE.md, README.md, contracts/README.md posés
 - Premier commit local — à créer repo GitHub `Highmindcontrol/proofeus-authentic-platform` pour push
+- **Domaine `proofeus.art` acheté chez Squarespace** — DNS à pointer vers Vercel
 
 ---
 

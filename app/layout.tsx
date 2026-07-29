@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://authentic.proofeus.com"),
+  metadataBase: new URL("https://proofeus.art"),
   title: {
     default: "Proofeus Authentic® — NFT : problème résolu.",
     template: "%s · Proofeus Authentic®",
