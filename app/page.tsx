@@ -374,9 +374,9 @@ const CAPTURES: { label: string; image: string }[] = [
 
 const TECHNIQUE = [
   {
-    titre: "Iris de l'auteur",
+    titre: "Signature biométrique multimodale",
     chapo:
-      "L'iris de l'artiste est capturé lors de l'enrôlement et gravé numériquement au cœur de son Sceau. Aussi unique qu'une empreinte digitale, il ne peut être ni imité, ni reproduit par une IA.",
+      "Les cinq empreintes biométriques de l'auteur — iris, morphologie, voix, paume et pouls — sont capturées lors de l'enrôlement, fusionnées cryptographiquement et gravées au cœur de son Sceau. Cette signature multimodale ne peut être ni imitée par un tiers, ni reproduite par une IA.",
   },
   {
     titre: "Empreinte cryptographique de l'œuvre",
