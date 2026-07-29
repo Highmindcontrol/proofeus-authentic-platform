@@ -149,7 +149,12 @@ export default function AuthenticLanding() {
             <strong className="font-medium text-blanc-casse">Sceau Proofeus</strong>{" "}
             — unique, inaltérable, à vous seul. C&apos;est cet emblème qui
             servira à enregistrer et à signer l&apos;ensemble de vos
-            œuvres et de vos propriétés.
+            œuvres et de vos propriétés. C&apos;est également ce même
+            Sceau qui vous permettra d&apos;utiliser l&apos;ensemble des
+            services des écosystèmes{" "}
+            <strong className="font-medium text-blanc-casse">Proofeus</strong>{" "}
+            et{" "}
+            <strong className="font-medium text-blanc-casse">Verbalock</strong>.
           </p>
         </div>
       </section>
