@@ -16,6 +16,18 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Proofeus Authentic",
     locale: "fr_FR",
+    images: [
+      {
+        url: "/sceau-canonique.png",
+        width: 1200,
+        height: 1200,
+        alt: "Le Sceau Cristal — Proofeus Authentic",
+      },
+    ],
+  },
+  icons: {
+    icon: "/sceau-canonique.png",
+    apple: "/sceau-canonique.png",
   },
 };
 

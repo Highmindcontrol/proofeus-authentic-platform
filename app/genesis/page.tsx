@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,6 +30,29 @@ export default function GenesisPage() {
         <h1 className="mt-4 text-5xl font-semibold tracking-[-0.03em] md:text-6xl">
           Le Sceau des Origines.
         </h1>
+
+        {/* Le Sceau canonique */}
+        <div className="mt-10 flex justify-center">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute inset-0 rounded-full opacity-30 blur-3xl"
+              style={{ background: "var(--color-cyan-proofeus)" }}
+            />
+            <Image
+              src="/sceau-canonique.png"
+              alt="Le Sceau Cristal — objet iconique de Proofeus Authentic"
+              width={320}
+              height={320}
+              className="relative"
+            />
+          </div>
+        </div>
+        <p className="mt-6 text-center text-sm italic text-cyan-300/70">
+          Le même Sceau pour chacun des 1 000 000 titulaires.
+          <br />
+          Une plaque compagnon numérotée personnalise chaque fragment.
+        </p>
         <p className="mt-8 text-xl leading-relaxed text-gris-clair">
           La première œuvre auto-certifiée de l&apos;histoire de Proofeus.
           Une œuvre numérique unique dont un million de fragments sont

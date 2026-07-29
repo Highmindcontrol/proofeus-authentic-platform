@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * Landing V1 Proofeus Authentic — « La Maison de l'Art Authentique ».
@@ -26,8 +27,28 @@ export default function AuthenticLanding() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
             Proofeus Authentic®
           </p>
+
+          {/* Le Sceau Cristal — objet-marque immuable */}
+          <div className="mx-auto mt-10 flex justify-center">
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute inset-0 rounded-full opacity-40 blur-3xl"
+                style={{ background: "var(--color-cyan-proofeus)" }}
+              />
+              <Image
+                src="/sceau-canonique.png"
+                alt="Le Sceau Cristal — Proofeus Authentic"
+                width={280}
+                height={280}
+                priority
+                className="relative"
+              />
+            </div>
+          </div>
+
           <h1
-            className="mt-6 font-semibold tracking-[-0.03em] text-blanc-casse"
+            className="mt-10 font-semibold tracking-[-0.03em] text-blanc-casse"
             style={{
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
               lineHeight: 1.05,
@@ -46,6 +67,10 @@ export default function AuthenticLanding() {
             numérique, chaque œuvre certifiée par Proofeus porte la
             signature biométrique de son auteur — opposable, inaltérable,
             sous droit européen.
+          </p>
+          <p className="mt-6 text-sm italic leading-relaxed text-cyan-300/60 md:text-base">
+            « L&apos;œuvre reste physique. Le NFT n&apos;est plus l&apos;œuvre.
+            Le NFT devient son identité. »
           </p>
         </div>
 
