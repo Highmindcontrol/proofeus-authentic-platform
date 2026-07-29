@@ -107,7 +107,7 @@ export default function AuthenticLanding() {
       <ChapitreSection
         numero="IV"
         salle="La Succession"
-        phrase="Ce qui est précieux mérite davantage qu'une signature."
+        phrase="La confiance se transmet."
         imageAlt="Deux mains — une âgée en costume, une plus jeune — se rencontrent pour transmettre Le Sceau, cadres dorés flous en arrière-plan"
         imagePlaceholder="chapitre-4-succession"
         imageSrc="/chapitre-4-succession.png"
