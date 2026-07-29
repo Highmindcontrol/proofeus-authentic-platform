@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Police serif de titre — codes musée/luxe (Christie's, Cartier, Hermès) */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
 @theme {
   --color-noir: #0a0f1c;
   --color-noir-profond: #050810;
@@ -10,6 +13,7 @@
   --color-or-authentic: #c9a13f;
 
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
 }
 
 * {

@@ -1,348 +1,290 @@
 import Link from "next/link";
-import Image from "next/image";
 
 /**
- * Landing V1 Proofeus Authentic — « La Maison de l'Art Authentique ».
+ * Landing Proofeus Authentic — Le Musée de la Confiance.
  *
- * Doctrine actée 29 juillet 2026 : Authentic couvre l'art physique
- * (galeries/musées/fondations) ET l'art numérique (Web3/NFT) sous un
- * même toit. Le TLD .art assume ce rôle unifié.
+ * Doctrine cinématographique 29 juillet 2026 soir : ce n'est plus
+ * un site, c'est une institution. Chaque scroll = une salle du siège.
+ * Silence, respiration, majesté. Références Christie's / Hermès /
+ * Leica / Rolls-Royce.
  *
- * Deux tunnels visibles dès le hero : Artistes & Galeries (physique
- * et numérique) + Web3 & NFT (spécifique Genesis / marketplaces).
+ * Structure :
+ * 1. Hero — image musée + Le Sceau qui flotte + « L'authenticité a
+ *    trouvé son emblème. »
+ * 2. Chapitre 1 — La Toile
+ * 3. Chapitre 2 — La Galerie
+ * 4. Chapitre 3 — Le Coffre
+ * 5. Chapitre 4 — La Succession
+ * 6. Le Sceau révélé (technologie, seulement à la fin)
+ *
+ * Zéro mention NFT/blockchain/IA/QR avant la section technique
+ * finale. Le client achète une émotion, pas une technologie.
  */
 export default function AuthenticLanding() {
   return (
-    <main className="min-h-screen">
-      {/* HERO — « La Maison de l'Art Authentique » */}
-      <section className="relative overflow-hidden px-6 pt-24 pb-32 md:px-12 md:pt-32 md:pb-40">
-        {/* Halo cyan diffus derrière le titre */}
+    <main>
+      {/* HERO — image musée pleine largeur + phrase-déclaration */}
+      <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
+        {/* Image musée en fond, pleine largeur */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-[100px]"
-          style={{ background: "var(--color-cyan-proofeus)" }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/hero-musee.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         />
 
-        <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-            Proofeus Authentic®
-          </p>
+        {/* Voile sombre bas pour lisibilité de la phrase */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 45%, rgba(5,8,16,0.65) 75%, rgba(5,8,16,0.95) 100%)",
+          }}
+        />
 
-          {/* Le Sceau Cristal — objet-marque immuable */}
-          <div className="mx-auto mt-10 flex justify-center">
-            <div className="relative">
-              <div
-                aria-hidden
-                className="absolute inset-0 rounded-full opacity-40 blur-3xl"
-                style={{ background: "var(--color-cyan-proofeus)" }}
-              />
-              <Image
-                src="/sceau-canonique.png"
-                alt="Le Sceau Cristal — Proofeus Authentic"
-                width={280}
-                height={280}
-                priority
-                className="relative"
-              />
+        {/* Phrase-déclaration en bas */}
+        <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
+          <h1
+            className="font-serif font-light tracking-[-0.02em] text-blanc-casse"
+            style={{
+              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              lineHeight: 1.15,
+              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            }}
+          >
+            L&apos;authenticité a trouvé son emblème.
+          </h1>
+
+          {/* Indicateur scroll très discret */}
+          <div className="mt-16 flex flex-col items-center gap-3">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gris-clair/70">
+              Entrer dans le siège
+            </span>
+            <span
+              aria-hidden
+              className="h-8 w-px animate-pulse bg-gradient-to-b from-cyan-proofeus/60 to-transparent"
+              style={{ background: "linear-gradient(to bottom, var(--color-cyan-proofeus), transparent)" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CHAPITRE 1 — La Toile */}
+      <ChapitreSection
+        numero="I"
+        salle="La Toile"
+        phrase="Toute œuvre mérite une identité."
+        imageAlt="Une toile ancienne, gros plan sur la texture, Le Sceau apparaît discrètement en cyan"
+        imagePlaceholder="chapitre-1-toile"
+      />
+
+      {/* CHAPITRE 2 — La Galerie */}
+      <ChapitreSection
+        numero="II"
+        salle="La Galerie"
+        phrase="L'authenticité précède la valeur."
+        imageAlt="Silhouettes de collectionneurs dans une galerie luxueuse, Le Sceau flotte au centre"
+        imagePlaceholder="chapitre-2-galerie"
+        inverse
+      />
+
+      {/* CHAPITRE 3 — Le Coffre */}
+      <ChapitreSection
+        numero="III"
+        salle="Le Coffre"
+        phrase="Certaines choses traversent le temps."
+        imageAlt="Un coffre-fort blindé s'ouvre lentement, Le Sceau flotte à l'intérieur"
+        imagePlaceholder="chapitre-3-coffre"
+      />
+
+      {/* CHAPITRE 4 — La Succession */}
+      <ChapitreSection
+        numero="IV"
+        salle="La Succession"
+        phrase="Ce qui est précieux mérite davantage qu'une signature."
+        imageAlt="Deux mains — une âgée, une jeune — se rencontrent pour une transmission, Le Sceau flotte entre elles"
+        imagePlaceholder="chapitre-4-succession"
+        inverse
+      />
+
+      {/* LE SCEAU RÉVÉLÉ — la technologie apparaît enfin, tout en bas */}
+      <section className="relative overflow-hidden border-t border-gris-sombre px-6 py-32 md:px-12 md:py-40">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
+            Le Sceau — dévoilé
+          </p>
+          <h2
+            className="mt-6 text-center font-serif font-light tracking-[-0.02em] text-blanc-casse"
+            style={{
+              fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
+              lineHeight: 1.2,
+              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            }}
+          >
+            Ce que vous voyez flotter dans chaque salle
+            <br />
+            n&apos;est pas un logo. C&apos;est un objet.
+          </h2>
+
+          <div className="mt-20 grid gap-x-16 gap-y-12 md:grid-cols-2">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Cristal</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                Verre optique haut de gamme légèrement teinté cyan. Sept couches
+                superposées visibles à l&apos;œil nu, chacune portant une couche
+                d&apos;information cryptographique.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Iris</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                L&apos;iris humain gravé au centre est la signature de
+                l&apos;auteur — une empreinte biométrique inaltérable, aussi
+                unique qu&apos;une œuvre.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Gravures</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                Sur l&apos;anneau intérieur, des micro-inscriptions inspirées des
+                billets de banque et des passeports. Sur l&apos;anneau extérieur,
+                les marques de sécurité d&apos;une monnaie officielle.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Registre</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                Chaque Sceau est inscrit à vie dans un registre public consultable.
+                Aucune œuvre certifiée ne peut être effacée de la mémoire.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Plaque compagnon</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                Une plaque métallique gravée accompagne toujours Le Sceau. Elle
+                porte le numéro d&apos;ordre, la date et la clé de vérification —
+                jamais sur le Sceau, toujours à côté de lui.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-cyan-300/70">Souveraineté</p>
+              <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                Ancré sur une infrastructure européenne, sous droit européen.
+                Vos données ne quittent jamais notre juridiction. Aucune tierce
+                partie non-européenne n&apos;y a accès.
+              </p>
             </div>
           </div>
 
-          <h1
-            className="mt-10 font-semibold tracking-[-0.03em] text-blanc-casse"
+          <div className="mt-24 flex flex-col items-center gap-4 text-center">
+            <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
+              « Le Sceau Proofeus n&apos;est pas une image de marque. C&apos;est
+              l&apos;objet même que nous produisons. »
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/artistes"
+                className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+              >
+                Sceller une œuvre
+              </Link>
+              <Link
+                href="/registry"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
+                style={{ background: "var(--color-cyan-proofeus)" }}
+              >
+                Visiter le registre
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+/**
+ * Composant de section "chapitre" — image cinématographique pleine
+ * hauteur d'un côté, phrase-déclaration de l'autre. Peut être
+ * inversé (inverse=true) pour alterner la composition.
+ *
+ * Les vraies images (4 chapitres) sont à générer via ChatGPT/DALL-E.
+ * En attendant, le composant affiche un placeholder cyan avec une
+ * indication de contenu.
+ */
+function ChapitreSection({
+  numero,
+  salle,
+  phrase,
+  imageAlt,
+  imagePlaceholder,
+  inverse = false,
+}: {
+  numero: string;
+  salle: string;
+  phrase: string;
+  imageAlt: string;
+  imagePlaceholder: string;
+  inverse?: boolean;
+}) {
+  return (
+    <section className="relative border-t border-gris-sombre">
+      <div
+        className={`mx-auto grid min-h-[70vh] max-w-7xl grid-cols-1 items-center md:grid-cols-2 ${inverse ? "md:grid-flow-dense" : ""}`}
+      >
+        {/* Image ou placeholder */}
+        <div
+          className={`relative min-h-[400px] md:min-h-[600px] ${inverse ? "md:col-start-2" : ""}`}
+          aria-label={imageAlt}
+        >
+          <div
+            className="absolute inset-0"
             style={{
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              lineHeight: 1.05,
+              background:
+                "linear-gradient(135deg, rgba(10,15,28,0.9) 0%, rgba(20,30,50,0.7) 50%, rgba(5,8,16,0.95) 100%)",
+            }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center opacity-30">
+              <div
+                className="mx-auto h-32 w-32 rounded-full blur-3xl"
+                style={{ background: "var(--color-cyan-proofeus)" }}
+              />
+              <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/60">
+                {imagePlaceholder}
+              </p>
+              <p className="mt-2 max-w-xs px-6 text-xs text-gris-clair/70">
+                {imageAlt}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Phrase-déclaration */}
+        <div
+          className={`px-6 py-20 md:px-16 md:py-32 ${inverse ? "md:col-start-1 md:row-start-1" : ""}`}
+        >
+          <p
+            className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70"
+          >
+            Chapitre {numero} · {salle}
+          </p>
+          <p
+            className="mt-10 font-serif font-light tracking-[-0.02em] text-blanc-casse"
+            style={{
+              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+              lineHeight: 1.2,
+              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
             }}
           >
-            La Maison
-            <br />
-            de l&apos;
-            <span style={{ color: "var(--color-cyan-proofeus)" }}>
-              Art Authentique
-            </span>
-            .
-          </h1>
-          <p className="mt-8 text-lg leading-relaxed text-gris-clair md:text-xl">
-            L&apos;humain derrière l&apos;œuvre, toujours. Physique ou
-            numérique, chaque œuvre certifiée par Proofeus porte la
-            signature biométrique de son auteur — opposable, inaltérable,
-            sous droit européen.
-          </p>
-          <p className="mt-6 text-sm italic leading-relaxed text-cyan-300/60 md:text-base">
-            « L&apos;œuvre reste physique. Le NFT n&apos;est plus l&apos;œuvre.
-            Le NFT devient son identité. »
+            {phrase}
           </p>
         </div>
-
-        {/* Les 2 tunnels — dès le hero */}
-        <div className="relative mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
-          <Link
-            href="/artistes"
-            className="group relative overflow-hidden rounded-sm border border-gris-sombre bg-noir-profond/60 p-8 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
-          >
-            <p
-              className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "var(--color-or-authentic)" }}
-            >
-              Vous êtes…
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-blanc-casse">
-              Artiste ou galerie
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-gris-clair">
-              Certifiez vos œuvres physiques et numériques. Sceau
-              d&apos;Auteur, offre Institutions pour galeries/musées/
-              fondations, intégration Gaugista® pour mesurer les
-              ressentis des visiteurs.
-            </p>
-            <p className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
-              Découvrir l&apos;offre Artistes & Galeries
-              <span aria-hidden>→</span>
-            </p>
-          </Link>
-
-          <Link
-            href="/genesis"
-            className="group relative overflow-hidden rounded-sm border border-gris-sombre bg-noir-profond/60 p-8 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
-          >
-            <p
-              className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "var(--color-or-authentic)" }}
-            >
-              Vous êtes…
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-blanc-casse">
-              Dans le Web3 & NFT
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-gris-clair">
-              La certification humaine que le Web3 attendait. Sceau des
-              Origines, Proofeus Genesis, marketplaces partenaires
-              (Foundation, SuperRare, OpenSea…). « NFT&nbsp;: problème
-              résolu. »
-            </p>
-            <p className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
-              Découvrir le Sceau des Origines
-              <span aria-hidden>→</span>
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Le problème commun — pour les 2 mondes */}
-      <section className="border-y border-gris-sombre px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gris-clair">
-            Ce que l&apos;IA a cassé
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Trois questions sans réponse.
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-gris-clair">
-            L&apos;IA générative a rendu impossible la distinction entre
-            humain et machine dans la création. Toile physique ou NFT,
-            même fracture&nbsp;: qui a réellement fait cette œuvre&nbsp;?
-          </p>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                num: "01",
-                titre: "Origine humaine",
-                chapo:
-                  "Un bot, une IA, ou un artiste ? Personne ne le sait. Aucune preuve d'humanité rattachée à l'œuvre, physique ou numérique.",
-              },
-              {
-                num: "02",
-                titre: "Authenticité du possesseur",
-                chapo:
-                  "Un compte Discord anonyme ou un acheteur inconnu qui rachète en salle. Rien ne garantit qui détient vraiment l'œuvre.",
-              },
-              {
-                num: "03",
-                titre: "Copies infinies",
-                chapo:
-                  "Right-click save pour le numérique, copie parfaite pour le physique via IA générative. La blockchain garantit l'unicité du jeton, pas de l'œuvre.",
-              },
-            ].map((f) => (
-              <div
-                key={f.num}
-                className="rounded-sm border border-gris-sombre bg-noir-profond/60 p-6"
-              >
-                <p
-                  className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: "var(--color-or-authentic)" }}
-                >
-                  {f.num}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold text-blanc-casse">
-                  {f.titre}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-gris-clair">
-                  {f.chapo}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* La proposition Maison */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
-            La proposition Proofeus Authentic
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Le maillon humain manquant.
-            <br />
-            <span style={{ color: "var(--color-cyan-proofeus)" }}>
-              Nous l&apos;avons soudé.
-            </span>
-          </h2>
-          <div className="mt-10 space-y-6 text-lg leading-relaxed text-gris-clair">
-            <p>
-              Une toile de galerie ou un NFT sur Foundation deviennent une{" "}
-              <strong className="text-blanc-casse">preuve d&apos;origine
-              humaine</strong>, une <strong className="text-blanc-casse">preuve
-              d&apos;authenticité biométrique</strong>, une{" "}
-              <strong className="text-blanc-casse">preuve de propriété</strong>{" "}
-              opposable.
-            </p>
-            <p>
-              Le Sceau Proofeus — l&apos;identité biométrique multi-modale de
-              l&apos;artiste, sous droit européen, zéro connaissance — est{" "}
-              <strong className="text-blanc-casse">nativement attaché</strong>{" "}
-              à l&apos;œuvre. La Maison garde la trace immuable pour
-              l&apos;éternité, physique et numérique.
-            </p>
-            <p>
-              C&apos;est la seule architecture au monde qui combine{" "}
-              <strong className="text-blanc-casse">certification humaine
-              multi-modale</strong> + <strong className="text-blanc-casse">zero-knowledge</strong>{" "}
-              + <strong className="text-blanc-casse">souveraineté
-              européenne</strong> + <strong className="text-blanc-casse">registre
-              public unifié</strong> art physique et art numérique.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Ce qu'abrite la Maison — 6 briques visibles */}
-      <section
-        className="border-y border-gris-sombre px-6 py-24 md:px-12 md:py-32"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 20%, rgba(63,212,217,0.06) 0%, transparent 60%)",
-        }}
-      >
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
-            Ce qu&apos;abrite la Maison
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Six briques, un seul toit.
-          </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                titre: "Sceau d'Auteur",
-                chapo:
-                  "Certifie l'humain derrière chaque œuvre. Toile, sculpture, JPEG, vidéo — même Sceau, même promesse.",
-                cta: "→ Voir les artistes",
-                href: "/artistes",
-              },
-              {
-                titre: "Offre Institutions",
-                chapo:
-                  "Cabinet certification pour galeries, musées, fondations. Sceaux d'Auteur illimités, protocole post-mortem 3 verrous.",
-                cta: "→ Offre B2B galeries",
-                href: "/galeries",
-              },
-              {
-                titre: "Sceau des Origines",
-                chapo:
-                  "1 000 000 fragments Soul-Bound offerts aux 1er humains vérifiés. Trace historique, pas actif spéculatif.",
-                cta: "→ Découvrir Genesis",
-                href: "/genesis",
-              },
-              {
-                titre: "Registre public unifié",
-                chapo:
-                  "Toutes les œuvres certifiées Proofeus, physiques et numériques, dans un seul registre consultable.",
-                cta: "→ Explorer le registre",
-                href: "/registry",
-              },
-              {
-                titre: "Gaugista® intégré",
-                chapo:
-                  "Mesurez les ressentis des visiteurs devant chaque œuvre. En galerie ou en ligne, jauges multi-critères signées.",
-                cta: "→ Découvrir Gaugista",
-                href: "/gaugista",
-              },
-              {
-                titre: "Marketplaces partenaires",
-                chapo:
-                  "Foundation, SuperRare, OpenSea, Manifold, Zora — le Sceau Proofeus s'intègre nativement dans leurs flux.",
-                cta: "→ Voir les intégrations",
-                href: "/marketplaces",
-              },
-            ].map((b) => (
-              <Link
-                key={b.titre}
-                href={b.href}
-                className="group flex flex-col rounded-sm border border-gris-sombre bg-noir-profond/60 p-6 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
-              >
-                <h3 className="text-lg font-semibold text-blanc-casse">
-                  {b.titre}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gris-clair">
-                  {b.chapo}
-                </p>
-                <p className="mt-6 text-xs font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
-                  {b.cta}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Waitlist */}
-      <section id="waitlist" className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gris-clair">
-            Liste d&apos;attente
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-            Rejoignez la Maison en avant-première.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gris-clair">
-            Nous préparons l&apos;ouverture publique. Artistes, galeries,
-            collectionneurs Web3&nbsp;: laissez votre email pour être
-            prévenus en priorité de l&apos;ouverture des certifications et
-            du drop du Sceau des Origines.
-          </p>
-          <form className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <input
-              type="email"
-              placeholder="votre@email.fr"
-              className="w-full max-w-sm rounded-full border border-gris-sombre bg-noir-profond px-5 py-3 text-sm text-blanc-casse placeholder:text-gris-clair/50 focus:border-cyan-proofeus/60 focus:outline-none"
-              required
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
-              style={{ background: "var(--color-cyan-proofeus)" }}
-            >
-              Rejoindre
-            </button>
-          </form>
-          <p className="mt-6 text-xs text-gris-clair/70">
-            RGPD strict — vos données ne sont jamais revendues. Vous pouvez
-            vous désinscrire en un clic.
-          </p>
-        </div>
-      </section>
-
-    </main>
+      </div>
+    </section>
   );
 }
