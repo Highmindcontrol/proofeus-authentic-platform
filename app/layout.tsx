@@ -4,15 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://proofeus.art"),
   title: {
-    default: "Proofeus Authentic® — NFT : problème résolu.",
+    default: "Proofeus Authentic® — La Maison de l'Art Authentique",
     template: "%s · Proofeus Authentic®",
   },
   description:
-    "Espace dédié à la certification humaine dans le Web3. Proofeus Authentic certifie l'humain derrière chaque œuvre numérique et chaque NFT. Accueille Proofeus Genesis et le drop du Sceau des Origines.",
+    "La Maison de l'Art Authentique — physique et numérique. Certification biométrique multi-modale de l'humain derrière chaque œuvre. Galeries, artistes, Web3, NFT : le maillon humain manquant, sous droit européen.",
   openGraph: {
-    title: "Proofeus Authentic® — NFT : problème résolu.",
+    title: "Proofeus Authentic® — La Maison de l'Art Authentique",
     description:
-      "Le maillon humain manquant du Web3. Certification biométrique multi-modale de l'humain derrière chaque œuvre.",
+      "L'humain derrière l'œuvre, toujours. Physique ou numérique, chaque œuvre certifiée par Proofeus porte la signature biométrique de son auteur — opposable, inaltérable, sous droit européen.",
     type: "website",
     siteName: "Proofeus Authentic",
     locale: "fr_FR",

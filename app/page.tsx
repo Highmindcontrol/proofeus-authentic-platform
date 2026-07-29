@@ -1,19 +1,19 @@
 import Link from "next/link";
 
 /**
- * Landing V1 Proofeus Authentic — placeholder narratif « NFT : problème résolu ».
+ * Landing V1 Proofeus Authentic — « La Maison de l'Art Authentique ».
  *
- * Contient : hero manifeste, les 3 fractures du NFT actuel, la proposition
- * Proofeus (le maillon humain), teaser Sceau des Origines / Genesis, waitlist.
+ * Doctrine actée 29 juillet 2026 : Authentic couvre l'art physique
+ * (galeries/musées/fondations) ET l'art numérique (Web3/NFT) sous un
+ * même toit. Le TLD .art assume ce rôle unifié.
  *
- * À enrichir en Phase 2 (galerie artistes témoins, marketplaces partenaires,
- * blog Voix Authentic). En Phase 3, bascule sur authentic.proofeus.com avec
- * registre public compteur temps réel.
+ * Deux tunnels visibles dès le hero : Artistes & Galeries (physique
+ * et numérique) + Web3 & NFT (spécifique Genesis / marketplaces).
  */
 export default function AuthenticLanding() {
   return (
     <main className="min-h-screen">
-      {/* HERO manifeste */}
+      {/* HERO — « La Maison de l'Art Authentique » */}
       <section className="relative overflow-hidden px-6 pt-24 pb-32 md:px-12 md:pt-32 md:pb-40">
         {/* Halo cyan diffus derrière le titre */}
         <div
@@ -29,68 +29,113 @@ export default function AuthenticLanding() {
           <h1
             className="mt-6 font-semibold tracking-[-0.03em] text-blanc-casse"
             style={{
-              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-              lineHeight: 1.02,
+              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              lineHeight: 1.05,
             }}
           >
-            NFT&nbsp;: problème
+            La Maison
             <br />
+            de l&apos;
             <span style={{ color: "var(--color-cyan-proofeus)" }}>
-              résolu.
+              Art Authentique
             </span>
+            .
           </h1>
           <p className="mt-8 text-lg leading-relaxed text-gris-clair md:text-xl">
-            Un NFT, un humain, une preuve. Nous ne créons pas de NFT —
-            nous certifions <em>l&apos;humain</em> derrière chaque œuvre
-            numérique.
+            L&apos;humain derrière l&apos;œuvre, toujours. Physique ou
+            numérique, chaque œuvre certifiée par Proofeus porte la
+            signature biométrique de son auteur — opposable, inaltérable,
+            sous droit européen.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/genesis"
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-proofeus px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
-              style={{ background: "var(--color-cyan-proofeus)" }}
+        </div>
+
+        {/* Les 2 tunnels — dès le hero */}
+        <div className="relative mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
+          <Link
+            href="/artistes"
+            className="group relative overflow-hidden rounded-sm border border-gris-sombre bg-noir-profond/60 p-8 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
+          >
+            <p
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "var(--color-or-authentic)" }}
             >
+              Vous êtes…
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-blanc-casse">
+              Artiste ou galerie
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-gris-clair">
+              Certifiez vos œuvres physiques et numériques. Sceau
+              d&apos;Auteur, offre Institutions pour galeries/musées/
+              fondations, intégration Gaugista® pour mesurer les
+              ressentis des visiteurs.
+            </p>
+            <p className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
+              Découvrir l&apos;offre Artistes & Galeries
+              <span aria-hidden>→</span>
+            </p>
+          </Link>
+
+          <Link
+            href="/genesis"
+            className="group relative overflow-hidden rounded-sm border border-gris-sombre bg-noir-profond/60 p-8 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
+          >
+            <p
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "var(--color-or-authentic)" }}
+            >
+              Vous êtes…
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-blanc-casse">
+              Dans le Web3 & NFT
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-gris-clair">
+              La certification humaine que le Web3 attendait. Sceau des
+              Origines, Proofeus Genesis, marketplaces partenaires
+              (Foundation, SuperRare, OpenSea…). « NFT&nbsp;: problème
+              résolu. »
+            </p>
+            <p className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
               Découvrir le Sceau des Origines
               <span aria-hidden>→</span>
-            </Link>
-            <a
-              href="#waitlist"
-              className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
-            >
-              Rejoindre la liste d&apos;attente
-            </a>
-          </div>
+            </p>
+          </Link>
         </div>
       </section>
 
-      {/* Les 3 fractures */}
+      {/* Le problème commun — pour les 2 mondes */}
       <section className="border-y border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gris-clair">
-            Le NFT 2021-2024 s&apos;est cassé sur trois fractures
+            Ce que l&apos;IA a cassé
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
             Trois questions sans réponse.
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-gris-clair">
+            L&apos;IA générative a rendu impossible la distinction entre
+            humain et machine dans la création. Toile physique ou NFT,
+            même fracture&nbsp;: qui a réellement fait cette œuvre&nbsp;?
+          </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
                 num: "01",
                 titre: "Origine humaine",
                 chapo:
-                  "Un bot ou un artiste ? Personne ne sait qui a réellement créé l'œuvre. Aucune preuve d'humanité côté créateur.",
+                  "Un bot, une IA, ou un artiste ? Personne ne le sait. Aucune preuve d'humanité rattachée à l'œuvre, physique ou numérique.",
               },
               {
                 num: "02",
                 titre: "Authenticité du possesseur",
                 chapo:
-                  "Un compte Discord anonyme n'est pas un humain vérifié. Rien ne garantit que celui qui détient le jeton est bien celui qu'il prétend être.",
+                  "Un compte Discord anonyme ou un acheteur inconnu qui rachète en salle. Rien ne garantit qui détient vraiment l'œuvre.",
               },
               {
                 num: "03",
                 titre: "Copies infinies",
                 chapo:
-                  "Right-click save. La blockchain garantit l'unicité du jeton, pas de l'œuvre. La copie visuelle reste triviale.",
+                  "Right-click save pour le numérique, copie parfaite pour le physique via IA générative. La blockchain garantit l'unicité du jeton, pas de l'œuvre.",
               },
             ].map((f) => (
               <div
@@ -112,22 +157,17 @@ export default function AuthenticLanding() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-center text-lg italic text-gris-clair">
-            Résultat : bulle spéculative → crash → discrédit du secteur.
-            <br />
-            Les galeries et artistes traditionnels rejettent en bloc.
-          </p>
         </div>
       </section>
 
-      {/* La proposition */}
+      {/* La proposition Maison */}
       <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
             La proposition Proofeus Authentic
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Le maillon humain manquant du Web3.
+            Le maillon humain manquant.
             <br />
             <span style={{ color: "var(--color-cyan-proofeus)" }}>
               Nous l&apos;avons soudé.
@@ -135,8 +175,8 @@ export default function AuthenticLanding() {
           </h2>
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-gris-clair">
             <p>
-              Un NFT n&apos;est plus qu&apos;un jeton spéculatif — il devient
-              une <strong className="text-blanc-casse">preuve d&apos;origine
+              Une toile de galerie ou un NFT sur Foundation deviennent une{" "}
+              <strong className="text-blanc-casse">preuve d&apos;origine
               humaine</strong>, une <strong className="text-blanc-casse">preuve
               d&apos;authenticité biométrique</strong>, une{" "}
               <strong className="text-blanc-casse">preuve de propriété</strong>{" "}
@@ -146,62 +186,98 @@ export default function AuthenticLanding() {
               Le Sceau Proofeus — l&apos;identité biométrique multi-modale de
               l&apos;artiste, sous droit européen, zéro connaissance — est{" "}
               <strong className="text-blanc-casse">nativement attaché</strong>{" "}
-              au NFT. La blockchain garde la trace immuable. Le NFT reste
-              transférable, mais l&apos;humain derrière ne change plus.
+              à l&apos;œuvre. La Maison garde la trace immuable pour
+              l&apos;éternité, physique et numérique.
             </p>
             <p>
               C&apos;est la seule architecture au monde qui combine{" "}
               <strong className="text-blanc-casse">certification humaine
               multi-modale</strong> + <strong className="text-blanc-casse">zero-knowledge</strong>{" "}
               + <strong className="text-blanc-casse">souveraineté
-              européenne</strong> + <strong className="text-blanc-casse">vitrine
-              SEO neutre</strong> + <strong className="text-blanc-casse">partenariats
-              marketplaces</strong>.
+              européenne</strong> + <strong className="text-blanc-casse">registre
+              public unifié</strong> art physique et art numérique.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Teaser Genesis */}
+      {/* Ce qu'abrite la Maison — 6 briques visibles */}
       <section
         className="border-y border-gris-sombre px-6 py-24 md:px-12 md:py-32"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 20%, rgba(63,212,217,0.08) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 20%, rgba(63,212,217,0.06) 0%, transparent 60%)",
         }}
       >
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-5xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300/80">
-            Proofeus Genesis®
+            Ce qu&apos;abrite la Maison
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-            Le Sceau des Origines.
+            Six briques, un seul toit.
           </h2>
-          <p className="mt-8 text-lg leading-relaxed text-gris-clair">
-            Une œuvre unique, un million de fragments, un million d&apos;humains
-            vérifiés. Chaque premier utilisateur reçoit à vie son numéro :{" "}
-            <em className="text-blanc-casse">
-              « Vous êtes le 237 491ᵉ humain vérifié par Proofeus. »
-            </em>
-          </p>
-          <p className="mt-4 text-lg leading-relaxed text-gris-clair">
-            Pas un NFT spéculatif. Une{" "}
-            <span
-              style={{ color: "var(--color-or-authentic)" }}
-              className="font-semibold"
-            >
-              trace historique
-            </span>
-            . Soul-Bound, non-transférable, sans valeur monétaire de rachat.
-          </p>
-          <Link
-            href="/genesis"
-            className="mt-10 inline-flex items-center gap-2 rounded-full border border-cyan-proofeus/60 px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5"
-            style={{ color: "var(--color-cyan-proofeus)" }}
-          >
-            Découvrir Genesis
-            <span aria-hidden>→</span>
-          </Link>
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                titre: "Sceau d'Auteur",
+                chapo:
+                  "Certifie l'humain derrière chaque œuvre. Toile, sculpture, JPEG, vidéo — même Sceau, même promesse.",
+                cta: "→ Voir les artistes",
+                href: "/artistes",
+              },
+              {
+                titre: "Offre Institutions",
+                chapo:
+                  "Cabinet certification pour galeries, musées, fondations. Sceaux d'Auteur illimités, protocole post-mortem 3 verrous.",
+                cta: "→ Offre B2B galeries",
+                href: "/galeries",
+              },
+              {
+                titre: "Sceau des Origines",
+                chapo:
+                  "1 000 000 fragments Soul-Bound offerts aux 1er humains vérifiés. Trace historique, pas actif spéculatif.",
+                cta: "→ Découvrir Genesis",
+                href: "/genesis",
+              },
+              {
+                titre: "Registre public unifié",
+                chapo:
+                  "Toutes les œuvres certifiées Proofeus, physiques et numériques, dans un seul registre consultable.",
+                cta: "→ Explorer le registre",
+                href: "/registry",
+              },
+              {
+                titre: "Gaugista® intégré",
+                chapo:
+                  "Mesurez les ressentis des visiteurs devant chaque œuvre. En galerie ou en ligne, jauges multi-critères signées.",
+                cta: "→ Découvrir Gaugista",
+                href: "/gaugista",
+              },
+              {
+                titre: "Marketplaces partenaires",
+                chapo:
+                  "Foundation, SuperRare, OpenSea, Manifold, Zora — le Sceau Proofeus s'intègre nativement dans leurs flux.",
+                cta: "→ Voir les intégrations",
+                href: "/marketplaces",
+              },
+            ].map((b) => (
+              <Link
+                key={b.titre}
+                href={b.href}
+                className="group flex flex-col rounded-sm border border-gris-sombre bg-noir-profond/60 p-6 transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40"
+              >
+                <h3 className="text-lg font-semibold text-blanc-casse">
+                  {b.titre}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gris-clair">
+                  {b.chapo}
+                </p>
+                <p className="mt-6 text-xs font-semibold text-cyan-proofeus transition-transform group-hover:translate-x-1">
+                  {b.cta}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -212,12 +288,13 @@ export default function AuthenticLanding() {
             Liste d&apos;attente
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-            Soyez parmi les premiers témoins de la fondation.
+            Rejoignez la Maison en avant-première.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-gris-clair">
-            Nous préparons l&apos;ouverture publique. Laissez votre email pour
-            recevoir en avant-première l&apos;annonce du drop du Sceau des
-            Origines et l&apos;accès prioritaire au registre public.
+            Nous préparons l&apos;ouverture publique. Artistes, galeries,
+            collectionneurs Web3&nbsp;: laissez votre email pour être
+            prévenus en priorité de l&apos;ouverture des certifications et
+            du drop du Sceau des Origines.
           </p>
           <form className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <input
@@ -241,12 +318,12 @@ export default function AuthenticLanding() {
         </div>
       </section>
 
-      {/* Footer sobre */}
+      {/* Footer */}
       <footer className="border-t border-gris-sombre px-6 py-12 md:px-12">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 text-xs text-gris-clair md:flex-row md:items-center">
           <p>
-            © Proofeus Authentic® — édité par Ataraxis IA. Marque INPI en
-            cours de dépôt.
+            © Proofeus Authentic® — édité par Ataraxis IA. La Maison de
+            l&apos;Art Authentique.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a

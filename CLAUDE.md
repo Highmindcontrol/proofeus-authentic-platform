@@ -8,11 +8,12 @@
 
 ## I — L'identité du projet
 
-**Proofeus Authentic®** est l'espace dédié à la certification humaine dans le Web3 — entité éditoriale semi-autonome à l'intérieur de Proofeus (modèle Watch). Certifie l'humain derrière chaque œuvre numérique et chaque NFT.
+**Proofeus Authentic®** est **La Maison de l'Art Authentique — physique et numérique**. Certifie l'humain derrière chaque œuvre, qu'elle soit une toile dans une galerie parisienne ou un NFT sur Foundation. Entité éditoriale autonome sous marque Proofeus (arbitrage 29 juillet 2026 : domaine dédié + périmètre unifié art physique + Web3).
 
 **Marque événement associée** : **Proofeus Genesis®** — nom du drop du Sceau des Origines. Réservé à l'événementiel uniquement (modèle Apple Music vs One More Thing).
 
-**Baseline** : *« NFT : problème résolu. »*
+**Baseline institutionnelle** : *« La Maison de l'Art Authentique. L'humain derrière l'œuvre, toujours. »*
+**Baseline campagne Web3 (spécifique tunnel NFT)** : *« NFT : problème résolu. »*
 
 **Éditeur** : Ataraxis IA (verticale d'intelligence artificielle souveraine du groupe Ataraxis).
 
@@ -144,30 +145,40 @@
 
 ---
 
-## XI — État au 29 juillet 2026
+## XI — Doctrine unifiée art physique + numérique (29 juillet 2026)
 
-- Repo créé (aujourd'hui)
-- Landing V1 posée (`/` + `/genesis` placeholder)
+**Arbitrage majeur** : Proofeus Authentic **abrite les 2 volets** :
+1. **Art physique** — offre B2B galeries/musées/fondations (ex-« Proofeus Institutions »), Sceau d'Auteur pour toile/sculpture/photo, protocole post-mortem 3 verrous, intégration Gaugista®
+2. **Art numérique Web3** — Sceau des Origines/Genesis, marketplaces partenaires, Sceau d'Auteur pour NFT
+
+**Pourquoi** : le TLD `.art` parle art dans son ensemble. Un artiste peut vouloir les deux (Beeple physique + NFT). Un galeriste peut vendre les deux. Séparer serait contre-nature et affaiblirait le message. **Le même Sceau d'Auteur, technique et juridiquement, couvre physique et numérique** — seul le format des métadonnées change (dimensions/technique/photo HD pour physique vs fichier natif pour numérique).
+
+**Sur les 4 fronts Chypre** : les fronts 3 (galeries) et 4 (NFT) **fusionnent** en une seule brique commerciale Proofeus Authentic hébergée sur proofeus.art.
+
+## XII — État au 29 juillet 2026
+
+- Repo créé
+- Landing V1 posée avec les 2 tunnels (Artistes/Galeries + Web3/NFT), positionnement « La Maison de l'Art Authentique »
 - Smart contract `SceauOrigines.sol` V1 écrit (Solidity 0.8.24, ERC-721 + Soul-Bound + Lazy Mint + upgradable metadata + cap 1M)
-- Tests Foundry V1 posés (déploiement, mint, transfer bloqué, burn, metadata, admin, cap)
+- Tests Foundry V1 posés
 - CLAUDE.md, README.md, contracts/README.md posés
-- Premier commit local — à créer repo GitHub `Highmindcontrol/proofeus-authentic-platform` pour push
-- **Domaine `proofeus.art` acheté chez Squarespace** — DNS à pointer vers Vercel
+- **Domaine `proofeus.art` acheté chez Squarespace + DNS pointé Vercel** — site live sur https://www.proofeus.art
+- Alias `authentic.proofeus.com` → 301 vers proofeus.art
 
 ---
 
-## XII — Chantiers restants (priorité arrivée Chypre)
+## XIII — Chantiers restants (priorité arrivée Chypre)
 
-1. **Créer repo GitHub** `Highmindcontrol/proofeus-authentic-platform` puis push
+1. **Créer les 6 sous-pages** listées dans la landing (`/artistes`, `/galeries`, `/genesis` déjà là, `/marketplaces`, `/registry`, `/gaugista`, `/developers`, `/voix`)
 2. **npm install** + `forge install OpenZeppelin/openzeppelin-contracts@v5.0.2` + `forge install foundry-rs/forge-std`
-3. **Enrichir la landing** : storytelling détaillé, section artistes témoins, section marketplaces partenaires
-4. **Générer l'œuvre inaugurale** via DALL·E/ChatGPT (prompt à écrire)
-5. **Uploader œuvre + métadonnées sur IPFS** (via Pinata ou similaire), obtenir CID
-6. **Déployer smart contract sur Base Sepolia** (testnet) — test end-to-end mint
-7. **Branchement Verbalock** : quand Verbalock Crypto sera en dev, intégrer réception Sceau des Origines nativement
-8. **Waitlist Brevo** — brancher formulaire réel
-9. **Validation MiCA** avec cabinet crypto (3-8 K€)
-10. **Audit sécurité smart contract** avant déploiement mainnet (3-8 K€)
+3. **Générer l'œuvre inaugurale** via DALL·E/ChatGPT (prompt à écrire)
+4. **Uploader œuvre + métadonnées sur IPFS** (via Pinata ou similaire), obtenir CID
+5. **Déployer smart contract sur Base Sepolia** (testnet) — test end-to-end mint
+6. **Branchement Verbalock** : quand Verbalock Crypto sera en dev, intégrer réception Sceau des Origines nativement
+7. **Waitlist Brevo** — brancher formulaire réel
+8. **Validation MiCA** avec cabinet crypto (3-8 K€)
+9. **Audit sécurité smart contract** avant déploiement mainnet (3-8 K€)
+10. **Intégration Gaugista®** — spécifier l'API entre Authentic et Gaugista pour signature de ressentis
 
 ---
 
