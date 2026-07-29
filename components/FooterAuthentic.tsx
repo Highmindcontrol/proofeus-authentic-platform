@@ -13,10 +13,10 @@ export function FooterAuthentic() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-cyan-300/70">
-              La Maison
+              L&apos;essentiel
             </p>
             <ul className="mt-4 space-y-2 text-sm text-gris-clair">
-              <li><Link href="/" className="hover:text-cyan-proofeus">Accueil</Link></li>
+              <li><Link href="/" className="hover:text-cyan-proofeus">Ce que nous faisons</Link></li>
               <li><Link href="/voix" className="hover:text-cyan-proofeus">Voix Authentic</Link></li>
               <li><Link href="/presse" className="hover:text-cyan-proofeus">Presse</Link></li>
               <li><Link href="/manifeste" className="hover:text-cyan-proofeus">Manifeste</Link></li>
@@ -90,8 +90,9 @@ export function FooterAuthentic() {
         {/* Ligne finale */}
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-gris-sombre pt-8 text-xs text-gris-clair md:flex-row md:items-center">
           <p>
-            © Proofeus Authentic® — édité par Ataraxis IA. La Maison de l&apos;Art
-            Authentique — physique et numérique.
+            © Proofeus Authentic® — édité par Ataraxis IA. La plateforme de
+            certification des œuvres physiques et numériques à l&apos;ère de
+            l&apos;intelligence artificielle.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/mentions-legales" className="hover:text-cyan-proofeus">

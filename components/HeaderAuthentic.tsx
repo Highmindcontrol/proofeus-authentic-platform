@@ -106,7 +106,7 @@ export function HeaderAuthentic() {
 }
 
 const NAV_ITEMS: { label: string; href: string; emphase?: boolean }[] = [
-  { label: "La Maison", href: "/" },
+  { label: "Ce que nous faisons", href: "/" },
   { label: "Artistes", href: "/artistes" },
   { label: "Galeries", href: "/galeries" },
   { label: "Le Registre", href: "/registry" },

@@ -1,22 +1,23 @@
 import Link from "next/link";
 
 /**
- * Landing Proofeus Authentic — La Maison.
+ * Landing Proofeus Authentic.
  *
- * Structure minimaliste (2-3 écrans max) :
- * 1. Hero — image musée + phrase-déclaration
- * 2. Les 4 Salles — grille horizontale de 4 cartes cliquables
- *    qui mènent chacune vers une page dédiée (/salle/la-toile,
- *    /salle/la-galerie, /salle/le-coffre, /salle/la-succession)
- * 3. Le Sceau révélé — section technique (dévoilée en dernier)
+ * Structure clarifiée (arbitrage 29 juillet 2026 soir — François a
+ * rejeté la doctrine « musée mystique » : le visiteur ne comprend pas
+ * ce que Proofeus fait) :
  *
- * Doctrine : peu de scroll, pages dédiées derrière chaque salle,
- * vocabulaire technique uniquement dans la dernière section.
+ * 1. Hero — image + baseline en haut + nom Proofeus Authentic en dessous
+ * 2. Ce que nous faisons — bloc de positionnement clair (le « quoi »)
+ * 3. Les 4 salles — grille horizontale (le « pour qui »)
+ * 4. Le Sceau, en détail — section technique explicite (le « comment »)
  */
 export default function AuthenticLanding() {
   return (
     <main>
-      {/* HERO — image musée pleine hauteur + phrase-déclaration */}
+      {/* ═══════════════════════════════════════════════════════════
+          1. HERO — image musée + baseline (au-dessus) + Proofeus Authentic
+          ═══════════════════════════════════════════════════════════ */}
       <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
         <div
           aria-hidden
@@ -32,55 +33,116 @@ export default function AuthenticLanding() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 45%, rgba(5,8,16,0.65) 75%, rgba(5,8,16,0.95) 100%)",
+              "linear-gradient(to bottom, transparent 45%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
-        <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
-          <h1
-            className="font-light tracking-[-0.02em] text-blanc-casse"
+        <div className="relative z-10 mx-auto mb-24 max-w-5xl px-6 text-center md:mb-32">
+          {/* Baseline AU-DESSUS, sur UNE seule ligne */}
+          <p
+            className="italic text-blanc-casse/85 md:whitespace-nowrap"
             style={{
               fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2rem, 4.5vw, 4rem)",
-              lineHeight: 1.15,
+              fontSize: "clamp(1rem, 2vw, 1.6rem)",
+              letterSpacing: "0.005em",
             }}
           >
-            L&apos;authenticité a trouvé son emblème.
-          </h1>
+            « L&apos;authenticité a trouvé son emblème. »
+          </p>
 
-          <div className="mt-16 flex flex-col items-center gap-3">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gris-clair/70">
-              Entrer dans les salles
-            </span>
-            <span
-              aria-hidden
-              className="h-8 w-px animate-pulse"
-              style={{
-                background:
-                  "linear-gradient(to bottom, var(--color-cyan-proofeus), transparent)",
-              }}
-            />
-          </div>
+          {/* Nom marque — Proofeus Authentic — en dessous, grand */}
+          <h1
+            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
+            style={{
+              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+              lineHeight: 1.05,
+            }}
+          >
+            Proofeus{" "}
+            <span style={{ color: "var(--color-cyan-proofeus)" }}>Authentic</span>
+          </h1>
         </div>
       </section>
 
-      {/* LES 4 SALLES — grille horizontale de cartes cliquables */}
+      {/* ═══════════════════════════════════════════════════════════
+          2. CE QUE NOUS FAISONS — positionnement clair
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+            Ce que nous faisons
+          </p>
+          <h2
+            className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)",
+              lineHeight: 1.2,
+            }}
+          >
+            La première plateforme de certification des œuvres d&apos;art
+            physiques et numériques à l&apos;ère de l&apos;intelligence
+            artificielle.
+          </h2>
+
+          <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+            Nous relions chaque œuvre — toile, sculpture, photographie ou
+            NFT — à l&apos;humain qui l&apos;a créée, par une empreinte
+            biométrique unique et un registre public inaltérable. Copies
+            générées par IA, contrefaçons, usurpations d&apos;auteur et
+            provenances douteuses ne peuvent plus se confondre avec
+            l&apos;original.
+          </p>
+
+          {/* 3 pastilles : les 3 problèmes résolus */}
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            <ProblemeResolu
+              titre="Copies générées par IA"
+              corps="Une image produite par une IA ne peut plus se faire passer pour l'œuvre d'un humain. Seul un auteur vérifié biométriquement peut sceller."
+            />
+            <ProblemeResolu
+              titre="Usurpation d'auteur"
+              corps="L'iris de l'auteur, gravé au cœur du Sceau, est aussi unique qu'une empreinte digitale. Aucun tiers ne peut se déclarer créateur à sa place."
+            />
+            <ProblemeResolu
+              titre="Provenance opaque"
+              corps="Chaque changement de propriétaire est inscrit dans un registre public, consultable à vie. La chaîne complète reste opposable, vérifiable en trois secondes."
+            />
+          </div>
+
+          <p className="mx-auto mt-14 max-w-2xl text-center text-lg italic leading-relaxed text-gris-clair">
+            « Une œuvre certifiée par Proofeus Authentic est une œuvre dont
+            l&apos;origine humaine est prouvée, opposable, transmissible. »
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          3. LES 4 SALLES — grille horizontale
+          ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:mb-16">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
               La visite
             </p>
             <h2
               className="mt-4 font-light tracking-[-0.02em] text-blanc-casse"
               style={{
-                fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
                 fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
                 lineHeight: 1.2,
               }}
             >
               Quatre salles. Un même Sceau.
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gris-clair md:text-base">
+              Découvrez, en quatre étapes, comment le Sceau Proofeus
+              accompagne une œuvre — de sa création à sa transmission.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -91,24 +153,32 @@ export default function AuthenticLanding() {
         </div>
       </section>
 
-      {/* LE SCEAU RÉVÉLÉ — section technique en dernier */}
+      {/* ═══════════════════════════════════════════════════════════
+          4. LE SCEAU — section technique explicite
+          ═══════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
-            Le Sceau — dévoilé
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+            Le Sceau — en détail
           </p>
           <h2
             className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(1.6rem, 3vw, 2.5rem)",
               lineHeight: 1.2,
             }}
           >
-            Ce que vous voyez flotter dans chaque salle
+            Une signature cryptographique.
             <br />
-            n&apos;est pas un logo. C&apos;est un objet.
+            Un registre inaltérable. Une garantie à vie.
           </h2>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+            Le Sceau Proofeus est notre certificat. Une fois apposé sur une
+            œuvre, il ne peut ni être copié, ni détaché, ni contesté. Voici
+            ce qu&apos;il contient.
+          </p>
 
           <div className="mt-16 grid gap-x-16 gap-y-10 md:grid-cols-2 md:mt-20">
             {TECHNIQUE.map((item) => (
@@ -124,16 +194,12 @@ export default function AuthenticLanding() {
           </div>
 
           <div className="mt-20 flex flex-col items-center gap-6 text-center">
-            <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
-              « Le Sceau Proofeus n&apos;est pas une image de marque. C&apos;est
-              l&apos;objet même que nous produisons. »
-            </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="/certifier"
                 className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
               >
-                Sceller une œuvre
+                Certifier une œuvre
               </Link>
               <Link
                 href="/registry"
@@ -151,9 +217,23 @@ export default function AuthenticLanding() {
 }
 
 /**
+ * Pastille « Problème résolu » — 3 pastilles dans la section
+ * « Ce que nous faisons » pour rendre le positionnement concret.
+ */
+function ProblemeResolu({ titre, corps }: { titre: string; corps: string }) {
+  return (
+    <div className="rounded-sm border border-gris-sombre bg-noir-profond p-6">
+      <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+        {titre}
+      </p>
+      <p className="mt-4 text-sm leading-relaxed text-gris-clair">{corps}</p>
+    </div>
+  );
+}
+
+/**
  * Carte d'une salle — image en background, overlay sombre pour
  * lisibilité, numéro romain + nom + phrase-déclaration en overlay.
- * Effet hover : léger scale + overlay plus léger.
  */
 function SalleCard({
   numero,
@@ -173,7 +253,6 @@ function SalleCard({
       href={href}
       className="group relative flex aspect-[4/5] overflow-hidden rounded-sm border border-gris-sombre bg-noir transition-all hover:-translate-y-1 hover:border-cyan-proofeus/40 hover:shadow-[0_18px_40px_-12px_rgba(63,212,217,0.25)]"
     >
-      {/* Image de fond */}
       <div
         aria-hidden
         className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
@@ -183,18 +262,15 @@ function SalleCard({
           backgroundPosition: "center",
         }}
       />
-
-      {/* Voile sombre pour lisibilité */}
       <div
         aria-hidden
         className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-70"
         style={{
           background:
-            "linear-gradient(to top, rgba(5,8,16,0.95) 10%, rgba(5,8,16,0.55) 55%, rgba(5,8,16,0.15) 100%)",
+            "linear-gradient(to top, rgba(13,13,16,0.95) 10%, rgba(13,13,16,0.55) 55%, rgba(13,13,16,0.15) 100%)",
         }}
       />
 
-      {/* Contenu */}
       <div className="relative z-10 flex w-full flex-col justify-end p-6 md:p-7">
         <p
           className="font-light text-cyan-proofeus/70"
@@ -260,33 +336,33 @@ const SALLES = [
 
 const TECHNIQUE = [
   {
-    titre: "Cristal",
+    titre: "Iris de l'auteur",
     chapo:
-      "Verre optique haut de gamme légèrement teinté cyan. Sept couches superposées visibles à l'œil nu, chacune portant une couche d'information cryptographique.",
+      "L'iris de l'artiste est capturé lors de l'enrôlement et gravé numériquement au cœur de son Sceau. Aussi unique qu'une empreinte digitale, il ne peut être ni imité, ni reproduit par une IA.",
   },
   {
-    titre: "Iris",
+    titre: "Empreinte cryptographique de l'œuvre",
     chapo:
-      "L'iris humain gravé au centre est la signature de l'auteur — une empreinte biométrique inaltérable, aussi unique qu'une œuvre.",
+      "Chaque œuvre certifiée reçoit une empreinte unique dérivée de son fichier numérique ou de sa fiche technique (dimensions, technique, matériaux, photo HD). Toute copie ou variation est immédiatement détectable.",
   },
   {
-    titre: "Gravures",
+    titre: "Registre public inaltérable",
     chapo:
-      "Sur l'anneau intérieur, des micro-inscriptions inspirées des billets de banque. Sur l'anneau extérieur, les marques de sécurité d'une monnaie officielle.",
-  },
-  {
-    titre: "Registre",
-    chapo:
-      "Chaque Sceau est inscrit à vie dans un registre public consultable. Aucune œuvre certifiée ne peut être effacée de la mémoire.",
+      "Chaque Sceau est inscrit à vie dans un registre public consultable par quiconque. Aucune œuvre certifiée ne peut être effacée ou modifiée — Proofeus Authentic elle-même n'en a pas le pouvoir.",
   },
   {
     titre: "Plaque compagnon",
     chapo:
-      "Une plaque métallique gravée accompagne toujours Le Sceau. Elle porte le numéro d'ordre, la date et la clé de vérification — jamais sur le Sceau, toujours à côté de lui.",
+      "Une clé de vérification numérique accompagne toujours le Sceau. Le collectionneur, l'expert ou le tribunal peuvent vérifier en trois secondes qui a créé cette œuvre et à qui elle appartient aujourd'hui.",
   },
   {
-    titre: "Souveraineté",
+    titre: "Physique et numérique",
     chapo:
-      "Ancré sur une infrastructure européenne, sous droit européen. Vos données ne quittent jamais notre juridiction.",
+      "Un même Sceau couvre une toile en galerie parisienne comme un NFT sur marketplace internationale. Seul le format des métadonnées change ; la garantie d'authenticité, elle, reste identique.",
+  },
+  {
+    titre: "Souveraineté européenne",
+    chapo:
+      "Infrastructure hébergée en Europe, sous droit européen. Les données biométriques ne quittent jamais votre appareil — seule leur empreinte cryptographique parvient à la plateforme.",
   },
 ];

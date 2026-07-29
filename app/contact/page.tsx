@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Écrire à la Maison",
+  title: "Nous écrire",
   description:
-    "Chaque parole reçue à la Maison est scellée. Une adresse unique, une équipe humaine, une réponse sous 24 h.",
+    "Chaque message reçu par Proofeus Authentic reçoit une réponse humaine sous 24 h. Trois adresses, une équipe, aucune machine intermédiaire.",
 };
 
 /**
- * Salle « Correspondance » — écrire à la Maison.
+ * Page « Nous écrire » — trois adresses de correspondance.
  *
  * Image de fond : salle-correspondance.png (enveloppe scellée avec
  * Le Sceau de cire cyan, plume, encrier — la correspondance devient
@@ -36,7 +36,7 @@ export default function ContactPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(5,8,16,0.7) 75%, rgba(5,8,16,0.98) 100%)",
+              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
@@ -52,9 +52,9 @@ export default function ContactPage() {
               lineHeight: 1.15,
             }}
           >
-            Chaque parole reçue à la Maison
+            Nous écrire — trois adresses,
             <br />
-            est scellée.
+            une réponse humaine.
           </h1>
         </div>
       </section>

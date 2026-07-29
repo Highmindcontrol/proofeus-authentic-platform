@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Certifier une œuvre",
   description:
-    "Toute œuvre présentée à la Maison reçoit son Sceau. Physique ou numérique, ancien ou contemporain — Le Sceau Proofeus s'appose comme une signature vivante, opposable et inaltérable.",
+    "Toute œuvre présentée à Proofeus Authentic reçoit son Sceau. Physique ou numérique, ancien ou contemporain — Le Sceau Proofeus s'appose comme une signature vivante, opposable et inaltérable.",
 };
 
 /**
@@ -37,7 +37,7 @@ export default function CertifierPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(5,8,16,0.7) 75%, rgba(5,8,16,0.98) 100%)",
+              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
@@ -53,7 +53,7 @@ export default function CertifierPage() {
               lineHeight: 1.15,
             }}
           >
-            Toute œuvre présentée à la Maison
+            Toute œuvre certifiée par Proofeus
             <br />
             reçoit son Sceau.
           </h1>
@@ -81,12 +81,12 @@ export default function CertifierPage() {
             <GesteRite
               numero="I"
               titre="L'auteur se présente"
-              texte="Un enrôlement biométrique multi-modal, dans le silence d'une pièce. L'iris, la voix, la morphologie, la paume. Ces signatures ne quittent jamais votre appareil — seule leur empreinte cryptographique parvient à la Maison."
+              texte="Un enrôlement biométrique multi-modal, dans le silence d'une pièce. L'iris, la voix, la morphologie, la paume. Ces signatures ne quittent jamais votre appareil — seule leur empreinte cryptographique parvient à la plateforme."
             />
             <GesteRite
               numero="II"
               titre="L'œuvre est déposée"
-              texte="Une photographie haute définition pour une toile, un fichier natif pour une œuvre numérique, un scan pour une sculpture. La Maison consigne ses dimensions, sa technique, sa date, son histoire — tout ce qui la rend unique."
+              texte="Une photographie haute définition pour une toile, un fichier natif pour une œuvre numérique, un scan pour une sculpture. La plateforme consigne ses dimensions, sa technique, sa date, son histoire — tout ce qui la rend unique."
             />
             <GesteRite
               numero="III"
@@ -97,8 +97,8 @@ export default function CertifierPage() {
 
           <div className="mt-24 flex flex-col items-center gap-6 text-center">
             <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
-              « L&apos;acte de sceller est un rite. La Maison en garantit
-              la solennité, la précision et la mémoire. »
+              « L&apos;acte de sceller est un rite. Proofeus Authentic en
+              garantit la solennité, la précision et la mémoire. »
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
@@ -118,7 +118,7 @@ export default function CertifierPage() {
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
                 style={{ background: "var(--color-cyan-proofeus)" }}
               >
-                Rejoindre la Maison
+                Rejoindre la plateforme
               </Link>
             </div>
           </div>

@@ -6,15 +6,17 @@ import { FooterAuthentic } from "@/components/FooterAuthentic";
 export const metadata: Metadata = {
   metadataBase: new URL("https://proofeus.art"),
   title: {
-    default: "Proofeus Authentic® — La Maison de l'Art Authentique",
+    default:
+      "Proofeus Authentic® — Certification des œuvres d'art physiques et numériques",
     template: "%s · Proofeus Authentic®",
   },
   description:
-    "La Maison de l'Art Authentique — physique et numérique. Certification biométrique multi-modale de l'humain derrière chaque œuvre. Galeries, artistes, Web3, NFT : le maillon humain manquant, sous droit européen.",
+    "La première plateforme de certification des œuvres d'art physiques et numériques à l'ère de l'intelligence artificielle. Contre la copie, la contrefaçon et l'usurpation d'auteur — l'humain derrière l'œuvre, toujours.",
   openGraph: {
-    title: "Proofeus Authentic® — La Maison de l'Art Authentique",
+    title:
+      "Proofeus Authentic® — Certification des œuvres d'art physiques et numériques",
     description:
-      "L'humain derrière l'œuvre, toujours. Physique ou numérique, chaque œuvre certifiée par Proofeus porte la signature biométrique de son auteur — opposable, inaltérable, sous droit européen.",
+      "Proofeus Authentic relie chaque œuvre à l'humain qui l'a créée par une empreinte biométrique unique et un registre public inaltérable. Copies générées par IA, contrefaçons, usurpations d'auteur : le problème est résolu.",
     type: "website",
     siteName: "Proofeus Authentic",
     locale: "fr_FR",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
         url: "/sceau-canonique.png",
         width: 1200,
         height: 1200,
-        alt: "Le Sceau Cristal — Proofeus Authentic",
+        alt: "Le Sceau Proofeus — Proofeus Authentic",
       },
     ],
   },

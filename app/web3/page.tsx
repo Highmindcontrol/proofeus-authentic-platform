@@ -11,17 +11,17 @@ const SECTIONS: { titre: string; corps: string }[] = [
   {
     titre: "La fracture que personne n'a soudée",
     corps:
-      "Le Web3 a promis la propriété numérique et l'a livrée. Mais il a laissé une fracture ouverte : rien, dans une blockchain, ne prouve que l'humain derrière le wallet est bien l'auteur de l'œuvre. Un même JPEG peut être minté cent fois par cent adresses différentes — et le marché doit croire, sans pouvoir vérifier. La Maison vient sceller cette faille avec l'unique élément que la cryptographie seule ne peut fabriquer : la preuve d'humanité.",
+      "Le Web3 a promis la propriété numérique et l'a livrée. Mais il a laissé une fracture ouverte : rien, dans une blockchain, ne prouve que l'humain derrière le wallet est bien l'auteur de l'œuvre. Un même JPEG peut être minté cent fois par cent adresses différentes — et le marché doit croire, sans pouvoir vérifier. Proofeus Authentic vient sceller cette faille avec l'unique élément que la cryptographie seule ne peut fabriquer : la preuve d'humanité.",
   },
   {
     titre: "Ce que le Sceau change pour un NFT",
     corps:
-      "Un NFT scellé par la Maison n'est plus un fichier numérique parmi d'autres. Il devient l'identité opposable d'une œuvre — reliée à l'iris de son auteur, inscrite dans le registre public, protégée contre toute usurpation. Le collectionneur qui l'acquiert n'achète plus un pari sur l'authenticité. Il acquiert la certitude, gravée dans le même mouvement que le mint : cet humain existe, cette œuvre est de lui, cette provenance est inaltérable.",
+      "Un NFT scellé par Proofeus Authentic n'est plus un fichier numérique parmi d'autres. Il devient l'identité opposable d'une œuvre — reliée à l'iris de son auteur, inscrite dans le registre public, protégée contre toute usurpation. Le collectionneur qui l'acquiert n'achète plus un pari sur l'authenticité. Il acquiert la certitude, gravée dans le même mouvement que le mint : cet humain existe, cette œuvre est de lui, cette provenance est inaltérable.",
   },
   {
     titre: "Une infrastructure neutre, ouverte à toutes les marketplaces",
     corps:
-      "La Maison ne vend pas d'œuvres. Elle ne prend pas de commission. Elle ne concurrence ni Foundation, ni SuperRare, ni Manifold, ni OpenSea. Elle leur offre le maillon qui leur manque : une couche de certification humaine, souveraine, sous droit européen, que chacune peut intégrer librement. Le Sceau des Origines — mille fragments d'histoire distribués aux premiers humains vérifiés — est la première pierre de cette infrastructure.",
+      "Proofeus Authentic ne vend pas d'œuvres. Elle ne prend pas de commission. Elle ne concurrence ni Foundation, ni SuperRare, ni Manifold, ni OpenSea. Elle leur offre le maillon qui leur manque : une couche de certification humaine, souveraine, sous droit européen, que chacune peut intégrer librement. Le Sceau des Origines — mille fragments d'histoire distribués aux premiers humains vérifiés — est la première pierre de cette infrastructure.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function Web3Page() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(5,8,16,0.7) 75%, rgba(5,8,16,0.98) 100%)",
+              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
@@ -128,7 +128,7 @@ export default function Web3Page() {
               href="/"
               className="text-xs uppercase tracking-[0.28em] text-gris-clair transition-colors hover:text-cyan-proofeus"
             >
-              ← Retour à La Maison
+              ← Retour à l&apos;accueil
             </Link>
           </div>
         </div>

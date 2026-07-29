@@ -68,7 +68,7 @@ export function PagePlaceholder({
             href="/"
             className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-5 py-2.5 text-sm text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
           >
-            <span aria-hidden>←</span> Retour à La Maison
+            <span aria-hidden>←</span> Retour à l&apos;accueil
           </Link>
           <Link
             href="/#waitlist"

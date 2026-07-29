@@ -44,7 +44,7 @@ export function SalleTemplate({
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(5,8,16,0.7) 75%, rgba(5,8,16,0.98) 100%)",
+              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
@@ -128,13 +128,13 @@ export function SalleTemplate({
             ))}
           </div>
 
-          {/* Retour à la Maison */}
+          {/* Retour à l'accueil */}
           <div className="mt-16 text-center">
             <Link
               href="/"
               className="text-xs uppercase tracking-[0.28em] text-gris-clair transition-colors hover:text-cyan-proofeus"
             >
-              ← Retour à La Maison
+              ← Retour à l&apos;accueil
             </Link>
           </div>
         </div>
