@@ -160,34 +160,7 @@ export default function AuthenticLanding() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          2C. 3 PASTILLES + phrase italique — retour fond anthracite
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            <ProblemeResolu
-              titre="Copies générées par IA"
-              corps="Une image produite par une IA ne peut plus se faire passer pour l'œuvre d'un humain. Seul un auteur vérifié biométriquement peut sceller."
-            />
-            <ProblemeResolu
-              titre="Usurpation d'auteur"
-              corps="L'ensemble de vos empreintes biométriques — iris, morphologie, voix, paume, pouls — est fusionné dans votre Sceau Proofeus. Aucun tiers ne peut se déclarer créateur à votre place."
-            />
-            <ProblemeResolu
-              titre="Provenance opaque"
-              corps="Chaque changement de propriétaire est inscrit dans un registre public, consultable à vie. La chaîne complète reste opposable, vérifiable en trois secondes."
-            />
-          </div>
-
-          <p className="mx-auto mt-14 max-w-2xl text-center text-lg italic leading-relaxed text-gris-clair">
-            « Une œuvre certifiée par Proofeus Authentic est une œuvre dont
-            l&apos;origine humaine est prouvée, opposable, transmissible. »
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          3. LES 4 SALLES — grille horizontale
+          3. LES 4 SALLES — grille horizontale (à arbitrer)
           ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-28">
         <div className="mx-auto max-w-7xl">
@@ -221,10 +194,10 @@ export default function AuthenticLanding() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          4. LE SCEAU — section technique explicite
+          4. LE SCEAU — en détail (contient / apporte / protège)
           ═══════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
             Le Sceau — en détail
           </p>
@@ -241,41 +214,136 @@ export default function AuthenticLanding() {
             <br />
             Un registre inaltérable. Une garantie à vie.
           </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
+          <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
             Le Sceau Proofeus est notre certificat. Une fois apposé sur une
             œuvre, il ne peut ni être copié, ni détaché, ni contesté. Voici
-            ce qu&apos;il contient.
+            ce qu&apos;il contient, ce qu&apos;il vous apporte et ce contre
+            quoi il vous protège.
           </p>
 
-          <div className="mt-16 grid gap-x-16 gap-y-10 md:grid-cols-2 md:mt-20">
-            {TECHNIQUE.map((item) => (
-              <div key={item.titre}>
-                <p className="text-xs uppercase tracking-widest text-cyan-300/70">
-                  {item.titre}
-                </p>
-                <p className="mt-3 text-base leading-relaxed text-gris-clair">
-                  {item.chapo}
-                </p>
-              </div>
-            ))}
+          {/* ─────────  SOUS-BLOC 1 : CE QU'IL CONTIENT  ───────── */}
+          <div className="mt-24 md:mt-28">
+            <div className="text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+                Ce qu&apos;il contient
+              </p>
+              <h3
+                className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                  lineHeight: 1.25,
+                }}
+              >
+                Six briques indissociables, gravées à vie.
+              </h3>
+            </div>
+
+            <div className="mt-14 grid gap-x-16 gap-y-10 md:grid-cols-2">
+              {TECHNIQUE.map((item) => (
+                <div key={item.titre}>
+                  <p className="text-xs uppercase tracking-widest text-cyan-300/70">
+                    {item.titre}
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed text-gris-clair">
+                    {item.chapo}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-20 flex flex-col items-center gap-6 text-center">
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/certifier"
-                className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+          {/* ─────────  SOUS-BLOC 2 : CE QU'IL VOUS APPORTE  ───────── */}
+          <div className="mt-24 border-t border-gris-sombre pt-16 md:mt-28 md:pt-20">
+            <div className="text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+                Ce qu&apos;il vous apporte
+              </p>
+              <h3
+                className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                  lineHeight: 1.25,
+                }}
               >
-                Certifier une œuvre
-              </Link>
-              <Link
-                href="/registry"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
-                style={{ background: "var(--color-cyan-proofeus)" }}
-              >
-                Visiter le registre
-              </Link>
+                Une seule identité, tous les services des écosystèmes
+                Proofeus &amp; Verbalock.
+              </h3>
+              <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
+                Votre Sceau est votre clé unique dans l&apos;ensemble des
+                briques du groupe. Il vous ouvre :
+              </p>
             </div>
+
+            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {APPORTS.map((item) => (
+                <Pastille key={item.titre} {...item} />
+              ))}
+            </div>
+          </div>
+
+          {/* ─────────  SOUS-BLOC 3 : CE CONTRE QUOI IL PROTÈGE  ───────── */}
+          <div className="mt-24 border-t border-gris-sombre pt-16 md:mt-28 md:pt-20">
+            <div className="text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+                Ce contre quoi il vous protège
+              </p>
+              <h3
+                className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                  lineHeight: 1.25,
+                }}
+              >
+                Vous êtes obligatoirement protégé contre tout ceci.
+              </h3>
+            </div>
+
+            {/* Groupe A — Dans le domaine de l'art */}
+            <div className="mt-14">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
+                Dans le domaine de l&apos;art
+              </p>
+              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {PROTECTIONS_ART.map((item) => (
+                  <Pastille key={item.titre} {...item} />
+                ))}
+              </div>
+            </div>
+
+            {/* Groupe B — Dans les écosystèmes Proofeus + Verbalock */}
+            <div className="mt-16">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
+                Dans les écosystèmes Proofeus &amp; Verbalock
+              </p>
+              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {PROTECTIONS_ECOSYSTEMES.map((item) => (
+                  <Pastille key={item.titre} {...item} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CTAs finaux */}
+          <div className="mt-24 flex flex-wrap justify-center gap-3 md:mt-28">
+            <Link
+              href="/certifier"
+              className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+            >
+              Certifier une œuvre
+            </Link>
+            <Link
+              href="/registry"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
+              style={{ background: "var(--color-cyan-proofeus)" }}
+            >
+              Visiter le registre
+            </Link>
           </div>
         </div>
       </section>
@@ -284,10 +352,11 @@ export default function AuthenticLanding() {
 }
 
 /**
- * Pastille « Problème résolu » — 3 pastilles dans la section
- * « Ce que nous faisons » pour rendre le positionnement concret.
+ * Pastille — carte compacte titre + corps, utilisée dans les 3
+ * sous-blocs de « Le Sceau — en détail » (apporte / protège art /
+ * protège écosystèmes).
  */
-function ProblemeResolu({ titre, corps }: { titre: string; corps: string }) {
+function Pastille({ titre, corps }: { titre: string; corps: string }) {
   return (
     <div className="rounded-sm border border-gris-sombre bg-noir-profond p-6">
       <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
@@ -470,5 +539,107 @@ const TECHNIQUE = [
     titre: "Souveraineté européenne",
     chapo:
       "Infrastructure hébergée en Europe, sous droit européen. Les données biométriques ne quittent jamais votre appareil — seule leur empreinte cryptographique parvient à la plateforme.",
+  },
+];
+
+/* Ce qu'il vous apporte — services débloqués par le Sceau dans les
+   écosystèmes Proofeus + Verbalock */
+const APPORTS: { titre: string; corps: string }[] = [
+  {
+    titre: "Certification d'œuvres",
+    corps:
+      "Toiles, sculptures, photographies, NFT — chaque œuvre reçoit son Sceau et rejoint le registre public inaltérable de Proofeus Authentic.",
+  },
+  {
+    titre: "Messagerie chiffrée E2E",
+    corps:
+      "Échangez avec la certitude absolue que votre interlocuteur est bien la personne qu'il prétend être. Chiffrement bout-en-bout, entre humains biométriquement vérifiés.",
+  },
+  {
+    titre: "Wallet de mots de passe",
+    corps:
+      "Verbalock stocke vos mots de passe et les débloque avec vos empreintes multimodales. L'ère du mot de passe oublié est terminée.",
+  },
+  {
+    titre: "Wallet cryptomonnaie",
+    corps:
+      "Un portefeuille crypto non-custodial protégé par votre Sceau. Plus de seed phrase à mémoriser — votre biométrie est la clé.",
+  },
+  {
+    titre: "Paiement humain à humain",
+    corps:
+      "Le premier rail de paiement crypto conversationnel entre humains vérifiés. Envoyez de la valeur comme vous envoyez un message.",
+  },
+  {
+    titre: "Transmission et testament",
+    corps:
+      "Léguez vos œuvres, vos mots de passe et vos actifs numériques à vos proches, avec verrouillage post-mortem sécurisé.",
+  },
+];
+
+/* Ce contre quoi il vous protège — deux domaines */
+const PROTECTIONS_ART: { titre: string; corps: string }[] = [
+  {
+    titre: "Copies générées par IA",
+    corps:
+      "Une image produite par une IA ne peut plus se faire passer pour l'œuvre d'un humain. Seul un auteur vérifié biométriquement peut sceller.",
+  },
+  {
+    titre: "Usurpation d'auteur",
+    corps:
+      "Vos cinq empreintes fusionnées dans votre Sceau garantissent que nul ne peut se déclarer créateur à votre place — de votre vivant, ni après.",
+  },
+  {
+    titre: "Contrefaçons plastiques",
+    corps:
+      "L'empreinte cryptographique de l'œuvre — dérivée de ses dimensions, matériaux, technique et photo HD — rend toute imitation immédiatement détectable.",
+  },
+  {
+    titre: "Faux certificats papier",
+    corps:
+      "Fini les certificats jaunis, perdus ou falsifiés. Le registre public de Proofeus Authentic est consultable en trois secondes, à vie.",
+  },
+  {
+    titre: "Provenance opaque",
+    corps:
+      "Chaque changement de propriétaire est inscrit dans le registre. La chaîne complète — de l'auteur au propriétaire actuel — reste opposable, vérifiable.",
+  },
+  {
+    titre: "Double cession d'œuvre",
+    corps:
+      "Une œuvre ne peut être vendue qu'une seule fois. Le registre empêche mécaniquement qu'une même pièce soit cédée à deux acheteurs différents.",
+  },
+];
+
+const PROTECTIONS_ECOSYSTEMES: { titre: string; corps: string }[] = [
+  {
+    titre: "Vol d'identité numérique",
+    corps:
+      "Votre Sceau est votre identité — nul ne peut l'usurper sans reproduire l'ensemble de vos empreintes biométriques, ce qui est impossible.",
+  },
+  {
+    titre: "Deepfakes vidéo et audio",
+    corps:
+      "Vos correspondances signées avec le Sceau attestent que c'est bien vous qui parlez, écrivez, transférez. Toute imitation IA est immédiatement démasquée.",
+  },
+  {
+    titre: "Prise de contrôle de compte",
+    corps:
+      "Aucun accès à vos comptes Proofeus, Verbalock ou services partenaires sans validation biométrique multimodale en direct.",
+  },
+  {
+    titre: "Ingénierie sociale",
+    corps:
+      "Arnaque au président, faux support technique, phishing sophistiqué — un contact non scellé n'est pas un contact humain vérifié.",
+  },
+  {
+    titre: "Perte de mots de passe",
+    corps:
+      "Verbalock supprime définitivement le mot de passe et la seed phrase de votre quotidien. Vos empreintes suffisent, partout, tout le temps.",
+  },
+  {
+    titre: "Fraude à la signature",
+    corps:
+      "Contrats, correspondances importantes, cessions : rien ne peut plus être contresigné à votre place. Le Sceau vous suit partout.",
   },
 ];
