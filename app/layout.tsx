@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { HeaderAuthentic } from "@/components/HeaderAuthentic";
-import { FooterAuthentic } from "@/components/FooterAuthentic";
+import { AppChrome } from "@/components/AppChrome";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://proofeus.art"),
@@ -44,9 +43,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <HeaderAuthentic />
-        {children}
-        <FooterAuthentic />
+        <AppChrome>{children}</AppChrome>
       </body>
     </html>
   );
