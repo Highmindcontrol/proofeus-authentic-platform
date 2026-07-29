@@ -38,54 +38,57 @@ export default function AuthenticLanding() {
         />
 
         <div className="relative z-10 mx-auto mb-24 max-w-5xl px-6 text-center md:mb-32">
-          {/* Baseline AU-DESSUS, sur UNE seule ligne */}
+          {/* Baseline — seul élément du hero */}
           <p
-            className="italic text-blanc-casse/85 md:whitespace-nowrap"
+            className="italic text-blanc-casse/90 md:whitespace-nowrap"
             style={{
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1rem, 2vw, 1.6rem)",
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)",
+              lineHeight: 1.25,
               letterSpacing: "0.005em",
             }}
           >
             « L&apos;authenticité a trouvé son emblème. »
           </p>
+        </div>
+      </section>
 
-          {/* Nom marque — Proofeus Authentic — en dessous, grand */}
-          <h1
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
+      {/* ═══════════════════════════════════════════════════════════
+          2. PROOFEUS AUTHENTIC — nom marque + positionnement clair
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-4xl">
+          {/* Nom marque en gros, à la place du eyebrow */}
+          <h2
+            className="text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
               lineHeight: 1.05,
             }}
           >
             Proofeus{" "}
-            <span style={{ color: "var(--color-cyan-proofeus)" }}>Authentic</span>
-          </h1>
-        </div>
-      </section>
+            <span style={{ color: "var(--color-cyan-proofeus)" }}>
+              Authentic
+            </span>
+          </h2>
 
-      {/* ═══════════════════════════════════════════════════════════
-          2. CE QUE NOUS FAISONS — positionnement clair
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-            Ce que nous faisons
-          </p>
-          <h2
-            className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
+          {/* Positionnement — juste en dessous */}
+          <p
+            className="mx-auto mt-8 max-w-3xl text-center font-light tracking-[-0.005em] text-blanc-casse/90"
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)",
-              lineHeight: 1.2,
+              fontSize: "clamp(1.4rem, 2.4vw, 2rem)",
+              lineHeight: 1.3,
             }}
           >
             La première plateforme de certification des œuvres d&apos;art
             physiques et numériques à l&apos;ère de l&apos;intelligence
             artificielle.
-          </h2>
+          </p>
 
           <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
             Nous relions chaque œuvre — toile, sculpture, photographie ou

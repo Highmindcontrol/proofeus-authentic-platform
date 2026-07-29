@@ -14,8 +14,11 @@ import Image from "next/image";
  */
 export function HeaderAuthentic() {
   return (
-    <header className="sticky top-0 z-50 border-b border-gris-sombre bg-noir/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10">
+    <header
+      className="sticky top-0 z-50 border-b border-gris-sombre backdrop-blur-xl"
+      style={{ background: "rgba(0,0,0,0.92)" }}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-7 md:px-10 md:py-8">
         {/* Logo + wordmark */}
         <Link
           href="/"
