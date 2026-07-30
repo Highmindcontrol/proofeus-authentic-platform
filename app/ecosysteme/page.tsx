@@ -337,13 +337,14 @@ function EcoSocleCard({
 
         <div className="relative mt-8 flex items-baseline gap-1">
           <span
-            className="font-light text-blanc-casse"
+            className="text-blanc-casse"
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+              fontWeight: 600,
+              fontSize: "clamp(3rem, 5vw, 4.25rem)",
               lineHeight: 1,
-              textShadow: "0 2px 12px rgba(0,0,0,0.3)",
+              letterSpacing: "-0.01em",
             }}
           >
             {prix}
@@ -356,10 +357,10 @@ function EcoSocleCard({
           </span>
         </div>
         <p
-          className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.24em]"
-          style={{ color: "rgba(255,255,255,0.9)" }}
+          className="relative mt-3 text-[10px] font-semibold uppercase tracking-[0.2em]"
+          style={{ color: "rgba(255,255,255,0.92)" }}
         >
-          À vie jusqu&apos;au premier million
+          À vie pour le premier million d&apos;utilisateurs
         </p>
       </div>
 
