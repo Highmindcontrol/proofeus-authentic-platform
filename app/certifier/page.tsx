@@ -147,16 +147,34 @@ export default function CertifierPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          2. SALLE DE CERTIFICATION — timeline handoff desktop → mobile
+          1.5. BANDEAU NOIR — "SALLE DE CERTIFICATION" en grand
           ═══════════════════════════════════════════════════════════ */}
-      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
+      <section
+        className="px-4 py-14 md:py-20"
+        style={{ background: "#000" }}
+      >
+        <h2
+          className="text-center font-light uppercase text-blanc-casse"
+          style={{
+            fontFamily:
+              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(2.4rem, 8.5vw, 9rem)",
+            letterSpacing: "0.05em",
+            lineHeight: 1,
+          }}
+        >
+          Salle de certification
+        </h2>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          2. TIMELINE handoff desktop → mobile — anthracite
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Salle de certification
-            </p>
-            <h2
-              className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
+            <h3
+              className="mx-auto max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
               style={{
                 fontFamily:
                   "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
@@ -165,7 +183,7 @@ export default function CertifierPage() {
               }}
             >
               Trois étapes, deux appareils.
-            </h2>
+            </h3>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
               Préparation sur cet ordinateur, validation sur votre téléphone.
               Votre biométrie ne quitte jamais votre appareil.
