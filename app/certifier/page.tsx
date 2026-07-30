@@ -130,7 +130,8 @@ export default function CertifierPage() {
           style={{
             top: "38%",
             left: "50%",
-            transform: "translate(-50%, -50%)",
+            transform:
+              "translate(-50%, -50%) translateX(100px) translateY(-200px)",
           }}
         >
           <p
@@ -138,7 +139,7 @@ export default function CertifierPage() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(0.9rem, 1.8vw, 1.5rem)",
+              fontSize: "clamp(1.15rem, 2.2vw, 1.9rem)",
               letterSpacing: "0.28em",
               lineHeight: 1,
               textShadow: "0 2px 16px rgba(0,0,0,0.7)",
