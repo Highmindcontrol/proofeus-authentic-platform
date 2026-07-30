@@ -143,111 +143,57 @@ export default function EcosystemePage() {
 
           <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
             {/* Proofeus 14,90 € */}
-            <div className="flex flex-col rounded-sm border border-gris-sombre bg-noir-profond p-8 md:p-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                Proofeus®
-              </p>
-              <p className="mt-2 text-sm text-blanc-casse/70">
-                Identité + services personnels
-              </p>
-              <div className="mt-6 flex items-baseline gap-1">
-                <span
-                  className="font-light text-blanc-casse"
-                  style={{
-                    fontFamily:
-                      "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                    lineHeight: 1,
-                  }}
-                >
-                  14,90 €
-                </span>
-                <span className="text-sm text-gris-clair">/an</span>
-              </div>
-              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie jusqu&apos;au premier million
-              </p>
-              <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
-                {[
-                  "Sceau d'humanité biométrique",
-                  "Messagerie chiffrée E2E",
-                  "Cercles de confiance",
-                  "Wallet mots de passe + crypto",
-                  "Paiement humain à humain",
-                  "Testament numérique + legs",
-                  "Boutons d'alerte Squad/Help",
-                  "Coryphea® — assistante IA",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <EcoSocleCard
+              nom="Proofeus®"
+              prix="14,90 €"
+              baseline="Identité + services personnels"
+              inclus={[
+                "Sceau d'humanité biométrique",
+                "Messagerie chiffrée E2E",
+                "Cercles de confiance",
+                "Wallet mots de passe + crypto",
+                "Paiement humain à humain",
+                "Testament numérique + legs",
+                "Boutons d'alerte Squad/Help",
+                "Coryphea® — assistante IA",
+              ]}
+            />
 
             {/* Proofeus intégral 19,90 € — vedette */}
-            <div className="relative flex flex-col rounded-sm border border-cyan-proofeus/60 bg-noir-profond p-8 shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)] md:p-10">
-              <span
-                className="absolute right-4 top-4 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur"
-                style={{
-                  color: "var(--color-or-authentic)",
-                  borderColor: "rgba(201,161,63,0.55)",
-                  background: "rgba(0,0,0,0.55)",
-                }}
-              >
-                Recommandé
-              </span>
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                Proofeus® intégral
-              </p>
-              <p className="mt-2 text-sm text-blanc-casse/70">
-                Identité + services + certification
-              </p>
-              <div className="mt-6 flex items-baseline gap-1">
-                <span
-                  className="font-light text-blanc-casse"
-                  style={{
-                    fontFamily:
-                      "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                    lineHeight: 1,
-                  }}
-                >
-                  19,90 €
-                </span>
-                <span className="text-sm text-gris-clair">/an</span>
-              </div>
-              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie jusqu&apos;au premier million
-              </p>
-              <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                  <span>Tout ce que contient Proofeus®</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                  <span>
-                    <strong className="text-blanc-casse">
-                      5 Sceaux d&apos;auteur par an
-                    </strong>
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                  <span>1 Sceau de création offert</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                  <span>Certification NFT compatible</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                  <span>Accès au Registre public</span>
-                </li>
-              </ul>
-            </div>
+            <EcoSocleCard
+              nom="Proofeus® intégral"
+              prix="19,90 €"
+              baseline="Identité + services + certification"
+              vedette
+              inclusJsx={
+                <>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>Tout ce que contient Proofeus®</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>
+                      <strong className="text-blanc-casse">
+                        5 Sceaux d&apos;auteur par an
+                      </strong>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>1 Sceau de création offert</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>Certification NFT compatible</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>Accès au Registre public</span>
+                  </li>
+                </>
+              }
+            />
           </div>
 
           <div className="mt-10 text-center">
@@ -311,6 +257,115 @@ export default function EcosystemePage() {
 /* ══════════════════════════════════════════════════════════════════
    Composants internes
    ══════════════════════════════════════════════════════════════════ */
+
+/**
+ * Card socle Proofeus® — header cyan lumineux avec prix + tag "à vie
+ * jusqu'au premier million" + corps sombre avec liste des services.
+ * Variante vedette : badge or "Recommandé" en angle top-right.
+ * Version simplifiée du SocleCard de /tarifs (pas de CTA, pas de chapo).
+ */
+function EcoSocleCard({
+  nom,
+  prix,
+  baseline,
+  inclus,
+  inclusJsx,
+  vedette,
+}: {
+  nom: string;
+  prix: string;
+  baseline: string;
+  inclus?: string[];
+  inclusJsx?: React.ReactNode;
+  vedette?: boolean;
+}) {
+  const headerGradient = vedette
+    ? "linear-gradient(140deg, #3fd4d9 0%, #4ee0e5 40%, #6ce9ec 100%)"
+    : "linear-gradient(140deg, #3fd4d9 0%, #46d8dc 100%)";
+
+  return (
+    <div
+      className="relative flex flex-col overflow-hidden rounded-lg border border-gris-sombre"
+      style={
+        vedette
+          ? { boxShadow: "0 28px 60px -20px rgba(63,212,217,0.35)" }
+          : { boxShadow: "0 20px 48px -18px rgba(0,0,0,0.55)" }
+      }
+    >
+      <div
+        className="relative px-8 pb-8 pt-10 md:px-10 md:pb-10 md:pt-12"
+        style={{ background: headerGradient }}
+      >
+        {vedette && (
+          <span
+            className="absolute right-4 top-4 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur"
+            style={{
+              color: "#0d0d10",
+              borderColor: "rgba(13,13,16,0.4)",
+              background: "rgba(255,255,255,0.35)",
+            }}
+          >
+            Recommandé
+          </span>
+        )}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-40 blur-3xl"
+          style={{ background: "rgba(255,255,255,0.55)" }}
+        />
+        <p
+          className="relative text-xs font-bold uppercase tracking-widest"
+          style={{ color: "#0d0d10" }}
+        >
+          {nom}
+        </p>
+        <p
+          className="relative mt-2 text-sm"
+          style={{ color: "rgba(13,13,16,0.75)" }}
+        >
+          {baseline}
+        </p>
+        <div className="relative mt-6 flex items-baseline gap-1">
+          <span
+            className="font-light text-blanc-casse"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
+              lineHeight: 1,
+              textShadow: "0 2px 12px rgba(0,0,0,0.25)",
+            }}
+          >
+            {prix}
+          </span>
+          <span
+            className="text-sm font-medium"
+            style={{ color: "rgba(13,13,16,0.75)" }}
+          >
+            /an
+          </span>
+        </div>
+        <p
+          className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.24em]"
+          style={{ color: "rgba(13,13,16,0.7)" }}
+        >
+          À vie jusqu&apos;au premier million
+        </p>
+      </div>
+
+      <ul className="flex flex-1 flex-col space-y-2 bg-noir-profond p-8 text-sm leading-relaxed text-blanc-casse/90 md:p-10">
+        {inclusJsx
+          ? inclusJsx
+          : inclus?.map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+      </ul>
+    </div>
+  );
+}
 
 function FamilleDetail({
   titre,

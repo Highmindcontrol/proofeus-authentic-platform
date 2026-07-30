@@ -564,79 +564,124 @@ function SocleCard({
   ctaHref: string;
   vedette?: boolean;
 }) {
+  const headerGradient = vedette
+    ? "linear-gradient(140deg, #3fd4d9 0%, #4ee0e5 40%, #6ce9ec 100%)"
+    : "linear-gradient(140deg, #3fd4d9 0%, #46d8dc 100%)";
+
   return (
     <div
-      className={`relative flex flex-col rounded-sm border p-8 md:p-10 ${
+      className={`relative flex flex-col overflow-hidden rounded-lg border shadow-[0_28px_60px_-20px_rgba(0,0,0,0.55)] ${
         vedette
-          ? "border-cyan-proofeus/60 bg-noir-profond shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)]"
-          : "border-gris-sombre bg-noir-profond"
+          ? "border-cyan-proofeus/60"
+          : "border-gris-sombre"
       }`}
+      style={
+        vedette
+          ? { boxShadow: "0 28px 60px -20px rgba(63,212,217,0.35)" }
+          : undefined
+      }
     >
-      {vedette && (
-        <span
-          className="absolute right-4 top-4 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur"
-          style={{
-            color: "var(--color-or-authentic)",
-            borderColor: "rgba(201,161,63,0.55)",
-            background: "rgba(0,0,0,0.55)",
-          }}
-        >
-          Recommandé
-        </span>
-      )}
-      <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-        {nom}
-      </p>
-      <p className="mt-2 text-sm text-blanc-casse/70">{baseline}</p>
-
-      <div className="mt-6 flex items-baseline gap-1">
-        <span
-          className="font-light text-blanc-casse"
-          style={{
-            fontFamily:
-              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            fontSize: "clamp(2.75rem, 4.5vw, 4rem)",
-            lineHeight: 1,
-          }}
-        >
-          {prix}
-        </span>
-        <span className="text-sm text-gris-clair">/{cadence}</span>
-      </div>
-      <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-        à vie jusqu&apos;au premier million
-      </p>
-
-      <p className="mt-5 text-sm leading-relaxed text-gris-clair">{chapo}</p>
-
-      <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
-        {inclus.map((i) => (
-          <li key={i} className="flex items-start gap-2">
-            <span className="mt-0.5 text-cyan-proofeus">✓</span>
-            <span>{i}</span>
-          </li>
-        ))}
-      </ul>
-
-      {exclu && (
-        <p className="mt-4 rounded-sm border border-blanc-casse/15 bg-black/40 px-3 py-2 text-[11px] italic leading-relaxed text-blanc-casse/70">
-          {exclu}
-        </p>
-      )}
-
-      <a
-        href={ctaHref}
-        target="_blank"
-        rel="noopener"
-        className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${
-          vedette
-            ? "text-noir"
-            : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
-        }`}
-        style={vedette ? { background: "var(--color-cyan-proofeus)" } : undefined}
+      {/* Header cyan lumineux */}
+      <div
+        className="relative px-8 pb-8 pt-10 md:px-10 md:pb-10 md:pt-12"
+        style={{ background: headerGradient }}
       >
-        {ctaLabel}
-      </a>
+        {vedette && (
+          <span
+            className="absolute right-4 top-4 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur"
+            style={{
+              color: "#0d0d10",
+              borderColor: "rgba(13,13,16,0.4)",
+              background: "rgba(255,255,255,0.35)",
+            }}
+          >
+            Recommandé
+          </span>
+        )}
+
+        {/* Halo lumineux discret dans le header */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-40 blur-3xl"
+          style={{ background: "rgba(255,255,255,0.55)" }}
+        />
+
+        <p
+          className="relative text-xs font-bold uppercase tracking-widest"
+          style={{ color: "#0d0d10" }}
+        >
+          {nom}
+        </p>
+        <p
+          className="relative mt-2 text-sm"
+          style={{ color: "rgba(13,13,16,0.75)" }}
+        >
+          {baseline}
+        </p>
+
+        <div className="relative mt-6 flex items-baseline gap-1">
+          <span
+            className="font-light text-blanc-casse"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(3rem, 5vw, 4.5rem)",
+              lineHeight: 1,
+              textShadow: "0 2px 12px rgba(0,0,0,0.25)",
+            }}
+          >
+            {prix}
+          </span>
+          <span
+            className="text-sm font-medium"
+            style={{ color: "rgba(13,13,16,0.75)" }}
+          >
+            /{cadence}
+          </span>
+        </div>
+        <p
+          className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.24em]"
+          style={{ color: "rgba(13,13,16,0.7)" }}
+        >
+          À vie jusqu&apos;au premier million
+        </p>
+      </div>
+
+      {/* Corps sombre */}
+      <div className="flex flex-1 flex-col bg-noir-profond p-8 md:p-10">
+        <p className="text-sm leading-relaxed text-gris-clair">{chapo}</p>
+
+        <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
+          {inclus.map((i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="mt-0.5 text-cyan-proofeus">✓</span>
+              <span>{i}</span>
+            </li>
+          ))}
+        </ul>
+
+        {exclu && (
+          <p className="mt-4 rounded-sm border border-blanc-casse/15 bg-black/40 px-3 py-2 text-[11px] italic leading-relaxed text-blanc-casse/70">
+            {exclu}
+          </p>
+        )}
+
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener"
+          className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${
+            vedette
+              ? "text-noir"
+              : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
+          }`}
+          style={
+            vedette ? { background: "var(--color-cyan-proofeus)" } : undefined
+          }
+        >
+          {ctaLabel}
+        </a>
+      </div>
     </div>
   );
 }
