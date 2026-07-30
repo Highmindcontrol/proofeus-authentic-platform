@@ -198,7 +198,7 @@ export default function TarifsPage() {
               nom="Proofeus®"
               prix="14,90 €"
               cadence="an"
-              baseline="Identité + services personnels"
+              baseline="Inclus : identité + services personnels"
               chapo="Pour tous ceux qui veulent une identité biométrique souveraine et les services personnels de l'écosystème."
               inclus={[
                 "Sceau d'humanité biométrique",
@@ -223,7 +223,7 @@ export default function TarifsPage() {
               prix="19,90 €"
               cadence="an"
               vedette
-              baseline="Identité + services + certification"
+              baseline="Inclus : identité + services personnels + certification + Proofeus Authentic®"
               chapo="Pour ceux qui veulent tout Proofeus® ET certifier occasionnellement leurs œuvres. Cinq Sceaux d'auteur par an inclus."
               inclus={[
                 "Tout ce que contient Proofeus®",
@@ -564,24 +564,24 @@ function SocleCard({
   ctaHref: string;
   vedette?: boolean;
 }) {
+  // Gradient qui descend du cyan clair vers un cyan très sombre
+  // (transition douce vers le corps anthracite).
   const headerGradient = vedette
-    ? "linear-gradient(140deg, #3fd4d9 0%, #4ee0e5 40%, #6ce9ec 100%)"
-    : "linear-gradient(140deg, #3fd4d9 0%, #46d8dc 100%)";
+    ? "linear-gradient(180deg, #4ee0e5 0%, #3fd4d9 30%, #2aa2a6 70%, #1a4a4c 100%)"
+    : "linear-gradient(180deg, #3fd4d9 0%, #2ba8ac 55%, #16484a 100%)";
 
   return (
     <div
-      className={`relative flex flex-col overflow-hidden rounded-lg border shadow-[0_28px_60px_-20px_rgba(0,0,0,0.55)] ${
-        vedette
-          ? "border-cyan-proofeus/60"
-          : "border-gris-sombre"
+      className={`relative flex flex-col overflow-hidden rounded-lg border ${
+        vedette ? "border-cyan-proofeus/60" : "border-gris-sombre"
       }`}
       style={
         vedette
           ? { boxShadow: "0 28px 60px -20px rgba(63,212,217,0.35)" }
-          : undefined
+          : { boxShadow: "0 20px 48px -18px rgba(0,0,0,0.55)" }
       }
     >
-      {/* Header cyan lumineux */}
+      {/* Header cyan dégradé vers cyan sombre */}
       <div
         className="relative px-8 pb-8 pt-10 md:px-10 md:pb-10 md:pt-12"
         style={{ background: headerGradient }}
@@ -599,27 +599,35 @@ function SocleCard({
           </span>
         )}
 
-        {/* Halo lumineux discret dans le header */}
+        {/* Halo lumineux blanc dans le coin haut */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-40 blur-3xl"
-          style={{ background: "rgba(255,255,255,0.55)" }}
+          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-45 blur-3xl"
+          style={{ background: "rgba(255,255,255,0.6)" }}
         />
 
-        <p
-          className="relative text-xs font-bold uppercase tracking-widest"
-          style={{ color: "#0d0d10" }}
+        {/* Nom du forfait — gros, serif, casse normale */}
+        <h3
+          className="relative font-light tracking-[-0.01em]"
+          style={{
+            fontFamily:
+              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(1.6rem, 2.6vw, 2.15rem)",
+            lineHeight: 1.15,
+            color: "#0d0d10",
+          }}
         >
-          {nom}
-        </p>
+          Forfait {renderNomWithR(nom)}
+        </h3>
+
         <p
-          className="relative mt-2 text-sm"
+          className="relative mt-3 text-sm leading-snug"
           style={{ color: "rgba(13,13,16,0.75)" }}
         >
           {baseline}
         </p>
 
-        <div className="relative mt-6 flex items-baseline gap-1">
+        <div className="relative mt-8 flex items-baseline gap-1">
           <span
             className="font-light text-blanc-casse"
             style={{
@@ -627,21 +635,21 @@ function SocleCard({
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(3rem, 5vw, 4.5rem)",
               lineHeight: 1,
-              textShadow: "0 2px 12px rgba(0,0,0,0.25)",
+              textShadow: "0 2px 12px rgba(0,0,0,0.3)",
             }}
           >
             {prix}
           </span>
           <span
             className="text-sm font-medium"
-            style={{ color: "rgba(13,13,16,0.75)" }}
+            style={{ color: "rgba(255,255,255,0.85)" }}
           >
             /{cadence}
           </span>
         </div>
         <p
           className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.24em]"
-          style={{ color: "rgba(13,13,16,0.7)" }}
+          style={{ color: "rgba(255,255,255,0.9)" }}
         >
           À vie jusqu&apos;au premier million
         </p>
@@ -683,6 +691,31 @@ function SocleCard({
         </a>
       </div>
     </div>
+  );
+}
+
+/**
+ * Rend le nom du forfait en gérant le ® en superscript propre.
+ * Exemples : "Proofeus®" → "Proofeus" + <sup>®</sup>
+ *            "Proofeus® intégral" → "Proofeus" + <sup>®</sup> + " intégral"
+ */
+function renderNomWithR(nom: string) {
+  const parts = nom.split("®");
+  return (
+    <>
+      {parts[0]}
+      <sup
+        style={{
+          fontSize: "0.42em",
+          verticalAlign: "0.8em",
+          fontWeight: 400,
+          marginLeft: "0.05em",
+        }}
+      >
+        ®
+      </sup>
+      {parts[1]}
+    </>
   );
 }
 

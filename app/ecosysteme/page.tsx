@@ -146,7 +146,7 @@ export default function EcosystemePage() {
             <EcoSocleCard
               nom="Proofeus®"
               prix="14,90 €"
-              baseline="Identité + services personnels"
+              baseline="Inclus : identité + services personnels"
               inclus={[
                 "Sceau d'humanité biométrique",
                 "Messagerie chiffrée E2E",
@@ -163,7 +163,7 @@ export default function EcosystemePage() {
             <EcoSocleCard
               nom="Proofeus® intégral"
               prix="19,90 €"
-              baseline="Identité + services + certification"
+              baseline="Inclus : identité + services personnels + certification + Proofeus Authentic®"
               vedette
               inclusJsx={
                 <>
@@ -280,8 +280,8 @@ function EcoSocleCard({
   vedette?: boolean;
 }) {
   const headerGradient = vedette
-    ? "linear-gradient(140deg, #3fd4d9 0%, #4ee0e5 40%, #6ce9ec 100%)"
-    : "linear-gradient(140deg, #3fd4d9 0%, #46d8dc 100%)";
+    ? "linear-gradient(180deg, #4ee0e5 0%, #3fd4d9 30%, #2aa2a6 70%, #1a4a4c 100%)"
+    : "linear-gradient(180deg, #3fd4d9 0%, #2ba8ac 55%, #16484a 100%)";
 
   return (
     <div
@@ -310,22 +310,32 @@ function EcoSocleCard({
         )}
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-40 blur-3xl"
-          style={{ background: "rgba(255,255,255,0.55)" }}
+          className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-45 blur-3xl"
+          style={{ background: "rgba(255,255,255,0.6)" }}
         />
-        <p
-          className="relative text-xs font-bold uppercase tracking-widest"
-          style={{ color: "#0d0d10" }}
+
+        {/* Nom du forfait — gros, serif */}
+        <h3
+          className="relative font-light tracking-[-0.01em]"
+          style={{
+            fontFamily:
+              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
+            lineHeight: 1.15,
+            color: "#0d0d10",
+          }}
         >
-          {nom}
-        </p>
+          Forfait {renderNomWithR(nom)}
+        </h3>
+
         <p
-          className="relative mt-2 text-sm"
+          className="relative mt-3 text-sm leading-snug"
           style={{ color: "rgba(13,13,16,0.75)" }}
         >
           {baseline}
         </p>
-        <div className="relative mt-6 flex items-baseline gap-1">
+
+        <div className="relative mt-8 flex items-baseline gap-1">
           <span
             className="font-light text-blanc-casse"
             style={{
@@ -333,21 +343,21 @@ function EcoSocleCard({
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(2.75rem, 4.5vw, 3.75rem)",
               lineHeight: 1,
-              textShadow: "0 2px 12px rgba(0,0,0,0.25)",
+              textShadow: "0 2px 12px rgba(0,0,0,0.3)",
             }}
           >
             {prix}
           </span>
           <span
             className="text-sm font-medium"
-            style={{ color: "rgba(13,13,16,0.75)" }}
+            style={{ color: "rgba(255,255,255,0.85)" }}
           >
             /an
           </span>
         </div>
         <p
           className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.24em]"
-          style={{ color: "rgba(13,13,16,0.7)" }}
+          style={{ color: "rgba(255,255,255,0.9)" }}
         >
           À vie jusqu&apos;au premier million
         </p>
@@ -364,6 +374,29 @@ function EcoSocleCard({
             ))}
       </ul>
     </div>
+  );
+}
+
+/**
+ * Rend le nom du forfait en gérant le ® en superscript propre.
+ */
+function renderNomWithR(nom: string) {
+  const parts = nom.split("®");
+  return (
+    <>
+      {parts[0]}
+      <sup
+        style={{
+          fontSize: "0.42em",
+          verticalAlign: "0.8em",
+          fontWeight: 400,
+          marginLeft: "0.05em",
+        }}
+      >
+        ®
+      </sup>
+      {parts[1]}
+    </>
   );
 }
 
