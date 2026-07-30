@@ -74,7 +74,7 @@ export default function ArtistesPage() {
       {/* ═══════════════════════════════════════════════════════════
           1. HERO — image atelier + phrase-déclaration
           ═══════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -89,11 +89,11 @@ export default function ArtistesPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
+              "linear-gradient(to bottom, rgba(13,13,16,0.35) 0%, rgba(13,13,16,0.55) 45%, rgba(13,13,16,0.5) 55%, rgba(13,13,16,0.95) 100%)",
           }}
         />
 
-        <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus/85">
             Aux créateurs
           </p>
@@ -102,25 +102,28 @@ export default function ArtistesPage() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.75rem, 3.8vw, 3.25rem)",
-              lineHeight: 1.15,
-              textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              fontSize: "clamp(1.5rem, 3.4vw, 3rem)",
+              lineHeight: 1.2,
+              textShadow: "0 2px 24px rgba(0,0,0,0.65)",
             }}
           >
-            Chaque œuvre commence par un geste,
-            <br />
-            Proofeus
-            <sup
-              style={{
-                fontSize: "0.32em",
-                verticalAlign: "0.9em",
-                fontWeight: 400,
-                marginLeft: "0.05em",
-              }}
-            >
-              ®
-            </sup>{" "}
-            protège ce qui naît ici.
+            <span className="block md:whitespace-nowrap">
+              Chaque œuvre commence par un geste,
+            </span>
+            <span className="block md:whitespace-nowrap">
+              Proofeus
+              <sup
+                style={{
+                  fontSize: "0.32em",
+                  verticalAlign: "0.9em",
+                  fontWeight: 400,
+                  marginLeft: "0.05em",
+                }}
+              >
+                ®
+              </sup>{" "}
+              protège ce qui naît ici.
+            </span>
           </h1>
         </div>
       </section>
