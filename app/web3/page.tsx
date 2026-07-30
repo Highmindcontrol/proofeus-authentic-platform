@@ -98,7 +98,7 @@ export default function Web3Page() {
             visible dans l'image (approx. 40% depuis la gauche, 42% depuis
             le haut). Ajustable si besoin. */}
         <div
-          className="absolute z-10 w-full max-w-xl px-6 text-center"
+          className="absolute z-10 px-6 text-center"
           style={{
             top: "42%",
             left: "40%",
@@ -109,11 +109,11 @@ export default function Web3Page() {
             Pour le monde Web3
           </p>
           <h1
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
+            className="mt-6 whitespace-nowrap font-light tracking-[-0.02em] text-blanc-casse"
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
+              fontSize: "clamp(1.9rem, 4.2vw, 4rem)",
               lineHeight: 1.05,
               textShadow: "0 2px 32px rgba(0,0,0,0.75)",
             }}
