@@ -56,9 +56,9 @@ const ART_ARTISTES: Formule[] = [
       "Pour l'artiste à production intense. Sceaux illimités, tous médiums, tous formats, en supplément de l'intégral.",
     inclus: [
       "Sceaux d'auteur illimités",
-      "Certification post-mortem (héritiers)",
-      "Contact direct fondateur",
-      "Audit annuel de provenance",
+      "Certification NFT illimitée",
+      "Tous médiums (peinture, sculpture, photo, vidéo, art numérique)",
+      "Support prioritaire humain",
     ],
   },
 ];
