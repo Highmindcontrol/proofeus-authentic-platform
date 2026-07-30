@@ -246,7 +246,18 @@ export default function AuthenticLanding() {
                 }}
               >
                 Une seule identité, tous les services des écosystèmes
-                Proofeus® &amp; Verbalock.
+                Proofeus
+                <sup
+                  style={{
+                    fontSize: "0.42em",
+                    verticalAlign: "0.8em",
+                    fontWeight: 400,
+                    marginLeft: "0.05em",
+                  }}
+                >
+                  ®
+                </sup>{" "}
+                &amp; Verbalock.
               </h3>
               <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
                 Votre Sceau est votre clé unique dans l&apos;ensemble des
