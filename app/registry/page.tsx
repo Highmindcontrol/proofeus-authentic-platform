@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PastilleCarousel } from "@/components/PastilleCarousel";
+import { RegistrySearch } from "@/components/RegistrySearch";
 
 export const metadata: Metadata = {
   title: "Le Registre — Proofeus Authentic®",
@@ -135,6 +136,14 @@ export default function RegistryPage() {
               Le grand livre public des œuvres scellées.
             </span>
           </h1>
+
+          {/* Moteur de recherche direct dans le hero */}
+          <p className="mt-10 text-sm text-blanc-casse/80">
+            Vérifier une œuvre au Registre
+          </p>
+          <div className="mt-4">
+            <RegistrySearch />
+          </div>
         </div>
       </section>
 
