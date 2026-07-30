@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { AppStoreBadges } from "@/components/AppStoreBadges";
 import { BandeauPaiementStripe } from "@/components/PaiementLogos";
 
@@ -120,26 +119,28 @@ export default function TarifsPage() {
   return (
     <main>
       {/* ═══════════════════════════════════════════════════════════
-          1. HERO — fond noir + Sceau filigrane + titre
+          1. HERO — image Sceau Cristal + titre + badges
           ═══════════════════════════════════════════════════════════ */}
-      <section
-        className="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-6 py-24 md:py-32"
-        style={{ background: "#000" }}
-      >
+      <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
-        >
-          <Image
-            src="/sceau-canonique.png"
-            alt=""
-            width={640}
-            height={640}
-            priority
-          />
-        </div>
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/salle-tarifs.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 35%, rgba(13,13,16,0.65) 70%, rgba(13,13,16,0.98) 100%)",
+          }}
+        />
 
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus/85">
             Nos tarifs
           </p>
@@ -150,20 +151,22 @@ export default function TarifsPage() {
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(2rem, 4.5vw, 4rem)",
               lineHeight: 1.1,
+              textShadow: "0 2px 24px rgba(0,0,0,0.7)",
             }}
           >
             Deux socles à vie. Zéro commission.
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-blanc-casse/90 md:text-lg">
             Proofeus® pour l&apos;identité biométrique et les services
             personnels. Proofeus® intégral pour ceux qui certifient aussi
             leurs œuvres. Tarifs de lancement verrouillés à vie pour le
             premier million d&apos;utilisateurs.
           </p>
+        </div>
 
-          <div className="mt-12">
-            <AppStoreBadges compact />
-          </div>
+        {/* Badges App Store / Google Play — pied du hero, centré */}
+        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 px-6 md:bottom-12">
+          <AppStoreBadges compact />
         </div>
       </section>
 
@@ -434,7 +437,18 @@ export default function TarifsPage() {
                 lineHeight: 1.2,
               }}
             >
-              Payer chez Proofeus®, c&apos;est payer en toute confiance.
+              Payer chez Proofeus
+              <sup
+                style={{
+                  fontSize: "0.42em",
+                  verticalAlign: "0.8em",
+                  fontWeight: 400,
+                  marginLeft: "0.05em",
+                }}
+              >
+                ®
+              </sup>
+              , c&apos;est payer en toute confiance.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
               Nous ne stockons ni votre numéro de carte, ni votre historique
