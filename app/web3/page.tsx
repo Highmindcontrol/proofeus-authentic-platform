@@ -102,14 +102,12 @@ export default function Web3Page() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.6rem, 3.4vw, 3rem)",
-              lineHeight: 1.2,
+              fontSize: "clamp(2.5rem, 5.5vw, 5rem)",
+              lineHeight: 1.05,
               textShadow: "0 2px 24px rgba(0,0,0,0.65)",
             }}
           >
-            <span className="block md:whitespace-nowrap">
-              NFT : problème résolu.
-            </span>
+            NFT : problème résolu.
           </h1>
         </div>
       </section>
