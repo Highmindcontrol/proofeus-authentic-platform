@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PastilleCarousel } from "@/components/PastilleCarousel";
 
 export const metadata: Metadata = {
   title: "Artistes — Proofeus Authentic®",
@@ -246,20 +247,8 @@ export default function ArtistesPage() {
             </h2>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {BENEFICES.map((b) => (
-              <div
-                key={b.titre}
-                className="rounded-sm border border-gris-sombre bg-noir-profond p-6"
-              >
-                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                  {b.titre}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-gris-clair">
-                  {b.corps}
-                </p>
-              </div>
-            ))}
+          <div className="mt-16">
+            <PastilleCarousel items={BENEFICES} />
           </div>
         </div>
       </section>
