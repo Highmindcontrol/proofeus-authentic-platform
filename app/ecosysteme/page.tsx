@@ -110,15 +110,13 @@ export default function EcosystemePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          4. PROOFEUS® INTÉGRAL — anthracite (14,90 €/an à vie unique)
+          4. LES DEUX SOCLES — anthracite (14,90 € / 19,90 €)
           ═══════════════════════════════════════════════════════════ */}
       <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Proofeus
-              <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>{" "}
-              Intégral
+              Deux socles à vie
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -129,92 +127,136 @@ export default function EcosystemePage() {
                 lineHeight: 1.2,
               }}
             >
-              Un seul tarif. Tout l&apos;écosystème. À vie.
+              Un tarif pour l&apos;identité. Un tarif pour ceux qui
+              certifient aussi.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
-              14,90 €/an, verrouillés à vie pour tous les souscripteurs.
-              Une seule et unique licence qui donne accès à l&apos;ensemble
-              des services de l&apos;écosystème Proofeus
+              Proofeus
               <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>{" "}
-              / Verbalock / Coryphea
-              <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>.
+              pour l&apos;identité biométrique et les services personnels.
+              Proofeus
+              <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>{" "}
+              intégral pour ceux qui certifient aussi leurs œuvres. Chacun
+              verrouillé à vie.
             </p>
           </div>
 
-          <div className="mx-auto mt-14 max-w-3xl overflow-hidden rounded-sm border border-cyan-proofeus/60 bg-noir-profond shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)]">
-            <div className="grid gap-8 p-8 md:grid-cols-[auto_1fr] md:gap-12 md:p-12">
-              {/* Prix */}
-              <div className="flex flex-col items-center justify-center border-b border-cyan-proofeus/20 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-12">
-                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                  Proofeus
-                  <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>
-                    ®
-                  </sup>{" "}
-                  intégral
-                </p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span
-                    className="font-light text-blanc-casse"
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                      fontSize: "clamp(3rem, 5vw, 4.5rem)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    14,90 €
-                  </span>
-                  <span className="text-sm text-gris-clair">/an</span>
-                </div>
-                <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                  à vie
-                </p>
+          <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
+            {/* Proofeus 14,90 € */}
+            <div className="flex flex-col rounded-sm border border-gris-sombre bg-noir-profond p-8 md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+                Proofeus®
+              </p>
+              <p className="mt-2 text-sm text-blanc-casse/70">
+                Identité + services personnels
+              </p>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span
+                  className="font-light text-blanc-casse"
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
+                    lineHeight: 1,
+                  }}
+                >
+                  14,90 €
+                </span>
+                <span className="text-sm text-gris-clair">/an</span>
               </div>
+              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
+                à vie
+              </p>
+              <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
+                {[
+                  "Sceau d'humanité biométrique",
+                  "Messagerie chiffrée E2E",
+                  "Cercles de confiance",
+                  "Wallet mots de passe + crypto",
+                  "Paiement humain à humain",
+                  "Testament numérique + legs",
+                  "Boutons d'alerte Squad/Help",
+                  "Coryphea® — assistante IA",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* Ce qui est inclus */}
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-blanc-casse/80">
-                  Tout l&apos;écosystème inclus
-                </p>
-                <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-blanc-casse/90 sm:grid-cols-2">
-                  {[
-                    "Sceau d'humanité biométrique",
-                    "Messagerie chiffrée E2E",
-                    "Cercles de confiance",
-                    "Wallet mots de passe",
-                    "Wallet crypto sans seed",
-                    "Paiement humain à humain",
-                    "Testament numérique",
-                    "Boutons d'alerte Squad/Help",
-                    "Coryphea® — assistante IA",
-                    "2 Sceaux (dont 1 à offrir)",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 rounded-sm border border-cyan-proofeus/30 bg-black/40 px-4 py-3 text-xs leading-relaxed text-blanc-casse/85">
-                  Le socle seul <strong className="font-semibold text-cyan-proofeus">ne donne pas accès</strong> à Proofeus Authentic®. Pour certifier des œuvres, choisissez un supplément Art — le socle est alors automatiquement inclus.
-                </p>
-                <div className="mt-6">
-                  <Link
-                    href="/tarifs"
-                    className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
-                    style={{ background: "var(--color-cyan-proofeus)" }}
-                  >
-                    Voir les formules Art
-                  </Link>
-                </div>
+            {/* Proofeus intégral 19,90 € — vedette */}
+            <div className="flex flex-col rounded-sm border border-cyan-proofeus/60 bg-noir-profond p-8 shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)] md:p-10">
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-proofeus">
+                Recommandé pour Authentic
+              </p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+                Proofeus® intégral
+              </p>
+              <p className="mt-2 text-sm text-blanc-casse/70">
+                Identité + services + certification
+              </p>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span
+                  className="font-light text-blanc-casse"
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
+                    lineHeight: 1,
+                  }}
+                >
+                  19,90 €
+                </span>
+                <span className="text-sm text-gris-clair">/an</span>
               </div>
+              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
+                à vie
+              </p>
+              <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                  <span>Tout ce que contient Proofeus®</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                  <span>
+                    <strong className="text-blanc-casse">
+                      5 Sceaux d&apos;auteur par an
+                    </strong>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                  <span>1 Sceau de création offert</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                  <span>Certification NFT compatible</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                  <span>Accès au Registre public</span>
+                </li>
+              </ul>
             </div>
           </div>
 
+          <div className="mt-10 text-center">
+            <Link
+              href="/tarifs"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
+              style={{ background: "var(--color-cyan-proofeus)" }}
+            >
+              Voir tous les tarifs (artistes + institutions)
+            </Link>
+          </div>
+
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic leading-relaxed text-gris-clair">
-            Pour la certification d&apos;œuvres physiques ou numériques, un
-            supplément Art s&apos;ajoute à ce socle unique — voir la page
-            Tarifs.
+            Les artistes qui certifient plus de 5 œuvres par an et les
+            institutions disposent de suppléments et forfaits dédiés, à
+            découvrir sur la page Tarifs.
           </p>
         </div>
       </section>

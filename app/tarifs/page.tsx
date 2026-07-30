@@ -6,12 +6,14 @@ import { AppStoreBadges } from "@/components/AppStoreBadges";
 export const metadata: Metadata = {
   title: "Tarifs — Proofeus Authentic®",
   description:
-    "Un seul socle Proofeus® intégral à 14,90 €/an à vie qui donne accès à tout l'écosystème. Sur Proofeus Authentic®, un supplément Art selon votre volume d'œuvres. Aucune commission de vente, jamais.",
+    "Deux socles Proofeus® à vie — 14,90 €/an pour l'identité, 19,90 €/an pour l'intégral avec certification d'œuvres. Suppléments Art pour artistes prolifiques, forfaits dédiés pour institutions. Aucune commission de vente.",
 };
 
 /* ══════════════════════════════════════════════════════════════════
-   MODULE ART ARTISTES — supplément à ajouter au Proofeus® intégral
+   DONNÉES
    ══════════════════════════════════════════════════════════════════ */
+
+const SOCLE_INTEGRAL = 19.9;
 
 type Formule = {
   nom: string;
@@ -20,40 +22,24 @@ type Formule = {
   chapo: string;
   inclus: string[];
   vedette?: boolean;
-  /** Prix numérique du supplément Art (permet de calculer le total avec socle). */
+  /** Montant numérique du supplément (permet le calcul total avec socle). */
   supplement?: number;
-  /** Slug pour le lien de souscription vers proofeus.com. */
+  /** Prix total autonome (pour les institutions qui incluent leur socle). */
+  totalAutonome?: number;
   slug?: string;
 };
 
-const SOCLE_PRIX = 14.9;
-
 const ART_ARTISTES: Formule[] = [
   {
-    nom: "Art débutant",
-    prix: "29 €",
-    cadence: "an",
-    supplement: 29,
-    slug: "art-debutant",
-    chapo:
-      "Pour l'artiste qui commence à certifier ses œuvres. Jusqu'à cinq Sceaux d'auteur par an.",
-    inclus: [
-      "Jusqu'à 5 Sceaux d'œuvres par an",
-      "Plaque compagnon numérotée",
-      "Inscription au Registre public",
-      "Support par email",
-    ],
-  },
-  {
-    nom: "Art actif",
-    prix: "89 €",
+    nom: "Artiste actif",
+    prix: "+89 €",
     cadence: "an",
     supplement: 89,
     slug: "art-actif",
     chapo:
-      "Pour l'artiste en activité régulière. Vingt Sceaux d'auteur par an, physique et numérique.",
+      "Pour l'artiste en activité régulière. Vingt Sceaux d'auteur par an, physique et numérique, en supplément de l'intégral.",
     inclus: [
-      "Jusqu'à 20 Sceaux d'œuvres par an",
+      "Jusqu'à 20 Sceaux d'auteur par an",
       "Certification NFT incluse",
       "Support prioritaire",
       "Accès aux marketplaces partenaires",
@@ -61,15 +47,15 @@ const ART_ARTISTES: Formule[] = [
     vedette: true,
   },
   {
-    nom: "Art pro",
-    prix: "249 €",
+    nom: "Artiste pro",
+    prix: "+249 €",
     cadence: "an",
     supplement: 249,
     slug: "art-pro",
     chapo:
-      "Pour l'artiste à production intense. Sceaux illimités, tous médiums, tous formats.",
+      "Pour l'artiste à production intense. Sceaux illimités, tous médiums, tous formats, en supplément de l'intégral.",
     inclus: [
-      "Sceaux d'œuvres illimités",
+      "Sceaux d'auteur illimités",
       "Certification post-mortem (héritiers)",
       "Contact direct fondateur",
       "Audit annuel de provenance",
@@ -82,10 +68,10 @@ const ART_INSTITUTIONS: Formule[] = [
     nom: "Galerie émergente",
     prix: "990 €",
     cadence: "an",
-    supplement: 990,
+    totalAutonome: 990,
     slug: "art-inst-emergente",
     chapo:
-      "Jeunes galeries qui exposent moins de cinquante œuvres par an. Interface conservateur incluse.",
+      "Jeunes galeries qui exposent moins de cinquante œuvres par an. Socle inclus.",
     inclus: [
       "Jusqu'à 50 Sceaux d'auteur par an",
       "Interface conservateur",
@@ -97,10 +83,10 @@ const ART_INSTITUTIONS: Formule[] = [
     nom: "Galerie établie",
     prix: "2 490 €",
     cadence: "an",
-    supplement: 2490,
+    totalAutonome: 2490,
     slug: "art-inst-etablie",
     chapo:
-      "Galeries à fort volume, fondations et maisons de vente régionales.",
+      "Galeries à fort volume, fondations et maisons de vente régionales. Socle inclus.",
     inclus: [
       "Jusqu'à 200 Sceaux d'auteur par an",
       "Intégration Gaugista® optionnelle",
@@ -165,15 +151,13 @@ export default function TarifsPage() {
               lineHeight: 1.1,
             }}
           >
-            Un socle unique. Un supplément selon vos œuvres.
-            <br />
-            Aucune commission, jamais.
+            Deux socles à vie. Zéro commission.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-            Proofeus Authentic® ne prend aucune commission sur la vente de
-            vos œuvres. Vous payez le socle Proofeus® intégral pour votre
-            identité biométrique, puis un supplément Art pour la
-            certification — c&apos;est tout.
+            Proofeus® pour l&apos;identité biométrique et les services
+            personnels. Proofeus® intégral pour ceux qui certifient aussi
+            leurs œuvres. Un seul choix à faire — le tarif est verrouillé
+            à vie.
           </p>
 
           <div className="mt-12">
@@ -183,13 +167,13 @@ export default function TarifsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          2. LE SOCLE — PROOFEUS® INTÉGRAL — anthracite
+          2. LES DEUX SOCLES — anthracite
           ═══════════════════════════════════════════════════════════ */}
       <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Étape 1 · Le socle
+              Étape 1 · Choisir votre socle
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -200,77 +184,66 @@ export default function TarifsPage() {
                 lineHeight: 1.2,
               }}
             >
-              Proofeus® intégral, 14,90 €/an à vie.
+              Deux formules, chacune verrouillée à vie.
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Un seul tarif, pour tout le monde, verrouillé à vie. Il donne
-              accès à l&apos;ensemble des services de l&apos;écosystème —
-              identité biométrique, messagerie chiffrée, wallets Verbalock,
-              testament, alerte, Coryphea®.
-            </p>
           </div>
 
-          <div className="mx-auto mt-14 max-w-3xl overflow-hidden rounded-sm border border-cyan-proofeus/60 bg-noir-profond shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)]">
-            <div className="grid gap-8 p-8 md:grid-cols-[auto_1fr] md:gap-12 md:p-12">
-              {/* Prix */}
-              <div className="flex flex-col items-center justify-center border-b border-cyan-proofeus/20 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-12">
-                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                  Proofeus® intégral
-                </p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span
-                    className="font-light text-blanc-casse"
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                      fontSize: "clamp(3rem, 5vw, 4.5rem)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    14,90 €
-                  </span>
-                  <span className="text-sm text-gris-clair">/an</span>
-                </div>
-                <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                  à vie
-                </p>
-              </div>
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            {/* Proofeus 14,90 € */}
+            <SocleCard
+              nom="Proofeus®"
+              prix="14,90 €"
+              cadence="an"
+              baseline="Identité + services personnels"
+              chapo="Pour tous ceux qui veulent une identité biométrique souveraine et les services personnels de l'écosystème."
+              inclus={[
+                "Sceau d'humanité biométrique",
+                "Messagerie chiffrée E2E",
+                "Cercles de confiance",
+                "Wallet mots de passe",
+                "Wallet crypto sans seed",
+                "Paiement humain à humain",
+                "Testament numérique",
+                "Boutons d'alerte Squad/Help",
+                "Coryphea® — assistante IA",
+                "2 Sceaux (dont 1 à offrir)",
+              ]}
+              exclu="Certification d'œuvres non incluse"
+              ctaLabel="Souscrire Proofeus® ↗"
+              ctaHref="https://proofeus.com/inscription?pkg=proofeus"
+            />
 
-              {/* Ce qui est inclus */}
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-blanc-casse/80">
-                  Tout l&apos;écosystème inclus, sauf Authentic
-                </p>
-                <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-blanc-casse/90 sm:grid-cols-2">
-                  {[
-                    "Sceau d'humanité biométrique",
-                    "Messagerie chiffrée E2E",
-                    "Cercles de confiance",
-                    "Wallet mots de passe",
-                    "Wallet crypto sans seed",
-                    "Paiement humain à humain",
-                    "Testament numérique",
-                    "Boutons d'alerte Squad/Help",
-                    "Coryphea® — assistante IA",
-                    "2 Sceaux (dont 1 à offrir)",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-0.5 text-cyan-proofeus">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 rounded-sm border border-cyan-proofeus/30 bg-black/40 px-4 py-3 text-xs leading-relaxed text-blanc-casse/85">
-                  Le socle seul <strong className="font-semibold text-cyan-proofeus">ne donne pas accès</strong> à la certification d&apos;œuvres. Pour utiliser Proofeus Authentic®, choisissez votre supplément Art ci-dessous — le socle est alors automatiquement inclus dans votre souscription.
-                </p>
-              </div>
-            </div>
+            {/* Proofeus intégral 19,90 € */}
+            <SocleCard
+              nom="Proofeus® intégral"
+              prix="19,90 €"
+              cadence="an"
+              vedette
+              baseline="Identité + services + certification"
+              chapo="Pour ceux qui veulent tout Proofeus® ET certifier occasionnellement leurs œuvres. Cinq Sceaux d'auteur par an inclus."
+              inclus={[
+                "Tout ce que contient Proofeus®",
+                "5 Sceaux d'auteur par an",
+                "1 Sceau de création offert",
+                "Certification NFT compatible",
+                "Accès au Registre public",
+                "Support prioritaire",
+              ]}
+              ctaLabel="Souscrire Proofeus® intégral ↗"
+              ctaHref="https://proofeus.com/inscription?pkg=proofeus-integral"
+            />
           </div>
+
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs italic leading-relaxed text-gris-clair">
+            Les artistes qui certifient plus de cinq œuvres par an et les
+            institutions doivent choisir un supplément ou un forfait dédié
+            ci-dessous.
+          </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          3. SUPPLÉMENT ART — ARTISTES — bandeau noir
+          3. SUPPLÉMENTS ART ARTISTES — bandeau noir
           ═══════════════════════════════════════════════════════════ */}
       <section
         className="px-6 py-24 md:px-12 md:py-32"
@@ -279,7 +252,7 @@ export default function TarifsPage() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Étape 2 · Supplément Art
+              Étape 2a · Artistes prolifiques
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -290,17 +263,16 @@ export default function TarifsPage() {
                 lineHeight: 1.2,
               }}
             >
-              Pour les artistes.
+              Au-delà de cinq œuvres par an.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Trois suppléments selon votre volume, à ajouter à votre
-              Proofeus® intégral. Peintres, sculpteurs, photographes,
-              artistes numériques, vidéastes — un même Sceau d&apos;auteur
-              pour tous les médiums.
+              Suppléments à ajouter au socle Proofeus® intégral 19,90 €/an.
+              Peintres, sculpteurs, photographes, artistes numériques,
+              vidéastes — un même Sceau pour tous les médiums.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
             {ART_ARTISTES.map((f) => (
               <FormuleCard key={f.nom} {...f} />
             ))}
@@ -315,7 +287,7 @@ export default function TarifsPage() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Étape 2 · Institutions
+              Étape 2b · Institutions
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -329,9 +301,9 @@ export default function TarifsPage() {
               Pour les galeries, musées, fondations.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Forfaits dégressifs indexés sur le volume d&apos;œuvres
-              certifiées annuellement. Interface conservateur et protocole
-              post-mortem inclus dans toutes les formules.
+              Forfaits autonomes qui incluent le socle. Interface
+              conservateur et protocole post-mortem inclus dans toutes les
+              formules.
             </p>
           </div>
 
@@ -432,11 +404,17 @@ export default function TarifsPage() {
               Traitement des paiements
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
-              {["Stripe", "Visa", "Mastercard", "American Express", "Apple Pay", "Google Pay", "SEPA"].map(
-                (nom) => (
-                  <PaiementBadge key={nom} nom={nom} />
-                ),
-              )}
+              {[
+                "Stripe",
+                "Visa",
+                "Mastercard",
+                "American Express",
+                "Apple Pay",
+                "Google Pay",
+                "SEPA",
+              ].map((nom) => (
+                <PaiementBadge key={nom} nom={nom} />
+              ))}
             </div>
           </div>
 
@@ -463,7 +441,7 @@ export default function TarifsPage() {
             />
             <GarantieCard
               titre="Résiliation en un clic"
-              corps="Aucun engagement caché. Vous résiliez à tout moment le supplément Art. Le Proofeus® intégral reste actif tant que vous le souhaitez."
+              corps="Aucun engagement caché. Vous résiliez à tout moment. Vos socles souscrits restent à vie au tarif d'entrée."
             />
           </div>
         </div>
@@ -478,10 +456,10 @@ export default function TarifsPage() {
       >
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-8 text-sm italic leading-relaxed text-gris-clair">
-            Les suppléments Art présentés sont indicatifs et seront confirmés
-            à l&apos;ouverture publique de la plateforme. Le socle Proofeus®
-            intégral à 14,90 €/an est verrouillé à vie pour tous les
-            souscripteurs.
+            Les suppléments Art présentés sont indicatifs et seront
+            confirmés à l&apos;ouverture publique de la plateforme. Les
+            socles Proofeus® (14,90 €/an) et Proofeus® intégral (19,90 €/an)
+            sont verrouillés à vie pour tous les souscripteurs.
           </p>
 
           <h2
@@ -519,6 +497,99 @@ export default function TarifsPage() {
    Composants
    ══════════════════════════════════════════════════════════════════ */
 
+function SocleCard({
+  nom,
+  prix,
+  cadence,
+  baseline,
+  chapo,
+  inclus,
+  exclu,
+  ctaLabel,
+  ctaHref,
+  vedette,
+}: {
+  nom: string;
+  prix: string;
+  cadence: string;
+  baseline: string;
+  chapo: string;
+  inclus: string[];
+  exclu?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  vedette?: boolean;
+}) {
+  return (
+    <div
+      className={`flex flex-col rounded-sm border p-8 md:p-10 ${
+        vedette
+          ? "border-cyan-proofeus/60 bg-noir-profond shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)]"
+          : "border-gris-sombre bg-noir-profond"
+      }`}
+    >
+      {vedette && (
+        <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-proofeus">
+          Recommandé
+        </p>
+      )}
+      <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+        {nom}
+      </p>
+      <p className="mt-2 text-sm text-blanc-casse/70">{baseline}</p>
+
+      <div className="mt-6 flex items-baseline gap-1">
+        <span
+          className="font-light text-blanc-casse"
+          style={{
+            fontFamily:
+              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+            fontSize: "clamp(2.75rem, 4.5vw, 4rem)",
+            lineHeight: 1,
+          }}
+        >
+          {prix}
+        </span>
+        <span className="text-sm text-gris-clair">/{cadence}</span>
+      </div>
+      <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
+        à vie
+      </p>
+
+      <p className="mt-5 text-sm leading-relaxed text-gris-clair">{chapo}</p>
+
+      <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
+        {inclus.map((i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-0.5 text-cyan-proofeus">✓</span>
+            <span>{i}</span>
+          </li>
+        ))}
+      </ul>
+
+      {exclu && (
+        <p className="mt-4 rounded-sm border border-blanc-casse/15 bg-black/40 px-3 py-2 text-[11px] italic leading-relaxed text-blanc-casse/70">
+          {exclu}
+        </p>
+      )}
+
+      <a
+        href={ctaHref}
+        target="_blank"
+        rel="noopener"
+        className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${
+          vedette
+            ? "text-noir"
+            : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
+        }`}
+        style={vedette ? { background: "var(--color-cyan-proofeus)" } : undefined}
+      >
+        {ctaLabel}
+      </a>
+    </div>
+  );
+}
+
 function FormuleCard({
   nom,
   prix,
@@ -527,9 +598,16 @@ function FormuleCard({
   inclus,
   vedette,
   supplement,
+  totalAutonome,
   slug,
 }: Formule) {
-  const total = supplement !== undefined ? supplement + SOCLE_PRIX : null;
+  const total =
+    supplement !== undefined
+      ? supplement + SOCLE_INTEGRAL
+      : totalAutonome !== undefined
+        ? totalAutonome
+        : null;
+
   const totalFmt =
     total !== null
       ? total.toLocaleString("fr-FR", {
@@ -568,7 +646,8 @@ function FormuleCard({
         </span>
         {cadence && (
           <span className="text-xs text-gris-clair">
-            /{cadence} en supplément
+            /{cadence}
+            {supplement !== undefined ? " en supplément" : ""}
           </span>
         )}
       </div>
@@ -582,7 +661,6 @@ function FormuleCard({
         ))}
       </ul>
 
-      {/* Total avec socle + CTA de souscription */}
       <div className="mt-8 border-t border-gris-sombre pt-6">
         {totalFmt ? (
           <>
@@ -593,19 +671,29 @@ function FormuleCard({
               <span className="font-semibold text-blanc-casse">
                 {totalFmt} €/an
               </span>{" "}
-              <span className="text-xs text-gris-clair">
-                (socle 14,90 € + supplément {prix})
-              </span>
+              {supplement !== undefined ? (
+                <span className="text-xs text-gris-clair">
+                  (socle Intégral 19,90 € + supplément {prix})
+                </span>
+              ) : (
+                <span className="text-xs text-gris-clair">
+                  (socle inclus)
+                </span>
+              )}
             </p>
             <a
               href={`https://proofeus.com/inscription?pkg=${slug}&socle=integral`}
               target="_blank"
               rel="noopener"
               className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${
-                vedette ? "text-noir" : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
+                vedette
+                  ? "text-noir"
+                  : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
               }`}
               style={
-                vedette ? { background: "var(--color-cyan-proofeus)" } : undefined
+                vedette
+                  ? { background: "var(--color-cyan-proofeus)" }
+                  : undefined
               }
             >
               Souscrire cette formule ↗
@@ -619,10 +707,14 @@ function FormuleCard({
             <a
               href="/contact"
               className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${
-                vedette ? "text-noir" : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
+                vedette
+                  ? "text-noir"
+                  : "border border-cyan-proofeus/50 text-cyan-proofeus hover:bg-cyan-proofeus hover:text-noir"
               }`}
               style={
-                vedette ? { background: "var(--color-cyan-proofeus)" } : undefined
+                vedette
+                  ? { background: "var(--color-cyan-proofeus)" }
+                  : undefined
               }
             >
               Demander un devis

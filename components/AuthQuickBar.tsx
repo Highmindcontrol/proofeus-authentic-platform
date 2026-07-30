@@ -153,18 +153,17 @@ export function AuthQuickBar() {
               ) : (
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-gris-clair">
                   <p>
-                    Pour créer votre compte Proofeus Authentic®, choisissez
-                    d&apos;abord votre supplément Art (débutant, actif ou
-                    pro) sur la page Tarifs.
+                    Pour certifier vos œuvres, il vous faut le socle{" "}
+                    <strong className="font-medium text-blanc-casse">
+                      Proofeus® intégral 19,90 €/an à vie
+                    </strong>{" "}
+                    (5 Sceaux d&apos;auteur par an inclus).
                   </p>
                   <p>
-                    Le socle{" "}
-                    <strong className="font-medium text-blanc-casse">
-                      Proofeus® intégral 14,90 €/an à vie
-                    </strong>{" "}
-                    est automatiquement inclus dans votre souscription —
-                    vous ne payez qu&apos;une seule fois, en un seul
-                    parcours.
+                    Les artistes prolifiques (plus de 5 œuvres/an) et les
+                    institutions ajoutent un supplément Art ou choisissent
+                    un forfait dédié. Rendez-vous sur la page Tarifs pour
+                    tout voir en un coup d&apos;œil.
                   </p>
                 </div>
               )}
