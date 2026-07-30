@@ -106,9 +106,20 @@ export default function ArtistesPage() {
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
             }}
           >
-            Ce que votre main a créé,
+            Chaque œuvre commence par un geste,
             <br />
-            votre iris le scelle.
+            Proofeus
+            <sup
+              style={{
+                fontSize: "0.32em",
+                verticalAlign: "0.9em",
+                fontWeight: 400,
+                marginLeft: "0.05em",
+              }}
+            >
+              ®
+            </sup>{" "}
+            protège ce qui naît ici.
           </h1>
           <p
             className="mx-auto mt-8 max-w-2xl italic text-blanc-casse/90"
