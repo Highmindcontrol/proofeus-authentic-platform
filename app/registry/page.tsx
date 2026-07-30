@@ -279,9 +279,32 @@ export default function RegistryPage() {
 
       {/* ═══════════════════════════════════════════════════════════
           4. CE QUE CONTIENT CHAQUE ENTRÉE — carrousel anthracite
+             avec filigrane vitrine cylindrique Sceau
           ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 md:py-32">
+        {/* Filigrane — vitrine cylindrique Sceau Proofeus® + œuvre +
+            8 informations flottantes, en accord parfait avec le sujet
+            "ce que contient chaque entrée". */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/filigrane-registry-entree.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.38,
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(22,22,26,0.68) 0%, rgba(22,22,26,0.55) 50%, rgba(22,22,26,0.72) 100%)",
+          }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
               Ce que contient chaque entrée
