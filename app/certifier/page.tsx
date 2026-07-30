@@ -150,17 +150,17 @@ export default function CertifierPage() {
           1.5. BANDEAU NOIR — "SALLE DE CERTIFICATION" en grand
           ═══════════════════════════════════════════════════════════ */}
       <section
-        className="px-4 py-14 md:py-20"
+        className="px-6 py-12 md:py-16"
         style={{ background: "#000" }}
       >
         <h2
-          className="text-center font-light uppercase text-blanc-casse"
+          className="whitespace-nowrap text-center font-light uppercase text-blanc-casse"
           style={{
             fontFamily:
               "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            fontSize: "clamp(2.4rem, 8.5vw, 9rem)",
-            letterSpacing: "0.05em",
-            lineHeight: 1,
+            fontSize: "clamp(1.4rem, 6vw, 6rem)",
+            letterSpacing: "0.04em",
+            lineHeight: 1.05,
           }}
         >
           Salle de certification
