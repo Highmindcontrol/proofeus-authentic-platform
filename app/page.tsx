@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PastilleCarousel } from "@/components/PastilleCarousel";
 
 /**
  * Landing Proofeus Authentic®.
@@ -265,10 +266,8 @@ export default function AuthenticLanding() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {APPORTS.map((item) => (
-                <Pastille key={item.titre} {...item} />
-              ))}
+            <div className="mt-14">
+              <PastilleCarousel items={APPORTS} />
             </div>
           </div>
 
@@ -296,10 +295,8 @@ export default function AuthenticLanding() {
               <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
                 Dans le domaine de l&apos;art
               </p>
-              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {PROTECTIONS_ART.map((item) => (
-                  <Pastille key={item.titre} {...item} />
-                ))}
+              <div className="mt-8">
+                <PastilleCarousel items={PROTECTIONS_ART} />
               </div>
             </div>
 
@@ -308,10 +305,8 @@ export default function AuthenticLanding() {
               <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
                 Dans les écosystèmes Proofeus® &amp; Verbalock
               </p>
-              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {PROTECTIONS_ECOSYSTEMES.map((item) => (
-                  <Pastille key={item.titre} {...item} />
-                ))}
+              <div className="mt-8">
+                <PastilleCarousel items={PROTECTIONS_ECOSYSTEMES} />
               </div>
             </div>
           </div>
