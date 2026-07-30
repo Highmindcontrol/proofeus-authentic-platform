@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AppStoreBadges } from "@/components/AppStoreBadges";
+import { AuthQuickBar } from "@/components/AuthQuickBar";
 
 export const metadata: Metadata = {
   title: "Certifier une œuvre — Proofeus Authentic®",
@@ -173,6 +173,16 @@ export default function CertifierPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          1.5. BANDEAU AUTH — pills connexion / inscription inline
+          ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="px-6 py-10 md:py-12"
+        style={{ background: "#000" }}
+      >
+        <AuthQuickBar />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           2. TIMELINE handoff desktop → mobile — anthracite
           ═══════════════════════════════════════════════════════════ */}
       <section className="px-6 py-24 md:px-12 md:py-32">
@@ -192,6 +202,11 @@ export default function CertifierPage() {
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
               Préparation sur cet ordinateur, validation sur votre téléphone.
               Votre biométrie ne quitte jamais votre appareil.
+              <br />
+              <span className="text-blanc-casse/80">
+                Vous pouvez toutefois réaliser l&apos;ensemble du processus
+                directement depuis votre téléphone.
+              </span>
             </p>
           </div>
 
@@ -371,98 +386,13 @@ export default function CertifierPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          4. CONNEXION / INSCRIPTION — anthracite
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Pour commencer
-            </p>
-            <h2
-              className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
-              style={{
-                fontFamily:
-                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)",
-                lineHeight: 1.2,
-              }}
-            >
-              Prêt à sceller votre première œuvre ?
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {/* Connexion */}
-            <div className="flex flex-col rounded-sm border border-gris-sombre bg-noir-profond p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                Vous avez déjà un compte
-              </p>
-              <h3
-                className="mt-4 font-light text-blanc-casse"
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)",
-                  lineHeight: 1.2,
-                }}
-              >
-                Connectez-vous.
-              </h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-gris-clair">
-                Retrouvez votre Sceau, vos œuvres certifiées et l&apos;accès
-                complet à votre espace de scellage. Authentification
-                biométrique instantanée via l&apos;application Proofeus®.
-              </p>
-              <div className="mt-8">
-                <Link
-                  href="/connexion"
-                  className="inline-flex items-center gap-2 rounded-full border border-cyan-proofeus/50 px-6 py-3 text-sm font-semibold text-cyan-proofeus transition-colors hover:bg-cyan-proofeus hover:text-noir"
-                >
-                  Se connecter
-                </Link>
-              </div>
-            </div>
-
-            {/* Inscription */}
-            <div className="flex flex-col rounded-sm border border-cyan-proofeus/60 bg-noir-profond p-8 shadow-[0_20px_50px_-20px_rgba(63,212,217,0.35)]">
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
-                Pas encore inscrit
-              </p>
-              <h3
-                className="mt-4 font-light text-blanc-casse"
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)",
-                  lineHeight: 1.2,
-                }}
-              >
-                Créez votre compte.
-              </h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-gris-clair">
-                Enrôlement biométrique en quelques minutes via
-                l&apos;application Proofeus®. Formule Découverte gratuite —
-                un premier Sceau d&apos;œuvre offert, sans engagement.
-              </p>
-              <div className="mt-8">
-                <Link
-                  href="/inscription"
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
-                  style={{ background: "var(--color-cyan-proofeus)" }}
-                >
-                  Créer mon compte
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <p className="mx-auto mt-14 max-w-xl text-center text-sm italic leading-relaxed text-gris-clair">
-            « L&apos;acte de sceller est un rite. Proofeus Authentic® en
-            garantit la solennité, la précision et la mémoire. »
-          </p>
-        </div>
+      {/* Citation finale — remplace l'ancien bloc Connexion/Inscription
+          qui est désormais remonté en pill sous le hero */}
+      <section className="px-6 py-16 md:px-12 md:py-20">
+        <p className="mx-auto max-w-xl text-center text-sm italic leading-relaxed text-gris-clair">
+          « L&apos;acte de sceller est un rite. Proofeus Authentic® en
+          garantit la solennité, la précision et la mémoire. »
+        </p>
       </section>
     </main>
   );
