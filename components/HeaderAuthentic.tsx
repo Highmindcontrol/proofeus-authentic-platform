@@ -110,10 +110,10 @@ export function HeaderAuthentic() {
 
 const NAV_ITEMS: { label: string; href: string; emphase?: boolean }[] = [
   { label: "Ce que nous faisons", href: "/" },
-  { label: "Écosystème", href: "/ecosysteme", emphase: true },
   { label: "Artistes", href: "/artistes" },
   { label: "Galeries", href: "/galeries" },
   { label: "Le Registre", href: "/registry" },
   { label: "Web3 & NFT", href: "/web3" },
   { label: "Tarifs", href: "/tarifs" },
+  { label: "Aide", href: "/aide" },
 ];

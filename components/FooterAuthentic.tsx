@@ -17,6 +17,7 @@ export function FooterAuthentic() {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-gris-clair">
               <li><Link href="/" className="hover:text-cyan-proofeus">Ce que nous faisons</Link></li>
+              <li><Link href="/ecosysteme" className="hover:text-cyan-proofeus">L&apos;écosystème Proofeus®</Link></li>
               <li><Link href="/voix" className="hover:text-cyan-proofeus">Voix Authentic</Link></li>
               <li><Link href="/presse" className="hover:text-cyan-proofeus">Presse</Link></li>
               <li><Link href="/manifeste" className="hover:text-cyan-proofeus">Manifeste</Link></li>
