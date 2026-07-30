@@ -71,7 +71,17 @@ export default function AuthenticLanding() {
               lineHeight: 1.05,
             }}
           >
-            Proofeus®{" "}
+            Proofeus
+            <sup
+              style={{
+                fontSize: "0.32em",
+                verticalAlign: "0.9em",
+                fontWeight: 400,
+                marginLeft: "0.05em",
+              }}
+            >
+              ®
+            </sup>{" "}
             <span style={{ color: "var(--color-cyan-proofeus)" }}>
               Authentic
             </span>
