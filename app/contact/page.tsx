@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Nous écrire",
+  title: "Nous écrire — Proofeus Authentic®",
   description:
-    "Chaque message reçu par Proofeus Authentic® reçoit une réponse humaine sous 24 h. Trois adresses, une équipe, aucune machine intermédiaire.",
+    "Un seul formulaire, une équipe humaine, une réponse sous 24 h. Aucun renvoi vers une messagerie externe — vos données restent dans notre infrastructure européenne.",
 };
 
-/**
- * Page « Nous écrire » — trois adresses de correspondance.
- *
- * Image de fond : salle-correspondance.png (enveloppe scellée avec
- * Le Sceau de cire cyan, plume, encrier — la correspondance devient
- * un rite institutionnel).
- *
- * Doctrine Musée de la Confiance : pas de « formulaire de contact »
- * banal, mais un salon d'écriture. Trois adresses seulement, aucune
- * complexité, une équipe qui répond.
- */
+const CATEGORIES = [
+  "Artistes & galeries — certification d'œuvres",
+  "Partenariats & marketplaces — intégration Sceau",
+  "Presse & médias — interviews, dossier de presse",
+  "Autre demande",
+];
+
 export default function ContactPage() {
   return (
     <main>
-      {/* SALLE — image cinématographique pleine hauteur */}
-      <section className="relative flex min-h-screen items-end justify-center overflow-hidden">
+      {/* ═══════════════════════════════════════════════════════════
+          1. HERO — image + titre unique
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -36,106 +36,96 @@ export default function ContactPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, rgba(13,13,16,0.7) 75%, rgba(13,13,16,0.98) 100%)",
+              "linear-gradient(to bottom, rgba(13,13,16,0.4) 0%, rgba(13,13,16,0.55) 45%, rgba(13,13,16,0.55) 55%, rgba(13,13,16,0.98) 100%)",
           }}
         />
 
-        <div className="relative z-10 mx-auto mb-24 max-w-4xl px-6 text-center md:mb-32">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
-            Salon de correspondance
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus/85">
+            Nous écrire
           </p>
           <h1
-            className="mt-8 font-light tracking-[-0.02em] text-blanc-casse"
+            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
             style={{
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
               fontSize: "clamp(2rem, 4.5vw, 4rem)",
               lineHeight: 1.15,
+              textShadow: "0 2px 24px rgba(0,0,0,0.65)",
             }}
           >
-            Nous écrire — trois adresses,
-            <br />
-            une réponse humaine.
+            Une équipe humaine, sous vingt-quatre heures.
           </h1>
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-blanc-casse/90 md:text-lg">
+            Un seul formulaire, traité en interne dans notre infrastructure
+            européenne. Aucun renvoi vers une messagerie externe, aucune
+            transmission tierce.
+          </p>
         </div>
       </section>
 
-      {/* TROIS ADRESSES */}
-      <section className="border-t border-gris-sombre px-6 py-32 md:px-12 md:py-40">
+      {/* ═══════════════════════════════════════════════════════════
+          2. FORMULAIRE — anthracite
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl">
-          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.32em] text-cyan-300/70">
-            Nous écrire
-          </p>
-          <h2
-            className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
-              lineHeight: 1.2,
-            }}
-          >
-            Trois adresses. Une réponse humaine.
-          </h2>
-
-          <div className="mt-20 space-y-14">
-            <Adresse
-              titre="Pour les artistes et les galeries"
-              chapo="Certification d'œuvres, offre Institutions, questions sur le Sceau d'Auteur."
-              email="maison@proofeus.art"
-            />
-            <Adresse
-              titre="Pour les partenariats et les marketplaces"
-              chapo="Intégration du Sceau dans vos flux, propositions institutionnelles, alliances de long terme."
-              email="partenariats@proofeus.art"
-            />
-            <Adresse
-              titre="Pour la presse et les médias"
-              chapo="Interviews du fondateur, dossier de presse, visuels haute définition du Sceau."
-              email="presse@proofeus.art"
-            />
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Formulaire de contact
+            </p>
+            <h2
+              id="contact-title"
+              className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                lineHeight: 1.2,
+              }}
+            >
+              Un seul formulaire, une réponse humaine.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
+              Précisez la nature de votre demande dans le champ « type de
+              demande » ci-dessous — nous l&apos;orienterons vers la
+              personne concernée dans l&apos;équipe.
+            </p>
           </div>
 
-          <div className="mt-24 flex flex-col items-center gap-4 text-center">
-            <p className="max-w-xl text-lg italic leading-relaxed text-gris-clair">
-              « Toute lettre reçoit une réponse humaine dans les vingt-quatre
-              heures. Nous ne déléguons pas la parole à des machines. »
-            </p>
+          <div className="mt-14">
+            <ContactForm categories={CATEGORIES} />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          3. CTAs — bandeau noir
+          ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="px-6 py-20 md:px-12 md:py-24"
+        style={{ background: "#000" }}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm italic leading-relaxed text-gris-clair">
+            « Toute lettre reçoit une réponse humaine dans les vingt-quatre
+            heures. Nous ne déléguons pas la parole à des machines. »
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/aide"
+              className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-5 py-2.5 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+            >
+              Voir l&apos;aide et Coryphea®
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-5 py-2.5 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+            >
+              ← Retour à l&apos;accueil
+            </Link>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function Adresse({
-  titre,
-  chapo,
-  email,
-}: {
-  titre: string;
-  chapo: string;
-  email: string;
-}) {
-  return (
-    <div className="border-l border-cyan-proofeus/30 pl-8 md:pl-12">
-      <h3
-        className="font-light text-blanc-casse"
-        style={{
-          fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-          fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)",
-          lineHeight: 1.2,
-        }}
-      >
-        {titre}
-      </h3>
-      <p className="mt-3 text-base leading-relaxed text-gris-clair md:text-lg">
-        {chapo}
-      </p>
-      <a
-        href={`mailto:${email}`}
-        className="mt-5 inline-block font-mono text-sm text-cyan-proofeus transition-colors hover:text-blanc-casse"
-      >
-        {email}
-      </a>
-    </div>
   );
 }
