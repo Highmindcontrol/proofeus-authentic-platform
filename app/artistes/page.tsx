@@ -101,8 +101,8 @@ export default function ArtistesPage() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
-              lineHeight: 1.1,
+              fontSize: "clamp(1.75rem, 3.8vw, 3.25rem)",
+              lineHeight: 1.15,
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
             }}
           >
@@ -121,18 +121,6 @@ export default function ArtistesPage() {
             </sup>{" "}
             protège ce qui naît ici.
           </h1>
-          <p
-            className="mx-auto mt-8 max-w-2xl italic text-blanc-casse/90"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.15rem, 1.9vw, 1.6rem)",
-              lineHeight: 1.35,
-            }}
-          >
-            « Là où votre pinceau, votre burin ou votre objectif s&apos;arrête,
-            le Sceau commence. »
-          </p>
         </div>
       </section>
 
