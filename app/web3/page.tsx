@@ -259,10 +259,33 @@ export default function Web3Page() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          4. BÉNÉFICES CARROUSEL — anthracite
+          4. BÉNÉFICES CARROUSEL — anthracite avec filigrane NFT
           ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 md:py-32">
+        {/* Filigrane — image "Protéger l'original. Garantir l'humain."
+            derrière le fond anthracite pour évoquer la doctrine NFT. */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/filigrane-web3-nft.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.18,
+          }}
+        />
+        {/* Voile anthracite pour laisser le filigrane à peine perceptible
+            tout en préservant la lisibilité du contenu par-dessus. */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(22,22,26,0.85) 0%, rgba(22,22,26,0.75) 50%, rgba(22,22,26,0.9) 100%)",
+          }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
               Ce que le Sceau change pour le Web3
