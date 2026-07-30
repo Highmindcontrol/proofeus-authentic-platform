@@ -165,7 +165,7 @@ export default function EcosystemePage() {
                 <span className="text-sm text-gris-clair">/an</span>
               </div>
               <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie · premier million
+                à vie jusqu&apos;au premier million
               </p>
               <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
                 {[
@@ -187,10 +187,17 @@ export default function EcosystemePage() {
             </div>
 
             {/* Proofeus intégral 19,90 € — vedette */}
-            <div className="flex flex-col rounded-sm border border-cyan-proofeus/60 bg-noir-profond p-8 shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)] md:p-10">
-              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-proofeus">
-                Recommandé pour Authentic
-              </p>
+            <div className="relative flex flex-col rounded-sm border border-cyan-proofeus/60 bg-noir-profond p-8 shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)] md:p-10">
+              <span
+                className="absolute right-4 top-4 rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] backdrop-blur"
+                style={{
+                  color: "var(--color-or-authentic)",
+                  borderColor: "rgba(201,161,63,0.55)",
+                  background: "rgba(0,0,0,0.55)",
+                }}
+              >
+                Recommandé
+              </span>
               <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
                 Proofeus® intégral
               </p>
@@ -212,7 +219,7 @@ export default function EcosystemePage() {
                 <span className="text-sm text-gris-clair">/an</span>
               </div>
               <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie · premier million
+                à vie jusqu&apos;au premier million
               </p>
               <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
                 <li className="flex items-start gap-2">
