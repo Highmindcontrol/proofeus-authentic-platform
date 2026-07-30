@@ -102,7 +102,7 @@ export default function Web3Page() {
           style={{
             top: "42%",
             left: "40%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-50%, -50%) translateX(100px)",
           }}
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus/85">
