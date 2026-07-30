@@ -190,40 +190,72 @@ export default function ArtistesPage() {
             </h2>
           </div>
 
-          <div className="mt-20 space-y-16">
-            {ETAPES.map((etape, i) => (
-              <div key={etape.titre} className="flex gap-8 md:gap-12">
-                <div className="flex-shrink-0">
-                  <span
-                    className="font-light text-cyan-proofeus/60"
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                      fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {["I", "II", "III"][i]}
-                  </span>
-                </div>
-                <div className="flex-1 pt-2">
+          {/* Timeline horizontale sur desktop, verticale sur mobile */}
+          <div className="relative mt-20">
+            {/* Ligne cyan reliant les 3 ronds — desktop uniquement */}
+            <div
+              aria-hidden
+              className="absolute left-[16%] right-[16%] top-8 hidden h-px md:block"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent 0%, rgba(63,212,217,0.35) 15%, rgba(63,212,217,0.35) 85%, transparent 100%)",
+              }}
+            />
+
+            <div className="grid gap-14 md:grid-cols-3 md:gap-8">
+              {ETAPES.map((etape, i) => (
+                <div
+                  key={etape.titre}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  {/* Rond numéroté avec halo cyan */}
+                  <div className="relative">
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 rounded-full opacity-40 blur-2xl"
+                      style={{ background: "var(--color-cyan-proofeus)" }}
+                    />
+                    <div
+                      className="relative flex h-16 w-16 items-center justify-center rounded-full border border-cyan-proofeus/60 bg-noir-profond"
+                      style={{
+                        boxShadow:
+                          "0 8px 24px -8px rgba(63,212,217,0.45), inset 0 0 20px rgba(63,212,217,0.1)",
+                      }}
+                    >
+                      <span
+                        className="font-light text-cyan-proofeus"
+                        style={{
+                          fontFamily:
+                            "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                          fontSize: "1.75rem",
+                          lineHeight: 1,
+                        }}
+                      >
+                        {i + 1}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Titre */}
                   <h3
-                    className="font-light text-blanc-casse"
+                    className="mt-6 font-light text-blanc-casse"
                     style={{
                       fontFamily:
                         "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                      fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
-                      lineHeight: 1.2,
+                      fontSize: "clamp(1.25rem, 2vw, 1.6rem)",
+                      lineHeight: 1.25,
                     }}
                   >
                     {etape.titre}
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed text-gris-clair md:text-lg">
+
+                  {/* Description courte */}
+                  <p className="mt-4 max-w-xs text-sm leading-relaxed text-gris-clair md:text-base">
                     {etape.texte}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
