@@ -52,9 +52,10 @@ export function PastilleCarousel({
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      {/* Scène coverflow */}
+      {/* Scène coverflow — hauteur généreuse + overflow horizontal seulement
+          pour laisser respirer les shadows cyan et les rotations 3D */}
       <div
-        className="relative mx-auto h-[340px] w-full overflow-hidden sm:h-[320px] md:h-[300px]"
+        className="relative mx-auto h-[440px] w-full overflow-x-hidden overflow-y-visible sm:h-[420px] md:h-[400px]"
         style={{ perspective: "1400px" }}
       >
         {items.map((item, index) => {
@@ -76,7 +77,7 @@ export function PastilleCarousel({
             <article
               key={item.titre}
               aria-hidden={!isActive}
-              className="absolute left-1/2 top-1/2 flex h-[280px] w-[300px] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-sm border bg-noir-profond p-6 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] sm:h-[260px] sm:w-[380px] md:w-[440px] md:p-8"
+              className="absolute left-1/2 top-1/2 flex h-[320px] w-[300px] flex-col overflow-hidden rounded-sm border bg-noir-profond p-6 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] sm:h-[300px] sm:w-[380px] md:w-[440px] md:p-8"
               style={{
                 transform: `translate(-50%, -50%) translateX(${translateX}%) rotateY(${rotateY}deg) scale(${scale})`,
                 opacity,
