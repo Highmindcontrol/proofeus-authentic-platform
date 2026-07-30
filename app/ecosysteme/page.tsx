@@ -110,7 +110,7 @@ export default function EcosystemePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          4. PROOFEUS® INTÉGRAL — anthracite (tarification à définir)
+          4. PROOFEUS® INTÉGRAL — anthracite (14,90 €/an à vie unique)
           ═══════════════════════════════════════════════════════════ */}
       <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-5xl">
@@ -129,25 +129,97 @@ export default function EcosystemePage() {
                 lineHeight: 1.2,
               }}
             >
-              Une seule licence, tout l&apos;écosystème.
+              Un seul tarif. Tout l&apos;écosystème. À vie.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Trois formules progressives. Chaque licence intègre le Sceau et
-              donne accès à l&apos;ensemble des services activables au sein de
-              votre formule, sur tous les sites Proofeus
+              14,90 €/an, verrouillés à vie pour tous les souscripteurs.
+              Une seule et unique licence qui donne accès à l&apos;ensemble
+              des services de l&apos;écosystème Proofeus
+              <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>{" "}
+              / Verbalock / Coryphea
               <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>.
             </p>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {FORMULES.map((f) => (
-              <Formule key={f.nom} {...f} />
-            ))}
+          <div className="mx-auto mt-14 max-w-3xl overflow-hidden rounded-sm border border-cyan-proofeus/60 bg-noir-profond shadow-[0_28px_60px_-20px_rgba(63,212,217,0.4)]">
+            <div className="grid gap-8 p-8 md:grid-cols-[auto_1fr] md:gap-12 md:p-12">
+              {/* Prix */}
+              <div className="flex flex-col items-center justify-center border-b border-cyan-proofeus/20 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-12">
+                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+                  Proofeus
+                  <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>
+                    ®
+                  </sup>{" "}
+                  intégral
+                </p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span
+                    className="font-light text-blanc-casse"
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                      fontSize: "clamp(3rem, 5vw, 4.5rem)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    14,90 €
+                  </span>
+                  <span className="text-sm text-gris-clair">/an</span>
+                </div>
+                <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
+                  à vie
+                </p>
+              </div>
+
+              {/* Ce qui est inclus */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-blanc-casse/80">
+                  Tout l&apos;écosystème inclus
+                </p>
+                <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-blanc-casse/90 sm:grid-cols-2">
+                  {[
+                    "Sceau d'humanité biométrique",
+                    "Messagerie chiffrée E2E",
+                    "Cercles de confiance",
+                    "Wallet mots de passe",
+                    "Wallet crypto sans seed",
+                    "Paiement humain à humain",
+                    "Testament numérique",
+                    "Boutons d'alerte Squad/Help",
+                    "Coryphea® — assistante IA",
+                    "2 Sceaux (dont 1 à offrir)",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-cyan-proofeus">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href="https://proofeus.com"
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
+                    style={{ background: "var(--color-cyan-proofeus)" }}
+                  >
+                    Souscrire sur proofeus.com ↗
+                  </a>
+                  <Link
+                    href="/tarifs"
+                    className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
+                  >
+                    Voir les suppléments Art
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic leading-relaxed text-gris-clair">
-            Les tarifs présentés sont indicatifs et seront confirmés à
-            l&apos;ouverture publique de l&apos;écosystème.
+            Pour la certification d&apos;œuvres physiques ou numériques, un
+            supplément Art s&apos;ajoute à ce socle unique — voir la page
+            Tarifs.
           </p>
         </div>
       </section>
@@ -218,64 +290,6 @@ function FamilleDetail({
           <li key={s} className="flex gap-2">
             <span className="text-cyan-proofeus/60">→</span>
             <span>{s}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function Formule({
-  nom,
-  prix,
-  cadence,
-  chapo,
-  inclus,
-  vedette,
-}: {
-  nom: string;
-  prix: string;
-  cadence: string;
-  chapo: string;
-  inclus: string[];
-  vedette?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-sm border p-8 transition-transform ${
-        vedette
-          ? "border-cyan-proofeus/60 bg-noir-profond shadow-[0_20px_50px_-20px_rgba(63,212,217,0.35)]"
-          : "border-gris-sombre bg-noir-profond"
-      }`}
-    >
-      {vedette && (
-        <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-proofeus">
-          Recommandé
-        </p>
-      )}
-      <p className="text-sm font-semibold uppercase tracking-widest text-blanc-casse">
-        {nom}
-      </p>
-      <div className="mt-6 flex items-baseline gap-1">
-        <span
-          className="font-light text-blanc-casse"
-          style={{
-            fontFamily:
-              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-            lineHeight: 1,
-          }}
-        >
-          {prix}
-        </span>
-        <span className="text-xs text-gris-clair">/{cadence}</span>
-      </div>
-      <p className="mt-5 text-sm leading-relaxed text-gris-clair">{chapo}</p>
-      <ul className="mt-6 space-y-2 text-xs leading-relaxed text-blanc-casse/85">
-        {inclus.map((i) => (
-          <li key={i} className="flex gap-2">
-            <span className="text-cyan-proofeus">✓</span>
-            <span>{i}</span>
           </li>
         ))}
       </ul>
@@ -370,49 +384,3 @@ const FAMILLES_DETAIL = [
   },
 ];
 
-const FORMULES = [
-  {
-    nom: "Sceau",
-    prix: "4,90 €",
-    cadence: "an",
-    chapo:
-      "L'identité biométrique de base. Un Sceau d'humanité, un Sceau offert à un proche, l'accès à la messagerie chiffrée.",
-    inclus: [
-      "Sceau d'humanité + Sceau offert",
-      "Messagerie chiffrée E2E",
-      "Cercles de confiance (3 max)",
-      "Accès au registre public",
-    ],
-  },
-  {
-    nom: "Souverain",
-    prix: "19,90 €",
-    cadence: "mois",
-    chapo:
-      "L'écosystème étendu : identité eIDAS, wallets Verbalock, testament numérique et boutons d'alerte.",
-    inclus: [
-      "Tout de la formule Sceau",
-      "Identité eIDAS certifiée",
-      "Wallet mots de passe + crypto",
-      "Rail de paiement humain à humain",
-      "Testament numérique + legs",
-      "Boutons d'alerte + assurance de base",
-    ],
-    vedette: true,
-  },
-  {
-    nom: "Intégral",
-    prix: "39,90 €",
-    cadence: "mois",
-    chapo:
-      "Toutes les briques activées, y compris Proofeus® Authentic (œuvres d'art + NFT) et Coryphea® (orchestration IA personnelle).",
-    inclus: [
-      "Tout de la formule Souverain",
-      "Certification d'œuvres illimitée (Authentic)",
-      "Sceaux d'auteur pour vos NFT",
-      "Assurance anti-arnaque étendue",
-      "Coryphea® — cockpit IA personnel",
-      "Support prioritaire humain",
-    ],
-  },
-];

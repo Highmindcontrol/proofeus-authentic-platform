@@ -126,67 +126,76 @@ export function AuthQuickBar() {
                   ? "Scannez ce QR avec l'app Proofeus®."
                   : "Téléchargez l'app, scannez ce QR."}
               </h3>
-              <ol className="mt-5 space-y-2.5 text-sm leading-relaxed text-gris-clair">
-                {mode === "connexion" ? (
-                  <>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        01
-                      </span>
-                      <span>Ouvrez l&apos;application Proofeus® sur votre téléphone.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        02
-                      </span>
-                      <span>Menu Connexion → « Scanner un appareil ».</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        03
-                      </span>
-                      <span>
-                        Validez avec vos empreintes biométriques. Ce navigateur
-                        est appairé, vous pouvez commencer.
-                      </span>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        01
-                      </span>
-                      <span>
-                        Téléchargez l&apos;application Proofeus® sur App Store
-                        ou Google Play.
-                      </span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        02
-                      </span>
-                      <span>Enrôlement biométrique multimodal, 3 à 5 min.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
-                        03
-                      </span>
-                      <span>
-                        Scannez ce QR : votre compte est appairé à ce
-                        navigateur, votre premier Sceau est offert.
-                      </span>
-                    </li>
-                  </>
+              {mode === "connexion" ? (
+                <ol className="mt-5 space-y-2.5 text-sm leading-relaxed text-gris-clair">
+                  <li className="flex gap-3">
+                    <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
+                      01
+                    </span>
+                    <span>Ouvrez l&apos;application Proofeus® sur votre téléphone.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
+                      02
+                    </span>
+                    <span>Menu Connexion → « Scanner un appareil ».</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-0.5 font-mono text-xs text-cyan-proofeus">
+                      03
+                    </span>
+                    <span>
+                      Validez avec vos empreintes biométriques. Ce navigateur
+                      est appairé, vous pouvez commencer.
+                    </span>
+                  </li>
+                </ol>
+              ) : (
+                <div className="mt-5 space-y-4 text-sm leading-relaxed text-gris-clair">
+                  <p>
+                    L&apos;inscription se fait en une seule fois sur
+                    <strong className="font-medium text-blanc-casse">
+                      {" "}
+                      proofeus.com{" "}
+                    </strong>
+                    — vous souscrivez au socle{" "}
+                    <strong className="font-medium text-blanc-casse">
+                      Proofeus® intégral
+                    </strong>{" "}
+                    à{" "}
+                    <strong className="font-medium text-blanc-casse">
+                      14,90 €/an à vie
+                    </strong>
+                    , qui donne accès à l&apos;ensemble de
+                    l&apos;écosystème.
+                  </p>
+                  <p>
+                    Une fois votre Sceau d&apos;humanité créé, revenez ici
+                    pour ajouter le supplément Art et sceller vos œuvres.
+                  </p>
+                </div>
+              )}
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                {mode === "inscription" && (
+                  <a
+                    href="https://proofeus.com"
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
+                    style={{ background: "var(--color-cyan-proofeus)" }}
+                  >
+                    Souscrire sur proofeus.com ↗
+                  </a>
                 )}
-              </ol>
-              <button
-                type="button"
-                onClick={() => setMode(null)}
-                className="mt-6 self-start text-xs uppercase tracking-widest text-gris-clair transition-colors hover:text-cyan-proofeus"
-              >
-                Fermer
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setMode(null)}
+                  className="text-xs uppercase tracking-widest text-gris-clair transition-colors hover:text-cyan-proofeus"
+                >
+                  Fermer
+                </button>
+              </div>
             </div>
           </div>
         </div>
