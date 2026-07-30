@@ -236,13 +236,13 @@ export default function ArtistesPage() {
                     </div>
                   </div>
 
-                  {/* Titre */}
+                  {/* Titre — forcé sur une seule ligne sur desktop */}
                   <h3
-                    className="mt-6 font-light text-blanc-casse"
+                    className="mt-6 font-light text-blanc-casse md:whitespace-nowrap"
                     style={{
                       fontFamily:
                         "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                      fontSize: "clamp(1.25rem, 2vw, 1.6rem)",
+                      fontSize: "clamp(1.15rem, 1.7vw, 1.45rem)",
                       lineHeight: 1.25,
                     }}
                   >
