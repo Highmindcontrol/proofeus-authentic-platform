@@ -195,21 +195,16 @@ export default function EcosystemePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a
-                    href="https://proofeus.com"
-                    target="_blank"
-                    rel="noopener"
+                <p className="mt-6 rounded-sm border border-cyan-proofeus/30 bg-black/40 px-4 py-3 text-xs leading-relaxed text-blanc-casse/85">
+                  Le socle seul <strong className="font-semibold text-cyan-proofeus">ne donne pas accès</strong> à Proofeus Authentic®. Pour certifier des œuvres, choisissez un supplément Art — le socle est alors automatiquement inclus.
+                </p>
+                <div className="mt-6">
+                  <Link
+                    href="/tarifs"
                     className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
                     style={{ background: "var(--color-cyan-proofeus)" }}
                   >
-                    Souscrire sur proofeus.com ↗
-                  </a>
-                  <Link
-                    href="/tarifs"
-                    className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
-                  >
-                    Voir les suppléments Art
+                    Voir les formules Art
                   </Link>
                 </div>
               </div>

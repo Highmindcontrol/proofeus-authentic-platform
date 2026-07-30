@@ -153,25 +153,18 @@ export function AuthQuickBar() {
               ) : (
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-gris-clair">
                   <p>
-                    L&apos;inscription se fait en une seule fois sur
-                    <strong className="font-medium text-blanc-casse">
-                      {" "}
-                      proofeus.com{" "}
-                    </strong>
-                    — vous souscrivez au socle{" "}
-                    <strong className="font-medium text-blanc-casse">
-                      Proofeus® intégral
-                    </strong>{" "}
-                    à{" "}
-                    <strong className="font-medium text-blanc-casse">
-                      14,90 €/an à vie
-                    </strong>
-                    , qui donne accès à l&apos;ensemble de
-                    l&apos;écosystème.
+                    Pour créer votre compte Proofeus Authentic®, choisissez
+                    d&apos;abord votre supplément Art (débutant, actif ou
+                    pro) sur la page Tarifs.
                   </p>
                   <p>
-                    Une fois votre Sceau d&apos;humanité créé, revenez ici
-                    pour ajouter le supplément Art et sceller vos œuvres.
+                    Le socle{" "}
+                    <strong className="font-medium text-blanc-casse">
+                      Proofeus® intégral 14,90 €/an à vie
+                    </strong>{" "}
+                    est automatiquement inclus dans votre souscription —
+                    vous ne payez qu&apos;une seule fois, en un seul
+                    parcours.
                   </p>
                 </div>
               )}
@@ -179,13 +172,11 @@ export function AuthQuickBar() {
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 {mode === "inscription" && (
                   <a
-                    href="https://proofeus.com"
-                    target="_blank"
-                    rel="noopener"
+                    href="/tarifs"
                     className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
                     style={{ background: "var(--color-cyan-proofeus)" }}
                   >
-                    Souscrire sur proofeus.com ↗
+                    Voir les formules Art
                   </a>
                 )}
                 <button
