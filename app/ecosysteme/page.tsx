@@ -163,7 +163,7 @@ export default function EcosystemePage() {
             <EcoSocleCard
               nom="Proofeus® intégral"
               prix="19,90 €"
-              baseline="Inclus : identité + services personnels + certification + Proofeus Authentic®"
+              baseline="Inclus : identité + services personnels + Proofeus Authentic®"
               vedette
               inclusJsx={
                 <>
@@ -314,15 +314,15 @@ function EcoSocleCard({
           style={{ background: "rgba(255,255,255,0.6)" }}
         />
 
-        {/* Nom du forfait — gros, serif */}
+        {/* Nom du forfait — gros, serif, blanc gras */}
         <h3
-          className="relative font-light tracking-[-0.01em]"
+          className="relative font-bold tracking-[-0.01em] text-blanc-casse"
           style={{
             fontFamily:
               "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
             fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
             lineHeight: 1.15,
-            color: "#0d0d10",
+            textShadow: "0 2px 12px rgba(0,0,0,0.3)",
           }}
         >
           Forfait {renderNomWithR(nom)}
