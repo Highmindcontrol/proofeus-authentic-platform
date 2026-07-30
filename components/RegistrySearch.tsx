@@ -29,19 +29,30 @@ export function RegistrySearch() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-lg">
+    <div className="mx-auto w-full max-w-2xl">
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 rounded-full border border-cyan-proofeus/40 bg-black/70 p-1.5 backdrop-blur-xl"
+        className="flex items-center gap-2 rounded-full border border-cyan-proofeus/40 bg-black/70 p-2 backdrop-blur-xl md:gap-3"
         style={{
           boxShadow:
             "0 12px 40px -8px rgba(0,0,0,0.6), 0 0 0 1px rgba(63,212,217,0.15)",
         }}
       >
-        {/* Icône loupe */}
+        {/* Label intégré à gauche */}
+        <span className="ml-4 hidden flex-shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-proofeus md:inline">
+          Vérifier une œuvre au Registre
+        </span>
+
+        {/* Séparateur vertical */}
+        <span
+          aria-hidden
+          className="hidden h-6 w-px flex-shrink-0 bg-cyan-proofeus/25 md:inline-block"
+        />
+
+        {/* Icône loupe — mobile uniquement (le label prend la place sur desktop) */}
         <div
           aria-hidden
-          className="ml-3 flex-shrink-0 text-cyan-proofeus/70"
+          className="ml-3 flex-shrink-0 text-cyan-proofeus/70 md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
             <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.75" />
@@ -60,13 +71,13 @@ export function RegistrySearch() {
           onChange={(e) => setNumero(e.target.value)}
           placeholder="Numéro d'œuvre (ex. 001042)"
           aria-label="Numéro d'œuvre à vérifier dans le Registre"
-          className="min-w-0 flex-1 bg-transparent px-2 py-2 text-sm text-blanc-casse outline-none placeholder:text-blanc-casse/50"
+          className="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-blanc-casse outline-none placeholder:text-blanc-casse/50"
         />
 
         <button
           type="submit"
           disabled={!numero.trim() || state.kind === "searching"}
-          className="flex-shrink-0 rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest text-noir transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex-shrink-0 rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-noir transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50"
           style={{ background: "var(--color-cyan-proofeus)" }}
         >
           {state.kind === "searching" ? "…" : "Vérifier"}

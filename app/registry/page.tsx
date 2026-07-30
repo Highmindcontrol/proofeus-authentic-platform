@@ -138,10 +138,7 @@ export default function RegistryPage() {
           </h1>
 
           {/* Moteur de recherche direct dans le hero */}
-          <p className="mt-10 text-sm text-blanc-casse/80">
-            Vérifier une œuvre au Registre
-          </p>
-          <div className="mt-4">
+          <div className="mt-8">
             <RegistrySearch />
           </div>
         </div>
