@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { AppStoreBadges } from "@/components/AppStoreBadges";
+import { BandeauPaiementStripe } from "@/components/PaiementLogos";
 
 export const metadata: Metadata = {
   title: "Tarifs — Proofeus Authentic®",
@@ -443,22 +444,7 @@ export default function TarifsPage() {
           </div>
 
           <div className="mt-14">
-            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/60">
-              Traitement des paiements
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
-              {[
-                "Stripe",
-                "Visa",
-                "Mastercard",
-                "American Express",
-                "Apple Pay",
-                "Google Pay",
-                "SEPA",
-              ].map((nom) => (
-                <PaiementBadge key={nom} nom={nom} />
-              ))}
-            </div>
+            <BandeauPaiementStripe />
           </div>
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -766,16 +752,6 @@ function FormuleCard({
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-function PaiementBadge({ nom }: { nom: string }) {
-  return (
-    <div className="flex h-10 items-center rounded-md border border-gris-sombre bg-noir-profond px-5">
-      <span className="text-sm font-semibold tracking-wide text-blanc-casse/90">
-        {nom}
-      </span>
     </div>
   );
 }
