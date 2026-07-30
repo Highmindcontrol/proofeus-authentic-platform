@@ -123,6 +123,31 @@ export default function CertifierPage() {
           }}
         />
 
+        {/* SALLE DE CERTIFICATION — positionné au-dessus du carré cyan
+            qui contient le Sceau dans l'image du hero. Ajustable en % */}
+        <div
+          className="absolute z-10 px-6 text-center"
+          style={{
+            top: "38%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <p
+            className="whitespace-nowrap font-light uppercase text-blanc-casse"
+            style={{
+              fontFamily:
+                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(0.9rem, 1.8vw, 1.5rem)",
+              letterSpacing: "0.28em",
+              lineHeight: 1,
+              textShadow: "0 2px 16px rgba(0,0,0,0.7)",
+            }}
+          >
+            Salle de certification
+          </p>
+        </div>
+
         <div className="relative z-10 mx-auto mb-24 max-w-5xl px-6 text-center md:mb-32">
           <h1
             className="font-light tracking-[-0.02em] text-blanc-casse"
@@ -144,27 +169,6 @@ export default function CertifierPage() {
         <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 px-6 md:bottom-12">
           <AppStoreBadges compact />
         </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          1.5. BANDEAU NOIR — "SALLE DE CERTIFICATION" en grand
-          ═══════════════════════════════════════════════════════════ */}
-      <section
-        className="px-6 py-12 md:py-16"
-        style={{ background: "#000" }}
-      >
-        <h2
-          className="whitespace-nowrap text-center font-light uppercase text-blanc-casse"
-          style={{
-            fontFamily:
-              "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-            fontSize: "clamp(1.4rem, 6vw, 6rem)",
-            letterSpacing: "0.04em",
-            lineHeight: 1.05,
-          }}
-        >
-          Salle de certification
-        </h2>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
