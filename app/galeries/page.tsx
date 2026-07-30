@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PastilleCarousel } from "@/components/PastilleCarousel";
+import { AppStoreBadges } from "@/components/AppStoreBadges";
 
 export const metadata: Metadata = {
   title: "Galeries & Institutions — Proofeus Authentic®",
@@ -111,6 +112,11 @@ export default function GaleriesPage() {
               Le marché de l&apos;art a trouvé son standard.
             </span>
           </h1>
+        </div>
+
+        {/* Badges App Store / Google Play — pied du hero, centré */}
+        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 px-6 md:bottom-12">
+          <AppStoreBadges compact />
         </div>
       </section>
 

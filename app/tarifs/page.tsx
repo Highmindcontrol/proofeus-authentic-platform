@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { AppStoreBadges } from "@/components/AppStoreBadges";
 
 export const metadata: Metadata = {
   title: "Tarifs — Proofeus Authentic®",
@@ -175,6 +176,11 @@ export default function TarifsPage() {
             faire vivre le Registre — à vie, souverainement, sans
             actionnaire prédateur.
           </p>
+
+          {/* Badges App Store / Google Play */}
+          <div className="mt-12">
+            <AppStoreBadges compact />
+          </div>
         </div>
       </section>
 
@@ -353,9 +359,85 @@ export default function TarifsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          6. NOTE + CTAs — anthracite
+          5.5. PAIEMENT SÉCURISÉ + CONFIANCE — anthracite
           ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-20 md:px-12 md:py-24">
+      <section className="px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Paiement sécurisé
+            </p>
+            <h2
+              className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                lineHeight: 1.2,
+              }}
+            >
+              Payer chez Proofeus®, c&apos;est payer en toute confiance.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
+              Nous ne stockons ni votre numéro de carte, ni votre historique
+              de paiement. Toutes les transactions passent par des
+              partenaires certifiés PCI-DSS de niveau bancaire.
+            </p>
+          </div>
+
+          {/* Ligne 1 — Partenaires paiement */}
+          <div className="mt-14">
+            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/60">
+              Traitement des paiements
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
+              <PaiementBadge nom="Stripe" />
+              <PaiementBadge nom="Visa" />
+              <PaiementBadge nom="Mastercard" />
+              <PaiementBadge nom="American Express" />
+              <PaiementBadge nom="Apple Pay" />
+              <PaiementBadge nom="Google Pay" />
+              <PaiementBadge nom="SEPA" />
+            </div>
+          </div>
+
+          {/* Ligne 2 — Garanties sécurité + conformité */}
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <GarantieCard
+              titre="PCI-DSS niveau 1"
+              corps="Traitement des cartes bancaires au plus haut niveau de sécurité — le même que celui des grandes banques."
+            />
+            <GarantieCard
+              titre="TLS 1.3 + AES-256"
+              corps="Toutes les communications sont chiffrées de bout en bout selon les standards les plus récents."
+            />
+            <GarantieCard
+              titre="RGPD & droit européen"
+              corps="Vos données sont hébergées en Europe, sous droit européen. Vous exercez à tout moment votre droit à l'oubli."
+            />
+            <GarantieCard
+              titre="Zéro stockage carte"
+              corps="Nous ne conservons ni votre numéro de CB, ni votre CVV, ni votre historique de transactions."
+            />
+            <GarantieCard
+              titre="3D Secure automatique"
+              corps="Chaque paiement au-dessus d'un seuil est authentifié par votre banque avec 3D Secure v2."
+            />
+            <GarantieCard
+              titre="Résiliation en un clic"
+              corps="Aucun engagement caché. Vous résiliez votre formule à tout moment, sans frais, sans justification."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          6. NOTE + CTAs — bandeau noir
+          ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="px-6 py-20 md:px-12 md:py-24"
+        style={{ background: "#000" }}
+      >
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-8 text-sm italic leading-relaxed text-gris-clair">
             Les tarifs présentés sur cette page sont indicatifs et seront
@@ -448,6 +530,55 @@ function FormuleCard({ nom, prix, cadence, chapo, inclus, vedette }: Formule) {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Badge partenaire paiement — pill uniforme
+   ══════════════════════════════════════════════════════════════════ */
+
+function PaiementBadge({ nom }: { nom: string }) {
+  return (
+    <div className="flex h-10 items-center rounded-md border border-gris-sombre bg-noir-profond px-5">
+      <span className="text-sm font-semibold tracking-wide text-blanc-casse/90">
+        {nom}
+      </span>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Carte garantie sécurité / conformité
+   ══════════════════════════════════════════════════════════════════ */
+
+function GarantieCard({ titre, corps }: { titre: string; corps: string }) {
+  return (
+    <div className="rounded-sm border border-cyan-proofeus/25 bg-noir-profond p-5">
+      <div className="flex items-start gap-3">
+        <span
+          aria-hidden
+          className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-cyan-proofeus/40 text-cyan-proofeus"
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path
+              d="M2.5 6.5l2.5 2.5 4.5-5.5"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-cyan-proofeus">
+            {titre}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-gris-clair">
+            {corps}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
