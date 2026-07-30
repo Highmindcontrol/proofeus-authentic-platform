@@ -165,7 +165,7 @@ export default function EcosystemePage() {
                 <span className="text-sm text-gris-clair">/an</span>
               </div>
               <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie
+                à vie · premier million
               </p>
               <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
                 {[
@@ -212,7 +212,7 @@ export default function EcosystemePage() {
                 <span className="text-sm text-gris-clair">/an</span>
               </div>
               <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-                à vie
+                à vie · premier million
               </p>
               <ul className="mt-6 flex-1 space-y-2 text-sm leading-relaxed text-blanc-casse/90">
                 <li className="flex items-start gap-2">

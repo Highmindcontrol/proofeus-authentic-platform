@@ -156,8 +156,8 @@ export default function TarifsPage() {
           <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
             Proofeus® pour l&apos;identité biométrique et les services
             personnels. Proofeus® intégral pour ceux qui certifient aussi
-            leurs œuvres. Un seul choix à faire — le tarif est verrouillé
-            à vie.
+            leurs œuvres. Tarifs de lancement verrouillés à vie pour le
+            premier million d&apos;utilisateurs.
           </p>
 
           <div className="mt-12">
@@ -239,6 +239,49 @@ export default function TarifsPage() {
             institutions doivent choisir un supplément ou un forfait dédié
             ci-dessous.
           </p>
+
+          {/* Bloc justificatif — pourquoi un tarif si bas */}
+          <div className="mx-auto mt-16 max-w-4xl rounded-sm border border-cyan-proofeus/40 bg-noir-profond p-8 md:p-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus">
+              Pourquoi un tarif si bas ?
+            </p>
+            <h3
+              className="mt-5 font-light tracking-[-0.01em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.35rem, 2.2vw, 1.75rem)",
+                lineHeight: 1.3,
+              }}
+            >
+              Un standard mondial ne se construit pas avec des tarifs
+              d&apos;élite.
+            </h3>
+            <p className="mt-6 text-base leading-relaxed text-gris-clair md:text-lg">
+              Notre objectif est que le Sceau Proofeus® devienne le standard
+              mondial de la souveraineté humaine à l&apos;ère post-IA. Pour
+              y arriver vite, nous avons choisi un tarif de lancement
+              défiant toute concurrence, réservé aux{" "}
+              <strong className="font-medium text-blanc-casse">
+                premiers utilisateurs
+              </strong>{" "}
+              qui nous rejoignent — et{" "}
+              <strong className="font-medium text-blanc-casse">
+                garanti à vie
+              </strong>{" "}
+              pour eux, quels que soient nos prix futurs.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-gris-clair md:text-lg">
+              Ces conditions ne reviendront pas. Une fois le{" "}
+              <strong className="font-medium text-blanc-casse">
+                premier million d&apos;utilisateurs
+              </strong>{" "}
+              atteint, les tarifs s&apos;alignent sur la valeur réelle du
+              marché de la souveraineté humaine. C&apos;est aujourd&apos;hui
+              que se joue le prix de votre protection pour les décennies à
+              venir.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -459,7 +502,8 @@ export default function TarifsPage() {
             Les suppléments Art présentés sont indicatifs et seront
             confirmés à l&apos;ouverture publique de la plateforme. Les
             socles Proofeus® (14,90 €/an) et Proofeus® intégral (19,90 €/an)
-            sont verrouillés à vie pour tous les souscripteurs.
+            sont verrouillés à vie pour les souscripteurs du premier
+            million d&apos;utilisateurs.
           </p>
 
           <h2
@@ -553,7 +597,7 @@ function SocleCard({
         <span className="text-sm text-gris-clair">/{cadence}</span>
       </div>
       <p className="mt-2 text-xs uppercase tracking-widest text-cyan-proofeus/80">
-        à vie
+        à vie · premier million
       </p>
 
       <p className="mt-5 text-sm leading-relaxed text-gris-clair">{chapo}</p>
