@@ -382,14 +382,14 @@ export default function RegistryPage() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
-              href="/certifier"
+              href="/registry/consulter"
               className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-noir transition-transform hover:-translate-y-0.5"
               style={{ background: "var(--color-cyan-proofeus)" }}
             >
               Ouvrir le Registre
             </Link>
             <Link
-              href="/artistes"
+              href="/certifier"
               className="inline-flex items-center gap-2 rounded-full border border-blanc-casse/30 px-6 py-3 text-sm font-medium text-blanc-casse transition-colors hover:border-cyan-proofeus/60 hover:text-cyan-proofeus"
             >
               Sceller une œuvre
