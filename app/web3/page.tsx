@@ -271,17 +271,17 @@ export default function Web3Page() {
             backgroundImage: "url('/filigrane-web3-nft.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.18,
+            opacity: 0.38,
           }}
         />
-        {/* Voile anthracite pour laisser le filigrane à peine perceptible
+        {/* Voile anthracite allégé pour rendre le filigrane plus lisible
             tout en préservant la lisibilité du contenu par-dessus. */}
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(22,22,26,0.85) 0%, rgba(22,22,26,0.75) 50%, rgba(22,22,26,0.9) 100%)",
+              "linear-gradient(180deg, rgba(22,22,26,0.68) 0%, rgba(22,22,26,0.55) 50%, rgba(22,22,26,0.72) 100%)",
           }}
         />
 
