@@ -131,7 +131,7 @@ export default function CertifierPage() {
             top: "38%",
             left: "50%",
             transform:
-              "translate(-50%, -50%) translateX(120px) translateY(-230px)",
+              "translate(-50%, -50%) translateX(150px) translateY(-260px)",
           }}
         >
           <p
