@@ -129,7 +129,7 @@ export default function Web3Page() {
       <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-            La fracture que personne n&apos;a soudée
+            La fracture que personne n&apos;avait encore soudée
           </p>
           <h2
             className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -152,7 +152,7 @@ export default function Web3Page() {
             humain n&apos;ait jamais tenu de pinceau. Le marché doit
             croire, sans pouvoir vérifier.
           </p>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-blanc-casse md:text-lg">
             Proofeus Authentic® vient sceller cette faille avec l&apos;unique
             élément que la cryptographie seule ne peut fabriquer : la
             preuve d&apos;humanité. L&apos;œuvre reste physique ou
