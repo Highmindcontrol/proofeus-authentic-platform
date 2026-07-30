@@ -292,7 +292,7 @@ export default function RegistryPage() {
             backgroundImage: "url('/filigrane-registry-entree.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.38,
+            opacity: 0.55,
           }}
         />
         <div
@@ -300,7 +300,7 @@ export default function RegistryPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(22,22,26,0.68) 0%, rgba(22,22,26,0.55) 50%, rgba(22,22,26,0.72) 100%)",
+              "linear-gradient(180deg, rgba(22,22,26,0.55) 0%, rgba(22,22,26,0.4) 50%, rgba(22,22,26,0.62) 100%)",
           }}
         />
 
