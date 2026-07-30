@@ -72,9 +72,10 @@ export default function Web3Page() {
   return (
     <main>
       {/* ═══════════════════════════════════════════════════════════
-          1. HERO — image NFT en galerie premium + titre
+          1. HERO — image NFT en galerie premium + titre positionné
+             sur le cadre au centre de l'image
           ═══════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -89,11 +90,21 @@ export default function Web3Page() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(13,13,16,0.4) 0%, rgba(13,13,16,0.55) 45%, rgba(13,13,16,0.5) 55%, rgba(13,13,16,0.95) 100%)",
+              "linear-gradient(to bottom, rgba(13,13,16,0.35) 0%, rgba(13,13,16,0.4) 60%, rgba(13,13,16,0.95) 100%)",
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
+        {/* Titre positionné en absolute, calé sur le centre du cadre NFT
+            visible dans l'image (approx. 40% depuis la gauche, 42% depuis
+            le haut). Ajustable si besoin. */}
+        <div
+          className="absolute z-10 w-full max-w-xl px-6 text-center"
+          style={{
+            top: "42%",
+            left: "40%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-proofeus/85">
             Pour le monde Web3
           </p>
@@ -102,9 +113,9 @@ export default function Web3Page() {
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(2.5rem, 5.5vw, 5rem)",
+              fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
               lineHeight: 1.05,
-              textShadow: "0 2px 24px rgba(0,0,0,0.65)",
+              textShadow: "0 2px 32px rgba(0,0,0,0.75)",
             }}
           >
             NFT : problème résolu.
