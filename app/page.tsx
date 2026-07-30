@@ -231,83 +231,95 @@ export default function AuthenticLanding() {
             </div>
           </div>
 
-          {/* ─────────  SOUS-BLOC 2 : CE QU'IL VOUS APPORTE  ───────── */}
-          <div className="mt-24 border-t border-gris-sombre pt-16 md:mt-28 md:pt-20">
-            <div className="text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-                Ce qu&apos;il vous apporte
-              </p>
-              <h3
-                className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          4B. BANDEAU NOIR — CE QU'IL VOUS APPORTE
+          ═══════════════════════════════════════════════════════════ */}
+      <section
+        className="px-6 py-24 md:px-12 md:py-32"
+        style={{ background: "#000" }}
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Ce qu&apos;il vous apporte
+            </p>
+            <h3
+              className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                lineHeight: 1.25,
+              }}
+            >
+              Une seule identité, tous les services des écosystèmes
+              Proofeus
+              <sup
                 style={{
-                  fontFamily:
-                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
-                  lineHeight: 1.25,
+                  fontSize: "0.42em",
+                  verticalAlign: "0.8em",
+                  fontWeight: 400,
+                  marginLeft: "0.05em",
                 }}
               >
-                Une seule identité, tous les services des écosystèmes
-                Proofeus
-                <sup
-                  style={{
-                    fontSize: "0.42em",
-                    verticalAlign: "0.8em",
-                    fontWeight: 400,
-                    marginLeft: "0.05em",
-                  }}
-                >
-                  ®
-                </sup>{" "}
-                &amp; Verbalock.
-              </h3>
-              <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
-                Votre Sceau est votre clé unique dans l&apos;ensemble des
-                briques du groupe. Il vous ouvre :
-              </p>
-            </div>
+                ®
+              </sup>{" "}
+              &amp; Verbalock.
+            </h3>
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
+              Votre Sceau est votre clé unique dans l&apos;ensemble des
+              briques du groupe. Il vous ouvre :
+            </p>
+          </div>
 
-            <div className="mt-14">
-              <PastilleCarousel items={APPORTS} />
+          <div className="mt-14">
+            <PastilleCarousel items={APPORTS} />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          4C. CE CONTRE QUOI IL VOUS PROTÈGE — retour fond anthracite
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Ce contre quoi il vous protège
+            </p>
+            <h3
+              className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
+                lineHeight: 1.25,
+              }}
+            >
+              Vous êtes obligatoirement protégé contre tout ceci.
+            </h3>
+          </div>
+
+          {/* Groupe A — Dans le domaine de l'art */}
+          <div className="mt-14">
+            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
+              Dans le domaine de l&apos;art
+            </p>
+            <div className="mt-8">
+              <PastilleCarousel items={PROTECTIONS_ART} />
             </div>
           </div>
 
-          {/* ─────────  SOUS-BLOC 3 : CE CONTRE QUOI IL PROTÈGE  ───────── */}
-          <div className="mt-24 border-t border-gris-sombre pt-16 md:mt-28 md:pt-20">
-            <div className="text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-                Ce contre quoi il vous protège
-              </p>
-              <h3
-                className="mx-auto mt-4 max-w-3xl font-light tracking-[-0.01em] text-blanc-casse"
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-                  fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)",
-                  lineHeight: 1.25,
-                }}
-              >
-                Vous êtes obligatoirement protégé contre tout ceci.
-              </h3>
-            </div>
-
-            {/* Groupe A — Dans le domaine de l'art */}
-            <div className="mt-14">
-              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
-                Dans le domaine de l&apos;art
-              </p>
-              <div className="mt-8">
-                <PastilleCarousel items={PROTECTIONS_ART} />
-              </div>
-            </div>
-
-            {/* Groupe B — Dans les écosystèmes Proofeus® + Verbalock */}
-            <div className="mt-16">
-              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
-                Dans les écosystèmes Proofeus® &amp; Verbalock
-              </p>
-              <div className="mt-8">
-                <PastilleCarousel items={PROTECTIONS_ECOSYSTEMES} />
-              </div>
+          {/* Groupe B — Dans les écosystèmes Proofeus® + Verbalock */}
+          <div className="mt-16">
+            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
+              Dans les écosystèmes Proofeus® &amp; Verbalock
+            </p>
+            <div className="mt-8">
+              <PastilleCarousel items={PROTECTIONS_ECOSYSTEMES} />
             </div>
           </div>
 
