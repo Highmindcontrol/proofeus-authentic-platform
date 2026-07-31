@@ -45,13 +45,13 @@ export default function EcosystemePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          2. MIND MAP — anthracite
+          2. MIND MAP — le bouclier au centre, les apps autour
           ═══════════════════════════════════════════════════════════ */}
       <section className="px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              L&apos;humain au centre
+              Le bouclier au centre
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -62,15 +62,21 @@ export default function EcosystemePage() {
                 lineHeight: 1.2,
               }}
             >
-              Huit familles de services, un seul Sceau.
+              Un Sceau. Des apps qui reposent dessus.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Chaque service de l&apos;écosystème part du même point : votre
-              identité biométrique multimodale. Voici comment il se déploie.
+              Votre Sceau Proofeus® est le socle — biométrique, souverain,
+              infranchissable. Chaque app de l&apos;écosystème est
+              téléchargeable indépendamment sur App Store et Google Play,
+              mais toutes exigent votre Sceau pour fonctionner.
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm italic leading-relaxed text-gris-clair/85">
+              Vous choisissez ce que vous branchez, vous ne payez que ce
+              que vous utilisez.
             </p>
           </div>
 
-          <div className="mt-16 md:mt-20">
+          <div className="mt-24 md:mt-28">
             <MindMapEcosysteme />
           </div>
         </div>
