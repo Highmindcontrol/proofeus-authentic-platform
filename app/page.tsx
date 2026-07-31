@@ -64,208 +64,12 @@ export default function AuthenticLanding() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          ACTE I · LA CRISE — bandeau noir
-          ═══════════════════════════════════════════════════════════ */}
-      <section
-        className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32"
-        style={{ background: "#000" }}
-      >
-        <div className="mx-auto max-w-3xl text-center">
-          <p
-            className="font-light text-cyan-proofeus/70"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-              lineHeight: 1,
-              letterSpacing: "0.12em",
-            }}
-          >
-            I
-          </p>
-          <h2
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-              lineHeight: 1.15,
-            }}
-          >
-            L&apos;IA a rendu le numérique inhabitable.
-          </h2>
-          <p className="mx-auto mt-8 text-base leading-relaxed text-gris-clair md:text-lg">
-            Deepfakes vidéo, voix clonées, arnaques industrialisées.
-            Plusieurs milliards d&apos;euros détournés en 2024 et 2025 par
-            des synthèses IA de directeurs financiers, de grand-parents,
-            de célébrités, d&apos;artistes. La confiance elle-même est
-            devenue une matière première rare.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          ACTE II · LA QUÊTE — anthracite
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <p
-            className="font-light text-cyan-proofeus/70"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-              lineHeight: 1,
-              letterSpacing: "0.12em",
-            }}
-          >
-            II
-          </p>
-          <h2
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-              lineHeight: 1.15,
-            }}
-          >
-            Nous cherchions une arme.
-          </h2>
-          <p className="mx-auto mt-8 text-base leading-relaxed text-gris-clair md:text-lg">
-            Pas un pansement. Pas un mot de passe de plus. Pas un CAPTCHA
-            de plus. Une vraie arme, capable de trancher net entre
-            l&apos;humain et la machine. Nous avons cherché des mois — dans
-            la cryptographie, dans la biométrie, dans les protocoles
-            d&apos;identité souveraine.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          ACTE III · LE BOUCLIER — bandeau noir avec Sceau visuel
-          ═══════════════════════════════════════════════════════════ */}
-      <section
-        className="relative overflow-hidden px-6 py-24 md:px-12 md:py-32"
-        style={{ background: "#000" }}
-      >
-        {/* Sceau canonique en filigrane subtil derrière le récit */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08]"
-        >
-          <Image
-            src="/sceau-canonique.png"
-            alt=""
-            width={560}
-            height={560}
-          />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <p
-            className="font-light text-cyan-proofeus/70"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-              lineHeight: 1,
-              letterSpacing: "0.12em",
-            }}
-          >
-            III
-          </p>
-          <h2
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-              lineHeight: 1.15,
-            }}
-          >
-            Nous l&apos;avons trouvée.
-          </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-blanc-casse/90 md:text-lg">
-            Une empreinte biométrique multimodale — iris, morphologie,
-            voix, paume, pouls. Fusionnée cryptographiquement, coupée en
-            deux moitiés : l&apos;une gravée dans le composant sécurisé de
-            votre téléphone, l&apos;autre sur nos serveurs européens.
-            <strong className="font-semibold text-cyan-proofeus">
-              {" "}
-              Impossible à reconstituer sans les deux.
-            </strong>{" "}
-            Ni copiable, ni imitable, ni générable par une IA.
-          </p>
-          <p className="mx-auto mt-6 text-sm italic leading-relaxed text-gris-clair md:text-base">
-            C&apos;est votre bouclier. Nous l&apos;appelons le Sceau
-            Proofeus®.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          ACTE IV · L'ÉCOSYSTÈME — anthracite + lien /ecosysteme
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-24 md:px-12 md:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <p
-            className="font-light text-cyan-proofeus/70"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-              lineHeight: 1,
-              letterSpacing: "0.12em",
-            }}
-          >
-            IV
-          </p>
-          <h2
-            className="mt-6 font-light tracking-[-0.02em] text-blanc-casse"
-            style={{
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-              lineHeight: 1.15,
-            }}
-          >
-            Sur cette pierre, une famille d&apos;apps.
-          </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-            Sur ce bouclier reposent désormais tous les services de
-            l&apos;écosystème Proofeus®. Messagerie chiffrée, wallets de
-            mots de passe et de cryptomonnaies, paiement humain à humain,
-            testament, bouton d&apos;alerte, certification d&apos;œuvres.
-            Chaque app est possible <em>parce que</em> le bouclier existe.
-          </p>
-          <p className="mx-auto mt-6 max-w-2xl text-sm italic leading-relaxed text-gris-clair md:text-base">
-            Vous construisez votre bouclier une fois. Vous choisissez les
-            apps que vous branchez dessus. Vous ne payez que ce que vous
-            utilisez.
-          </p>
-          <div className="mt-10">
-            <Link
-              href="/ecosysteme"
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-proofeus/50 px-6 py-3 text-sm font-medium text-cyan-proofeus transition-colors hover:bg-cyan-proofeus hover:text-noir"
-            >
-              Découvrir l&apos;écosystème complet →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          FOCUS · PROOFEUS AUTHENTIC — l'app dont parle ce site
+          2A. PROOFEUS AUTHENTIC — focus direct sur l'app de ce site
           ═══════════════════════════════════════════════════════════ */}
       <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-4xl">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-            L&apos;app dont ce site parle
-          </p>
-
           <h2
-            className="mt-6 text-center font-light tracking-[-0.02em] text-blanc-casse"
+            className="text-center font-light tracking-[-0.02em] text-blanc-casse"
             style={{
               fontFamily:
                 "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
@@ -304,10 +108,24 @@ export default function AuthenticLanding() {
 
           <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-gris-clair md:text-lg">
             Nous relions chaque œuvre — toile, sculpture, photographie ou
-            NFT — à l&apos;humain qui l&apos;a créée, grâce à son bouclier
-            Proofeus®. Copies générées par IA, contrefaçons, usurpations
+            NFT — à l&apos;humain qui l&apos;a créée, par une empreinte
+            biométrique multimodale unique et un registre public
+            inaltérable. Copies générées par IA, contrefaçons, usurpations
             d&apos;auteur et provenances douteuses ne peuvent plus se
             confondre avec l&apos;original.
+          </p>
+
+          {/* Petite accroche vers l'écosystème complet, sans dérouler
+              le récit fondateur qui appartient à proofeus.com */}
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic leading-relaxed text-gris-clair">
+            Proofeus® Authentic est l&apos;une des apps de
+            l&apos;écosystème Proofeus®.{" "}
+            <Link
+              href="/ecosysteme"
+              className="not-italic text-cyan-proofeus underline underline-offset-4 transition-colors hover:text-blanc-casse"
+            >
+              Découvrir l&apos;écosystème complet →
+            </Link>
           </p>
         </div>
       </section>
