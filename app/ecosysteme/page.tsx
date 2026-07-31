@@ -83,7 +83,7 @@ export default function EcosystemePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          3. LE SOCLE SOVEREIGN — bandeau noir
+          3. LES DEUX SOCLES — bandeau noir
           ═══════════════════════════════════════════════════════════ */}
       <section
         className="px-6 py-24 md:px-12 md:py-32"
@@ -92,7 +92,7 @@ export default function EcosystemePage() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
-              Le socle
+              Deux façons d&apos;entrer
             </p>
             <h2
               className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
@@ -103,23 +103,20 @@ export default function EcosystemePage() {
                 lineHeight: 1.2,
               }}
             >
-              Proofeus
-              <sup style={{ fontSize: "0.5em", verticalAlign: "0.7em" }}>®</sup>{" "}
-              Sovereign — le bouclier, à vie.
+              Le bouclier seul, ou l&apos;écosystème complet.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Un seul tarif d&apos;entrée dans l&apos;écosystème. Tout ce
-              qu&apos;il vous faut pour créer votre bouclier biométrique et
-              activer les apps de votre choix.
+              Vous préférez commencer petit et ajouter les apps une à une ?
+              Sovereign. Vous voulez tout d&apos;un coup, en économisant
+              51 % ? Intégral.
             </p>
           </div>
 
-          <div className="mx-auto mt-14 max-w-2xl">
+          <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
             <EcoSocleCard
               nom="Proofeus® Sovereign"
               prix="14,90 €"
-              baseline="Le bouclier biométrique + protections nativement incluses"
-              vedette
+              baseline="Le bouclier + protections nativement incluses"
               inclus={[
                 "Sceau d'humanité biométrique multimodal",
                 "Cercles de confiance & fonction ping",
@@ -129,13 +126,27 @@ export default function EcosystemePage() {
                 "Consultation du Registre public",
               ]}
             />
+
+            <EcoSocleCard
+              nom="Proofeus® Intégral"
+              prix="29,90 €"
+              baseline="Sovereign + Verbalock® complet + Legacy® + Authentic® occasionnel"
+              vedette
+              inclus={[
+                "Tout Sovereign (bouclier + protections)",
+                "Verbalock® Passwords, Crypto, Chat, Pay",
+                "Legacy® — testament et transmission",
+                "Authentic® — 5 Sceaux d'auteur par an",
+                "1 Sceau de création offert",
+                "Accès complet au Registre public",
+              ]}
+            />
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic leading-relaxed text-gris-clair">
-            Les apps modulaires (Verbalock®, Authentic®, Legacy®…)
-            s&apos;ajoutent à ce socle depuis votre hub, en un clic. Vous
-            ne payez que ce que vous utilisez. Voir la page Tarifs pour la
-            grille complète.
+            Les apps modulaires s&apos;ajoutent à Sovereign en un clic
+            depuis votre hub. Aucune commission App Store — vous ne payez
+            que ce que vous utilisez.
           </p>
 
           <div className="mt-10 text-center">

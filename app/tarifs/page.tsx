@@ -13,7 +13,7 @@ export const metadata: Metadata = {
    DONNÉES
    ══════════════════════════════════════════════════════════════════ */
 
-const SOCLE_INTEGRAL = 19.9;
+const SOCLE_INTEGRAL = 29.9;
 
 type Formule = {
   nom: string;
@@ -193,48 +193,44 @@ export default function TarifsPage() {
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-2">
-            {/* Proofeus 14,90 € */}
+            {/* Proofeus Sovereign 14,90 € — le bouclier seul */}
             <SocleCard
-              nom="Proofeus®"
+              nom="Proofeus® Sovereign"
               prix="14,90 €"
               cadence="an"
-              baseline="Inclus : identité + services personnels"
-              chapo="Pour tous ceux qui veulent une identité biométrique souveraine et les services personnels de l'écosystème."
+              baseline="Le bouclier + protections nativement incluses"
+              chapo="Le socle d'entrée dans l'écosystème. Votre bouclier biométrique et les protections offertes avec. À enrichir librement avec les apps de votre choix."
               inclus={[
-                "Sceau d'humanité biométrique",
-                "Messagerie chiffrée E2E",
-                "Cercles de confiance",
-                "Wallet mots de passe",
-                "Wallet crypto sans seed",
-                "Paiement humain à humain",
-                "Testament numérique",
-                "Boutons d'alerte Squad/Help",
-                "Coryphea® — assistante IA",
-                "2 Sceaux (dont 1 à offrir)",
+                "Sceau d'humanité biométrique multimodal",
+                "Cercles de confiance & fonction ping",
+                "Help — bouton d'alerte physique",
+                "Coryphea® — assistante conversationnelle",
+                "Watch® — observatoire IA malveillante",
+                "Consultation du Registre public",
               ]}
-              exclu="Certification d'œuvres non incluse"
-              ctaLabel="Souscrire Proofeus® ↗"
-              ctaHref="https://proofeus.com/inscription?pkg=proofeus"
+              exclu="Apps modulaires à ajouter à la carte (Verbalock®, Authentic®, Legacy®)"
+              ctaLabel="Souscrire Sovereign ↗"
+              ctaHref="https://proofeus.com/inscription?pkg=sovereign"
             />
 
-            {/* Proofeus intégral 19,90 € */}
+            {/* Proofeus Intégral 29,90 € — tout inclus grand public */}
             <SocleCard
-              nom="Proofeus® intégral"
-              prix="19,90 €"
+              nom="Proofeus® Intégral"
+              prix="29,90 €"
               cadence="an"
               vedette
-              baseline="Inclus : identité + services personnels + Proofeus Authentic®"
-              chapo="Pour ceux qui veulent tout Proofeus® ET certifier occasionnellement leurs œuvres. Cinq Sceaux d'auteur par an inclus."
+              baseline="Sovereign + Verbalock® complet + Legacy® + Authentic® occasionnel"
+              chapo="Le pack tout-en-un pour la vie numérique complète — bouclier + 4 apps Verbalock® + testament Legacy® + certification d'œuvres occasionnelle. −51 % vs les modules à la carte."
               inclus={[
-                "Tout ce que contient Proofeus®",
-                "5 Sceaux d'auteur par an",
+                "Tout Sovereign (bouclier + protections)",
+                "Verbalock® Passwords, Crypto, Chat, Pay",
+                "Legacy® — testament et transmission",
+                "Authentic® — 5 Sceaux d'auteur par an",
                 "1 Sceau de création offert",
-                "Certification NFT compatible",
-                "Accès au Registre public",
-                "Support prioritaire",
+                "Accès complet au Registre public",
               ]}
-              ctaLabel="Souscrire Proofeus® intégral ↗"
-              ctaHref="https://proofeus.com/inscription?pkg=proofeus-integral"
+              ctaLabel="Souscrire Intégral ↗"
+              ctaHref="https://proofeus.com/inscription?pkg=integral"
             />
           </div>
 
@@ -286,6 +282,76 @@ export default function TarifsPage() {
               venir.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          2b. APPS À LA CARTE — anthracite (pour ceux qui préfèrent choisir)
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="border-t border-gris-sombre px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-cyan-300/80">
+              Apps à la carte
+            </p>
+            <h2
+              className="mx-auto mt-6 max-w-3xl font-light tracking-[-0.02em] text-blanc-casse"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                lineHeight: 1.2,
+              }}
+            >
+              Ou construisez votre écosystème sur mesure.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
+              À ajouter au socle Sovereign 14,90 €/an. Chaque app se
+              télécharge sur App Store et Google Play — mais s&apos;active
+              en un clic depuis votre hub Proofeus®, sans commission
+              intermédiaire.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <AppCarte
+              nom="Verbalock® Passwords"
+              prix="4,90 €"
+              chapo="Coffre de mots de passe débloqué par votre biométrie. Fini les mots de passe oubliés."
+            />
+            <AppCarte
+              nom="Verbalock® Crypto"
+              prix="4,90 €"
+              chapo="Wallet crypto non-custodial sans seed phrase. Votre biométrie est la clé."
+            />
+            <AppCarte
+              nom="Verbalock® Chat"
+              prix="4,90 €"
+              chapo="Messagerie chiffrée E2E entre humains vérifiés. Fini les deepfakes textuels."
+            />
+            <AppCarte
+              nom="Verbalock® Pay"
+              prix="4,90 €"
+              chapo="Envoyez et recevez de la valeur entre humains vérifiés. Rail conversationnel."
+            />
+            <AppCarte
+              nom="Pack Verbalock® 4-en-1"
+              prix="9,90 €"
+              chapo="Les 4 apps Verbalock® réunies. Économie 9,60 €/an vs à la carte."
+              vedette
+            />
+            <AppCarte
+              nom="Proofeus® Legacy"
+              prix="6,90 €"
+              chapo="Testament, transmission, vidéos post-mortem, dossiers pour les enfants. Service actif à vie."
+            />
+          </div>
+
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs italic leading-relaxed text-gris-clair">
+            Prix affichés par app et par an, en supplément du socle
+            Sovereign 14,90 €/an. Pour Proofeus® Authentic (certification
+            d&apos;œuvres), voir les formules dédiées ci-dessous.
+          </p>
         </div>
       </section>
 
@@ -852,6 +918,46 @@ function FormuleCard({
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Card app à la carte — nom + prix cyan + chapo court.
+ * Compact, alignée sur la charte modulaire iPhone/App Store.
+ */
+function AppCarte({
+  nom,
+  prix,
+  chapo,
+  vedette,
+}: {
+  nom: string;
+  prix: string;
+  chapo: string;
+  vedette?: boolean;
+}) {
+  return (
+    <div
+      className={`flex flex-col rounded-sm border p-5 ${
+        vedette
+          ? "border-cyan-proofeus/60 bg-noir-profond shadow-[0_14px_36px_-14px_rgba(63,212,217,0.35)]"
+          : "border-gris-sombre bg-noir-profond"
+      }`}
+    >
+      <div className="flex items-baseline justify-between gap-2">
+        <p className="text-sm font-semibold text-blanc-casse">{nom}</p>
+        <p className="text-sm font-semibold text-cyan-proofeus">
+          {prix}
+          <span className="text-[10px] text-gris-clair">/an</span>
+        </p>
+      </div>
+      {vedette && (
+        <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-proofeus">
+          Meilleure valeur
+        </p>
+      )}
+      <p className="mt-3 text-xs leading-relaxed text-gris-clair">{chapo}</p>
     </div>
   );
 }
