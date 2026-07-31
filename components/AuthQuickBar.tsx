@@ -155,7 +155,7 @@ export function AuthQuickBar() {
                   <p>
                     Pour certifier vos œuvres, il vous faut le socle{" "}
                     <strong className="font-medium text-blanc-casse">
-                      Proofeus® intégral 19,90 €/an, à vie pour le premier million
+                      Proofeus® intégral 29,90 €/an, à vie pour le premier million
                     </strong>{" "}
                     (5 Sceaux d&apos;auteur par an inclus).
                   </p>

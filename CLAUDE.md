@@ -17,7 +17,9 @@
 
 **Éditeur** : Ataraxis IA (verticale d'intelligence artificielle souveraine du groupe Ataraxis).
 
-**Filiale** : Ataraxis IA — marques sœurs Coryphea®, Proofeus®, Verbalock®, VocalGPS®.
+**Filiale** : Ataraxis IA — marques sœurs Coryphea®, Proofeus®, VocalGPS®.
+
+> **Note doctrine** : Verbalock® reste marque défensive INPI mais **n'est plus utilisée dans la communication utilisateur** depuis l'arbitrage du 31 juillet 2026. Toutes les apps de l'écosystème sont préfixées « Proofeus® » (modèle Apple/Google — « Proofeus® Passwords », « Proofeus® Crypto », « Proofeus® Chat », « Proofeus® Pay »). Le repo `verbalock-platform` et le domaine `verbalock.com` seront traités dans un chantier séparé (redirect 301 vers `proofeus.com/[section]`).
 
 **URL cible** :
 - **`proofeus.art`** — **domaine canonique arbitré 29 juillet 2026** (TLD .art choisi pour signal cible artistes/galeries/marketplaces Web3, neutralité renforcée vs sous-domaine, garde la marque Proofeus visible)
@@ -58,7 +60,7 @@
 - **1 000 000 fragments** SBT non-transférables sur Base
 - **Modèle Lazy Mint** — mint à la réclamation, pas de pré-mint
 - **Chaque humain reçoit son numéro à vie** : *« Vous êtes le 237 491ᵉ humain vérifié par Proofeus »*
-- **Wallet natif Verbalock** — élimine friction MetaMask
+- **Wallet natif Proofeus® Crypto** — élimine friction MetaMask
 - **Chain** : Base (Ethereum L2 Coinbase, frais ~2 cents/mint)
 - **Coût total 35-55 K€** étalés sur 2-3 ans
 - **Œuvre inaugurale** : générée DALL·E/ChatGPT en V1 (arbitrage 29 juillet 2026 « ship first, polish later »), remplaçable par artiste co-signataire ultérieurement via `setBaseURI()` du smart contract
@@ -81,7 +83,7 @@
 
 ### Ecosystème adjacent
 - **Repo `proofeus-platform`** : brique principale Proofeus, contient les 2 roadmaps sources (`docs/roadmap-authentic.md` + `docs/roadmap-certificat-fondation.md`)
-- **Repo `verbalock-platform`** : wallet natif où les Sceaux sont stockés (accélération T2→T1 2027 pour matcher drop)
+- **Repo `verbalock-platform`** : code interne du wallet natif où les Sceaux sont stockés (exposé aux utilisateurs sous le nom **Proofeus® Crypto** — accélération T2→T1 2027 pour matcher drop)
 - **Repo `ataraxis-platform`** : forteresse admin qui documente la marque (`docs/briefs/proofeus-authentic.md`)
 
 ---
@@ -174,7 +176,7 @@
 3. **Générer l'œuvre inaugurale** via DALL·E/ChatGPT (prompt à écrire)
 4. **Uploader œuvre + métadonnées sur IPFS** (via Pinata ou similaire), obtenir CID
 5. **Déployer smart contract sur Base Sepolia** (testnet) — test end-to-end mint
-6. **Branchement Verbalock** : quand Verbalock Crypto sera en dev, intégrer réception Sceau des Origines nativement
+6. **Branchement Proofeus® Crypto** : quand le wallet sera en dev, intégrer réception Sceau des Origines nativement
 7. **Waitlist Brevo** — brancher formulaire réel
 8. **Validation MiCA** avec cabinet crypto (3-8 K€)
 9. **Audit sécurité smart contract** avant déploiement mainnet (3-8 K€)

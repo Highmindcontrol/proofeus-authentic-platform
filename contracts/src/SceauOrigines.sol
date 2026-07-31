@@ -108,7 +108,7 @@ contract SceauOrigines is ERC721, Ownable {
      * @dev Appelé par le backend Proofeus après vérification biométrique
      *      off-chain (via le Sceau d'Humanité). Chaque humain reçoit
      *      son numéro unique (tokenId auto-incrémenté).
-     * @param to Adresse du wallet Verbalock de l'humain vérifié
+     * @param to Adresse du wallet Proofeus® Crypto de l'humain vérifié
      */
     function mintForVerifiedHuman(address to)
         external

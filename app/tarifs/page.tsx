@@ -6,7 +6,7 @@ import { BandeauPaiementStripe } from "@/components/PaiementLogos";
 export const metadata: Metadata = {
   title: "Tarifs — Proofeus Authentic®",
   description:
-    "Deux socles Proofeus® à vie — 14,90 €/an pour l'identité, 19,90 €/an pour l'intégral avec certification d'œuvres. Suppléments Art pour artistes prolifiques, forfaits dédiés pour institutions. Aucune commission de vente.",
+    "Deux socles Proofeus® à vie — 14,90 €/an pour l'identité, 29,90 €/an pour l'intégral avec certification d'œuvres. Suppléments Art pour artistes prolifiques, forfaits dédiés pour institutions. Aucune commission de vente.",
 };
 
 /* ══════════════════════════════════════════════════════════════════
@@ -379,7 +379,7 @@ export default function TarifsPage() {
               Au-delà de cinq œuvres par an.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gris-clair md:text-lg">
-              Suppléments à ajouter au socle Proofeus® intégral 19,90 €/an.
+              Suppléments à ajouter au socle Proofeus® intégral 29,90 €/an.
               Peintres, sculpteurs, photographes, artistes numériques,
               vidéastes — un même Sceau pour tous les médiums.
             </p>
@@ -567,7 +567,7 @@ export default function TarifsPage() {
           <p className="mb-8 text-sm italic leading-relaxed text-gris-clair">
             Les suppléments Art présentés sont indicatifs et seront
             confirmés à l&apos;ouverture publique de la plateforme. Les
-            socles Proofeus® (14,90 €/an) et Proofeus® intégral (19,90 €/an)
+            socles Proofeus® (14,90 €/an) et Proofeus® intégral (29,90 €/an)
             sont verrouillés à vie pour les souscripteurs du premier
             million d&apos;utilisateurs.
           </p>
@@ -869,7 +869,7 @@ function FormuleCard({
               </span>{" "}
               {supplement !== undefined ? (
                 <span className="text-xs text-gris-clair">
-                  (socle Intégral 19,90 € + supplément {prix})
+                  (socle Intégral 29,90 € + supplément {prix})
                 </span>
               ) : (
                 <span className="text-xs text-gris-clair">
