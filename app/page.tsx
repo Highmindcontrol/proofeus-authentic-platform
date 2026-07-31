@@ -178,10 +178,8 @@ export default function AuthenticLanding() {
             servira à enregistrer et à signer l&apos;ensemble de vos
             œuvres et de vos propriétés. C&apos;est également ce même
             Sceau qui vous permettra d&apos;utiliser l&apos;ensemble des
-            services des écosystèmes{" "}
-            <strong className="font-medium text-blanc-casse">Proofeus®</strong>{" "}
-            et{" "}
-            <strong className="font-medium text-blanc-casse">Verbalock</strong>.
+            apps de l&apos;écosystème{" "}
+            <strong className="font-medium text-blanc-casse">Proofeus®</strong>.
           </p>
         </div>
       </section>
@@ -271,7 +269,7 @@ export default function AuthenticLanding() {
                 lineHeight: 1.25,
               }}
             >
-              Une seule identité, tous les services des écosystèmes
+              Une seule identité, toutes les apps de l&apos;écosystème
               Proofeus
               <sup
                 style={{
@@ -282,8 +280,7 @@ export default function AuthenticLanding() {
                 }}
               >
                 ®
-              </sup>{" "}
-              &amp; Verbalock.
+              </sup>.
             </h3>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-gris-clair md:text-lg">
               Votre Sceau est votre clé unique dans l&apos;ensemble des
@@ -329,10 +326,10 @@ export default function AuthenticLanding() {
             </div>
           </div>
 
-          {/* Groupe B — Dans les écosystèmes Proofeus® + Verbalock */}
+          {/* Groupe B — Dans les écosystème Proofeus® */}
           <div className="mt-16">
             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-blanc-casse/70">
-              Dans les écosystèmes Proofeus® &amp; Verbalock
+              Dans les écosystème Proofeus®
             </p>
             <div className="mt-8">
               <PastilleCarousel items={PROTECTIONS_ECOSYSTEMES} />
@@ -450,7 +447,7 @@ const TECHNIQUE = [
 ];
 
 /* Ce qu'il vous apporte — services débloqués par le Sceau dans les
-   écosystèmes Proofeus® + Verbalock */
+   écosystème Proofeus® */
 const APPORTS: { titre: string; corps: string }[] = [
   {
     titre: "Certification d'œuvres",
@@ -465,7 +462,7 @@ const APPORTS: { titre: string; corps: string }[] = [
   {
     titre: "Wallet de mots de passe",
     corps:
-      "Verbalock stocke vos mots de passe et les débloque avec vos empreintes multimodales. L'ère du mot de passe oublié est terminée.",
+      "Proofeus® Passwords stocke vos mots de passe et les débloque avec vos empreintes multimodales. L'ère du mot de passe oublié est terminée.",
   },
   {
     titre: "Wallet cryptomonnaie",
@@ -532,7 +529,7 @@ const PROTECTIONS_ECOSYSTEMES: { titre: string; corps: string }[] = [
   {
     titre: "Prise de contrôle de compte",
     corps:
-      "Aucun accès à vos comptes Proofeus®, Verbalock ou services partenaires sans validation biométrique multimodale en direct.",
+      "Aucun accès à vos comptes Proofeus® ou services partenaires sans validation biométrique multimodale en direct.",
   },
   {
     titre: "Ingénierie sociale",
@@ -542,7 +539,7 @@ const PROTECTIONS_ECOSYSTEMES: { titre: string; corps: string }[] = [
   {
     titre: "Perte de mots de passe",
     corps:
-      "Verbalock supprime définitivement le mot de passe et la seed phrase de votre quotidien. Vos empreintes suffisent, partout, tout le temps.",
+      "Proofeus® Passwords supprime définitivement le mot de passe et la seed phrase de votre quotidien. Vos empreintes suffisent, partout, tout le temps.",
   },
   {
     titre: "Fraude à la signature",

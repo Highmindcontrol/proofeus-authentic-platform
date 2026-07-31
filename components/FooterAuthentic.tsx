@@ -73,16 +73,6 @@ export function FooterAuthentic() {
                   Proofeus® ↗
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://verbalock.com"
-                  target="_blank"
-                  rel="noopener"
-                  className="hover:text-cyan-proofeus"
-                >
-                  Verbalock ↗
-                </a>
-              </li>
               <li><Link href="/contact" className="hover:text-cyan-proofeus">Contact</Link></li>
             </ul>
           </div>

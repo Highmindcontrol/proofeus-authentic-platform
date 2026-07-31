@@ -4,7 +4,7 @@ import Image from "next/image";
 /**
  * Header Proofeus Authentic® — épuré, classe, technique.
  *
- * Codes hérités de Verbalock/Proofeus® : header fixed, ligne fine
+ * Codes hérités de Proofeus® : header fixed, ligne fine
  * en séparateur, sceau à gauche + wordmark, 7 items de navigation
  * centrés, sélecteur langue + connexion + CTA cyan à droite.
  *

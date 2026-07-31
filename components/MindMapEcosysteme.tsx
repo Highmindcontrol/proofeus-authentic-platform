@@ -28,7 +28,7 @@ type AppItem = {
 const APPS: AppItem[] = [
   {
     id: "verbalock-passwords",
-    titre: "Verbalock® Passwords",
+    titre: "Proofeus® Passwords",
     courte: "Coffre de mots de passe",
     prix: "4,90 €/an",
     icon: (
@@ -41,7 +41,7 @@ const APPS: AppItem[] = [
   },
   {
     id: "verbalock-crypto",
-    titre: "Verbalock® Crypto",
+    titre: "Proofeus® Crypto",
     courte: "Wallet crypto sans seed",
     prix: "4,90 €/an",
     icon: (
@@ -54,7 +54,7 @@ const APPS: AppItem[] = [
   },
   {
     id: "verbalock-chat",
-    titre: "Verbalock® Chat",
+    titre: "Proofeus® Chat",
     courte: "Messagerie chiffrée E2E",
     prix: "4,90 €/an",
     icon: (
@@ -67,7 +67,7 @@ const APPS: AppItem[] = [
   },
   {
     id: "verbalock-pay",
-    titre: "Verbalock® Pay",
+    titre: "Proofeus® Pay",
     courte: "Paiement humain à humain",
     prix: "4,90 €/an",
     icon: (

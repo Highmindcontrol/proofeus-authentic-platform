@@ -130,11 +130,11 @@ export default function EcosystemePage() {
             <EcoSocleCard
               nom="Proofeus® Intégral"
               prix="29,90 €"
-              baseline="Sovereign + Verbalock® complet + Legacy® + Authentic® occasionnel"
+              baseline="Sovereign + Proofeus® Pack complet + Legacy® + Authentic® occasionnel"
               vedette
               inclus={[
                 "Tout Sovereign (bouclier + protections)",
-                "Verbalock® Passwords, Crypto, Chat, Pay",
+                "Proofeus® Passwords, Crypto, Chat, Pay",
                 "Legacy® — testament et transmission",
                 "Authentic® — 5 Sceaux d'auteur par an",
                 "1 Sceau de création offert",

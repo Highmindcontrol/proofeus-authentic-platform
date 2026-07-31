@@ -208,7 +208,7 @@ export default function TarifsPage() {
                 "Watch® — observatoire IA malveillante",
                 "Consultation du Registre public",
               ]}
-              exclu="Apps modulaires à ajouter à la carte (Verbalock®, Authentic®, Legacy®)"
+              exclu="Apps modulaires à ajouter à la carte (Passwords, Crypto, Chat, Pay, Legacy®)"
               ctaLabel="Souscrire Sovereign ↗"
               ctaHref="https://proofeus.com/inscription?pkg=sovereign"
             />
@@ -219,11 +219,11 @@ export default function TarifsPage() {
               prix="29,90 €"
               cadence="an"
               vedette
-              baseline="Sovereign + Verbalock® complet + Legacy® + Authentic® occasionnel"
-              chapo="Le pack tout-en-un pour la vie numérique complète — bouclier + 4 apps Verbalock® + testament Legacy® + certification d'œuvres occasionnelle. −51 % vs les modules à la carte."
+              baseline="Sovereign + Proofeus® Pack complet + Legacy® + Authentic® occasionnel"
+              chapo="Le pack tout-en-un pour la vie numérique complète — bouclier + 4 apps Proofeus® + testament Legacy® + certification d'œuvres occasionnelle. −51 % vs les modules à la carte."
               inclus={[
                 "Tout Sovereign (bouclier + protections)",
-                "Verbalock® Passwords, Crypto, Chat, Pay",
+                "Proofeus® Passwords, Crypto, Chat, Pay",
                 "Legacy® — testament et transmission",
                 "Authentic® — 5 Sceaux d'auteur par an",
                 "1 Sceau de création offert",
@@ -315,29 +315,29 @@ export default function TarifsPage() {
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <AppCarte
-              nom="Verbalock® Passwords"
+              nom="Proofeus® Passwords"
               prix="4,90 €"
               chapo="Coffre de mots de passe débloqué par votre biométrie. Fini les mots de passe oubliés."
             />
             <AppCarte
-              nom="Verbalock® Crypto"
+              nom="Proofeus® Crypto"
               prix="4,90 €"
               chapo="Wallet crypto non-custodial sans seed phrase. Votre biométrie est la clé."
             />
             <AppCarte
-              nom="Verbalock® Chat"
+              nom="Proofeus® Chat"
               prix="4,90 €"
               chapo="Messagerie chiffrée E2E entre humains vérifiés. Fini les deepfakes textuels."
             />
             <AppCarte
-              nom="Verbalock® Pay"
+              nom="Proofeus® Pay"
               prix="4,90 €"
               chapo="Envoyez et recevez de la valeur entre humains vérifiés. Rail conversationnel."
             />
             <AppCarte
-              nom="Pack Verbalock® 4-en-1"
+              nom="Proofeus® Pack"
               prix="9,90 €"
-              chapo="Les 4 apps Verbalock® réunies. Économie 9,60 €/an vs à la carte."
+              chapo="Les 4 apps Proofeus® réunies. Économie 9,60 €/an vs à la carte."
               vedette
             />
             <AppCarte
