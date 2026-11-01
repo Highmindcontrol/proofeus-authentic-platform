@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { checkPreviewAuth } from "@/lib/preview-auth";
 
 const COOKIE_NAME = "proofeus_authentic_gate";
 
 export function middleware(request: NextRequest) {
+  const gate = checkPreviewAuth(request);
+  if (gate) return gate;
+
   const { pathname } = request.nextUrl;
 
   if (pathname === "/gate" || pathname === "/api/gate") {
