@@ -4,7 +4,7 @@ import { checkPreviewAuth } from "@/lib/preview-auth";
 
 const COOKIE_NAME = "proofeus_authentic_gate";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const gate = checkPreviewAuth(request);
   if (gate) return gate;
 
